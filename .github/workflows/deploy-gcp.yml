@@ -1,0 +1,76 @@
+name: Deploy Jet to GCP
+
+on:
+  push:
+    branches:
+      - feat/jet-rebrand
+      - main
+
+env:
+  GCE_INSTANCE: jet-server
+  GCE_ZONE: us-central1-a
+  PROJECT_ID: innovation-labs-489916
+
+jobs:
+  deploy:
+    name: Deploy to GCP VM
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.GCP_SA_KEY }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+        with:
+          project_id: ${{ env.PROJECT_ID }}
+
+      - name: Deploy to VM
+        run: |
+          gcloud compute ssh ${{ env.GCE_INSTANCE }} \
+            --zone=${{ env.GCE_ZONE }} \
+            --command="
+              cd /opt/jet && \
+              sudo git fetch origin && \
+              sudo git checkout ${{ github.ref_name }} && \
+              sudo git pull origin ${{ github.ref_name }} && \
+              sudo docker compose build --parallel && \
+              sudo docker compose up -d && \
+              sleep 10 && \
+              sudo docker compose restart proxy && \
+              echo 'Deployment complete!'
+            "
+
+      - name: Verify deployment
+        run: |
+          EXTERNAL_IP=$(gcloud compute instances describe ${{ env.GCE_INSTANCE }} \
+            --zone=${{ env.GCE_ZONE }} \
+            --format='value(networkInterfaces[0].accessConfigs[0].natIP)')
+
+          echo "Testing http://${EXTERNAL_IP}/"
+          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "http://${EXTERNAL_IP}/")
+
+          if [ "$STATUS" = "200" ]; then
+            echo "Web app is responding (HTTP 200)"
+          else
+            echo "Web app returned HTTP $STATUS"
+            exit 1
+          fi
+
+          echo "Testing http://${EXTERNAL_IP}/api/configs/"
+          API_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "http://${EXTERNAL_IP}/api/configs/")
+
+          if [ "$API_STATUS" = "200" ]; then
+            echo "API is responding (HTTP 200)"
+          else
+            echo "API returned HTTP $API_STATUS"
+            exit 1
+          fi
+
+          echo "Deployment verified successfully!"
+          echo "App URL: http://${EXTERNAL_IP}"
