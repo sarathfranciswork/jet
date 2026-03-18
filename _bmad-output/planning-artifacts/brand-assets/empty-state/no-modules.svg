@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <pattern id="blueprint" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <line x1="0" y1="20" x2="20" y2="20" stroke="#3B82F6" stroke-width="0.3" opacity="0.1"/>
+      <line x1="20" y1="0" x2="20" y2="20" stroke="#3B82F6" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#blueprint)"/>
+  <!-- Module blocks (stacked rectangles) -->
+  <rect x="160" y="80" width="80" height="40" rx="4" stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <rect x="170" y="90" width="60" height="4" rx="2" fill="#3B82F6" opacity="0.2"/>
+  <rect x="170" y="100" width="40" height="4" rx="2" fill="#3B82F6" opacity="0.15"/>
+  <rect x="160" y="130" width="80" height="40" rx="4" stroke="#06B6D4" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <rect x="170" y="140" width="50" height="4" rx="2" fill="#06B6D4" opacity="0.2"/>
+  <rect x="170" y="150" width="35" height="4" rx="2" fill="#06B6D4" opacity="0.15"/>
+  <!-- Connection lines -->
+  <line x1="200" y1="120" x2="200" y2="130" stroke="#3F3F46" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="200" y="210" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="500" font-size="18" fill="#A1A1AA">No modules yet</text>
+  <text x="200" y="236" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="400" font-size="14" fill="#71717A">Group related issues into modules</text>
+</svg>

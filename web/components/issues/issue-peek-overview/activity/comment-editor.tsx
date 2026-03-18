@@ -5,9 +5,9 @@ import { useForm, Controller } from "react-hook-form";
 // services
 import { FileService } from "services/file.service";
 // components
-import { LiteTextEditorWithRef } from "@plane/lite-text-editor";
+import { LiteTextEditorWithRef } from "@jet/lite-text-editor";
 // ui
-import { Button, Tooltip } from "@plane/ui";
+import { Button, Tooltip } from "@jet/ui";
 import { Globe2, Lock } from "lucide-react";
 
 // types

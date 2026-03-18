@@ -6,7 +6,7 @@ import Image from "next/image";
 // layouts
 import DefaultLayout from "layouts/default-layout";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // images
 import Image404 from "public/404.svg";
 // types

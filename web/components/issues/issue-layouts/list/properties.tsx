@@ -9,7 +9,7 @@ import { IssuePropertyAssignee } from "../properties/assignee";
 import { IssuePropertyEstimates } from "../properties/estimates";
 import { IssuePropertyDate } from "../properties/date";
 // ui
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // types
 import { IIssue, IState, TIssuePriorities } from "types";
 

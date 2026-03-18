@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 // ui
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // helpers
 import { renderDateFormat, renderShortDateWithYearFormat } from "helpers/date-time.helper";
 // types

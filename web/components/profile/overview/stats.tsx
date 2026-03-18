@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 // ui
-import { CreateIcon, LayerStackIcon, Loader } from "@plane/ui";
+import { CreateIcon, LayerStackIcon, Loader } from "@jet/ui";
 import { UserCircle2 } from "lucide-react";
 // types
 import { IUserProfileData } from "types";

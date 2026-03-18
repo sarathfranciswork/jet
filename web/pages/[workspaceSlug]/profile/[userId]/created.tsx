@@ -11,7 +11,7 @@ import { ProfileAuthWrapper } from "layouts/profile-layout";
 import { UserProfileHeader } from "components/headers";
 import { ProfileIssuesListLayout } from "components/issues/issue-layouts/list/roots/profile-issues-root";
 import { ProfileIssuesKanBanLayout } from "components/issues/issue-layouts/kanban/roots/profile-issues-root";
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 // types
 import { NextPageWithLayout } from "types/app";
 

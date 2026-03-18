@@ -9,7 +9,7 @@ import { WorkspaceSettingLayout } from "layouts/settings-layout";
 import { WorkspaceSettingHeader } from "components/headers";
 import { SendWorkspaceInvitationModal, WorkspaceMembersList } from "components/workspace";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { Search } from "lucide-react";
 // types

@@ -4,7 +4,7 @@ import useSWR from "swr";
 // services
 import { ProjectService } from "services/project";
 // ui
-import { Avatar, CustomSearchSelect } from "@plane/ui";
+import { Avatar, CustomSearchSelect } from "@jet/ui";
 // icons
 import { ChevronDown, UserCircle2 } from "lucide-react";
 // fetch-keys

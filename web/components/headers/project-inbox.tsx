@@ -5,7 +5,7 @@ import { Plus } from "lucide-react";
 // hooks
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Breadcrumbs, Button, LayersIcon } from "@plane/ui";
+import { Breadcrumbs, Button, LayersIcon } from "@jet/ui";
 // components
 import { CreateInboxIssueModal } from "components/inbox";
 // helper

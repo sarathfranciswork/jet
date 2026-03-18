@@ -9,7 +9,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // services
 import { IssueService } from "services/issue";
 // ui
-import { Avatar } from "@plane/ui";
+import { Avatar } from "@jet/ui";
 // types
 import { IUser, IIssue } from "types";
 // constants

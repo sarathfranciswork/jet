@@ -11,7 +11,7 @@ import { PAGE_DETAILS } from "constants/fetch-keys";
 // hooks
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Breadcrumbs, Button } from "@plane/ui";
+import { Breadcrumbs, Button } from "@jet/ui";
 // helper
 import { renderEmoji } from "helpers/emoji.helper";
 

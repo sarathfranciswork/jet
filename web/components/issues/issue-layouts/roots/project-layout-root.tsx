@@ -14,7 +14,7 @@ import {
   ProjectSpreadsheetLayout,
   ProjectEmptyState,
 } from "components/issues";
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 
 export const ProjectLayoutRoot: React.FC = observer(() => {
   const router = useRouter();

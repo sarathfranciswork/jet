@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 // components
 import { HeaderGroupByCard } from "./group-by-card";
 // ui
-import { StateGroupIcon } from "@plane/ui";
+import { StateGroupIcon } from "@jet/ui";
 
 export interface IStateGroupHeader {
   column_id: string;

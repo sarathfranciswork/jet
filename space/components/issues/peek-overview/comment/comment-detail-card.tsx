@@ -6,7 +6,7 @@ import { Check, MessageSquare, MoreVertical, X } from "lucide-react";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // components
-import { LiteReadOnlyEditorWithRef, LiteTextEditorWithRef } from "@plane/lite-text-editor";
+import { LiteReadOnlyEditorWithRef, LiteTextEditorWithRef } from "@jet/lite-text-editor";
 
 import { CommentReactions } from "components/issues/peek-overview";
 // helpers

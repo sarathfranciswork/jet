@@ -5,7 +5,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { ProjectCard } from "components/project";
 import { EmptyState } from "components/common";
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // images
 import emptyProject from "public/empty-state/project.svg";
 // icons

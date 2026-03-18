@@ -6,7 +6,7 @@ import { usePopper } from "react-popper";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { ToggleSwitch } from "@plane/ui";
+import { ToggleSwitch } from "@jet/ui";
 // icons
 import { Check, ChevronUp } from "lucide-react";
 // types

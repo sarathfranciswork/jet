@@ -9,9 +9,9 @@ import { TrackEventService } from "services/track_event.service";
 import useToast from "hooks/use-toast";
 import useUserAuth from "hooks/use-user-auth";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // components
-import { RichReadOnlyEditor, RichReadOnlyEditorWithRef } from "@plane/rich-text-editor";
+import { RichReadOnlyEditor, RichReadOnlyEditorWithRef } from "@jet/rich-text-editor";
 // types
 import { IIssue, IPageBlock } from "types";
 

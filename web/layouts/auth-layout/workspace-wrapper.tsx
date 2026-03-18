@@ -4,7 +4,7 @@ import Link from "next/link";
 import useSWR from "swr";
 import { observer } from "mobx-react-lite";
 // icons
-import { Button, Spinner } from "@plane/ui";
+import { Button, Spinner } from "@jet/ui";
 // hooks
 import { useMobxStore } from "lib/mobx/store-provider";
 

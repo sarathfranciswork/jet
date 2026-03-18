@@ -7,7 +7,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { GlobalViewEmptyState, GlobalViewsAppliedFiltersRoot, SpreadsheetView } from "components/issues";
 // ui
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 // types
 import { IIssue, IIssueDisplayFilterOptions, TStaticViewTypes } from "types";
 

@@ -13,7 +13,7 @@ import DefaultLayout from "layouts/default-layout";
 // components
 import { EmailSignUpForm } from "components/account";
 // images
-import BluePlaneLogoWithoutText from "public/plane-logos/blue-without-text.png";
+import BlueJetLogoWithoutText from "public/jet-logos/blue-without-text.png";
 // types
 import { NextPageWithLayout } from "types/app";
 
@@ -72,13 +72,13 @@ const SignUpPage: NextPageWithLayout = () => {
       <div className="fixed grid place-items-center bg-custom-background-100 sm:py-5 top-11 sm:top-12 left-7 sm:left-16 lg:left-28">
         <div className="grid place-items-center bg-custom-background-100">
           <div className="h-[30px] w-[30px]">
-            <Image src={BluePlaneLogoWithoutText} alt="Plane Logo" />
+            <Image src={BlueJetLogoWithoutText} alt="Jet Logo" />
           </div>
         </div>
       </div>
       <div className="grid place-items-center h-full w-full overflow-y-auto py-5 px-7">
         <div>
-          <h1 className="text-2xl text-center font-">SignUp on Plane</h1>
+          <h1 className="text-2xl text-center font-">SignUp on Jet</h1>
           <EmailSignUpForm onSubmit={handleSignUp} />
         </div>
       </div>

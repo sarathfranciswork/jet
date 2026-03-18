@@ -13,7 +13,7 @@ import useUserAuth from "hooks/use-user-auth";
 import { CreateUpdatePageModal, DeletePageModal, SinglePageDetailedItem, SinglePageListItem } from "components/pages";
 // ui
 import { EmptyState } from "components/common";
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // icons
 import { Plus } from "lucide-react";
 // images

@@ -18,7 +18,7 @@ import { JIRA_IMPORTER_DETAIL } from "constants/fetch-keys";
 import { IJiraImporterForm, IJiraMetadata } from "types";
 
 // components
-import { ToggleSwitch, Spinner } from "@plane/ui";
+import { ToggleSwitch, Spinner } from "@jet/ui";
 
 import type { IJiraIntegrationData, TJiraIntegrationSteps } from ".";
 

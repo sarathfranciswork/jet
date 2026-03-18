@@ -1,7 +1,7 @@
 import { Draggable } from "@hello-pangea/dnd";
 // components
 import { KanBanProperties } from "./properties";
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 import { IssuePeekOverview } from "components/issues/issue-peek-overview";
 // types
 import { IIssueDisplayProperties, IIssue } from "types";

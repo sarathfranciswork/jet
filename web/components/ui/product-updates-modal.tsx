@@ -8,7 +8,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { WorkspaceService } from "services/workspace.service";
 // components
 import { MarkdownRenderer } from "components/ui";
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // icons
 import { X } from "lucide-react";
 // helpers

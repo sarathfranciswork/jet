@@ -1,6 +1,6 @@
 "use client"
 import * as React from 'react';
-import { EditorContainer, EditorContentWrapper, getEditorClassNames, useEditor } from '@plane/editor-core';
+import { EditorContainer, EditorContentWrapper, getEditorClassNames, useEditor } from '@jet/editor-core';
 import { EditorBubbleMenu } from './menus/bubble-menu';
 import { RichTextEditorExtensions } from './extensions';
 

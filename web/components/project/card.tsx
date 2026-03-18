@@ -10,7 +10,7 @@ import useToast from "hooks/use-toast";
 // components
 import { DeleteProjectModal, JoinProjectModal } from "components/project";
 // ui
-import { Avatar, AvatarGroup, Button, Tooltip } from "@plane/ui";
+import { Avatar, AvatarGroup, Button, Tooltip } from "@jet/ui";
 // helpers
 import { copyTextToClipboard } from "helpers/string.helper";
 import { renderEmoji } from "helpers/emoji.helper";

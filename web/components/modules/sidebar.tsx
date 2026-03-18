@@ -15,7 +15,7 @@ import { LinkModal, LinksList, SidebarProgressStats } from "components/core";
 import { DeleteModuleModal, SidebarLeadSelect, SidebarMembersSelect } from "components/modules";
 import ProgressChart from "components/core/sidebar/progress-chart";
 // ui
-import { CustomMenu, Loader, LayersIcon, CustomSelect, ModuleStatusIcon } from "@plane/ui";
+import { CustomMenu, Loader, LayersIcon, CustomSelect, ModuleStatusIcon } from "@jet/ui";
 // icon
 import { AlertCircle, ChevronDown, ChevronRight, Info, LinkIcon, Plus, Trash2 } from "lucide-react";
 // helpers

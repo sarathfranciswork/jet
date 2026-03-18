@@ -8,7 +8,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // services
 import { FileService } from "services/file.service";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { UserCircle2 } from "lucide-react";
 

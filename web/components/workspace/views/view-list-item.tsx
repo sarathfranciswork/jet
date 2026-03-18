@@ -6,7 +6,7 @@ import { useState } from "react";
 // components
 import { CreateUpdateWorkspaceViewModal, DeleteGlobalViewModal } from "components/workspace";
 // ui
-import { CustomMenu } from "@plane/ui";
+import { CustomMenu } from "@jet/ui";
 // icons
 import { Pencil, Sparkles, Trash2 } from "lucide-react";
 // helpers

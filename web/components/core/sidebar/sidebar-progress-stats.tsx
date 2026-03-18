@@ -11,7 +11,7 @@ import emptyMembers from "public/empty-state/empty_members.svg";
 // components
 import { SingleProgressStats } from "components/core";
 // ui
-import { Avatar, StateGroupIcon } from "@plane/ui";
+import { Avatar, StateGroupIcon } from "@jet/ui";
 // types
 import {
   IModule,

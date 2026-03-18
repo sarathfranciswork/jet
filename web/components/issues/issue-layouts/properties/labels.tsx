@@ -7,7 +7,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 import { usePopper } from "react-popper";
 // components
 import { Combobox } from "@headlessui/react";
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 import { Check, ChevronDown, Search } from "lucide-react";
 // types
 import { Placement } from "@popperjs/core";

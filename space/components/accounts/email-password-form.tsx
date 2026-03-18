@@ -40,7 +40,7 @@ export const EmailPasswordForm: React.FC<Props> = ({ onSubmit }) => {
   return (
     <>
       <h1 className="text-center text-2xl sm:text-2.5xl font-semibold text-custom-text-100">
-        {isResettingPassword ? "Reset your password" : isSignUpPage ? "Sign up on Plane" : "Sign in to Plane"}
+        {isResettingPassword ? "Reset your password" : isSignUpPage ? "Sign up on Jet" : "Sign in to Jet"}
       </h1>
       {isResettingPassword ? (
         <EmailResetPasswordForm setIsResettingPassword={setIsResettingPassword} />

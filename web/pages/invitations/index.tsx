@@ -14,12 +14,12 @@ import useToast from "hooks/use-toast";
 import DefaultLayout from "layouts/default-layout";
 import { UserAuthWrapper } from "layouts/auth-layout";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { CheckCircle2 } from "lucide-react";
 // images
-import BlackHorizontalLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
-import WhiteHorizontalLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
+import BlackHorizontalLogo from "public/jet-logos/black-horizontal-with-blue-logo.svg";
+import WhiteHorizontalLogo from "public/jet-logos/white-horizontal-with-blue-logo.svg";
 import emptyInvitation from "public/empty-state/invitation.svg";
 // helpers
 import { truncateText } from "helpers/string.helper";
@@ -109,9 +109,9 @@ const UserInvitationsPage: NextPageWithLayout = () => {
         <div className="absolute grid place-items-center bg-custom-background-100 px-3 sm:px-0 sm:py-5 left-5 sm:left-1/2 md:left-1/3 sm:-translate-x-[15px] top-1/2 -translate-y-1/2 sm:translate-y-0 sm:top-12">
           <div className="h-[30px] w-[133px]">
             {theme === "light" ? (
-              <Image src={BlackHorizontalLogo} alt="Plane black logo" />
+              <Image src={BlackHorizontalLogo} alt="Jet black logo" />
             ) : (
-              <Image src={WhiteHorizontalLogo} alt="Plane white logo" />
+              <Image src={WhiteHorizontalLogo} alt="Jet white logo" />
             )}
           </div>
         </div>

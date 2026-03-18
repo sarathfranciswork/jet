@@ -1,6 +1,6 @@
 import { Controller, useForm } from "react-hook-form";
 // ui
-import { Button, Input, TextArea } from "@plane/ui";
+import { Button, Input, TextArea } from "@jet/ui";
 import { DateSelect } from "components/ui";
 import { IssueProjectSelect } from "components/issues/select";
 // types

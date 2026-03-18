@@ -11,7 +11,7 @@ import useToast from "hooks/use-toast";
 // components
 import { ConfirmProjectMemberRemove } from "components/project";
 // ui
-import { CustomSelect, Tooltip } from "@plane/ui";
+import { CustomSelect, Tooltip } from "@jet/ui";
 // icons
 import { ChevronDown, XCircle } from "lucide-react";
 // constants

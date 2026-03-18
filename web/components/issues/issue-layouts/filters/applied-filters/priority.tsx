@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 
 // icons
-import { PriorityIcon } from "@plane/ui";
+import { PriorityIcon } from "@jet/ui";
 import { X } from "lucide-react";
 // types
 import { TIssuePriorities } from "types";

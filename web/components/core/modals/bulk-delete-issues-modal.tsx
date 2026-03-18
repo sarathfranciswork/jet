@@ -10,7 +10,7 @@ import { IssueService } from "services/issue";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, LayersIcon } from "@plane/ui";
+import { Button, LayersIcon } from "@jet/ui";
 // icons
 import { Search } from "lucide-react";
 // types

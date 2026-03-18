@@ -44,6 +44,6 @@ const ToggleSwitch: React.FC<IToggleSwitchProps> = (props) => {
   );
 };
 
-ToggleSwitch.displayName = "plane-ui-toggle-switch";
+ToggleSwitch.displayName = "jet-ui-toggle-switch";
 
 export { ToggleSwitch };

@@ -8,7 +8,7 @@ import { CreateUpdateEstimateModal, DeleteEstimateModal, EstimateListItem } from
 //hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 import { EmptyState } from "components/common";
 // icons
 import { Plus } from "lucide-react";

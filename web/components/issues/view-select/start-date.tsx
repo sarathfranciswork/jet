@@ -1,6 +1,6 @@
 // ui
 import { CustomDatePicker } from "components/ui";
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // helpers
 import { renderShortDateWithYearFormat } from "helpers/date-time.helper";
 // types

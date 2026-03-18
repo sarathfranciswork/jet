@@ -4,7 +4,7 @@ import { Placement } from "@popperjs/core";
 import { Combobox } from "@headlessui/react";
 import { Check, ChevronDown, Search } from "lucide-react";
 // ui
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // types
 import { IIssueLabels } from "types";
 

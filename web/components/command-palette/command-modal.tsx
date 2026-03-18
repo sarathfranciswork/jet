@@ -41,7 +41,7 @@ import {
   ToggleSwitch,
   Tooltip,
   UserGroupIcon,
-} from "@plane/ui";
+} from "@jet/ui";
 // icons
 import { DiscordIcon, GithubIcon, SettingIcon } from "components/icons";
 // helpers
@@ -636,13 +636,13 @@ export const CommandModal: React.FC<Props> = (props) => {
                           <Command.Item
                             onSelect={() => {
                               closePalette();
-                              window.open("https://docs.plane.so/", "_blank");
+                              window.open("https://docs.jetpm.app/", "_blank");
                             }}
                             className="focus:outline-none"
                           >
                             <div className="flex items-center gap-2 text-custom-text-200">
                               <FileText className="h-3.5 w-3.5" />
-                              Open Plane documentation
+                              Open Jet documentation
                             </div>
                           </Command.Item>
                           <Command.Item
@@ -660,7 +660,7 @@ export const CommandModal: React.FC<Props> = (props) => {
                           <Command.Item
                             onSelect={() => {
                               closePalette();
-                              window.open("https://github.com/makeplane/plane/issues/new/choose", "_blank");
+                              window.open("https://github.com/makeplane/jet/issues/new/choose", "_blank");
                             }}
                             className="focus:outline-none"
                           >

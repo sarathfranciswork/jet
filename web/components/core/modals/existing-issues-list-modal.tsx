@@ -8,7 +8,7 @@ import { ProjectService } from "services/project";
 import useToast from "hooks/use-toast";
 import useDebounce from "hooks/use-debounce";
 // ui
-import { Button, LayersIcon, Loader, ToggleSwitch, Tooltip } from "@plane/ui";
+import { Button, LayersIcon, Loader, ToggleSwitch, Tooltip } from "@jet/ui";
 // types
 import { ISearchIssueResponse, TProjectIssuesSearchParams } from "types";
 

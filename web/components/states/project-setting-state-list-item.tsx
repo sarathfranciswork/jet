@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Tooltip, StateGroupIcon } from "@plane/ui";
+import { Tooltip, StateGroupIcon } from "@jet/ui";
 // icons
 import { Pencil, X, ArrowDown, ArrowUp } from "lucide-react";
 

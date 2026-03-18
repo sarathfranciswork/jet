@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
 import { ContrastIcon, FileText, Inbox, Layers } from "lucide-react";
-import { DiceIcon, ToggleSwitch } from "@plane/ui";
+import { DiceIcon, ToggleSwitch } from "@jet/ui";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // services

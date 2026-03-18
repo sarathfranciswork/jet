@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useRouter } from "next/router";
 import { useForm, Controller } from "react-hook-form";
 // ui
-import { Input, Button } from "@plane/ui";
+import { Input, Button } from "@jet/ui";
 
 export interface EmailForgotPasswordFormValues {
   email: string;

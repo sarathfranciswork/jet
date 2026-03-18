@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 // components
 import { NotificationPopover } from "components/notifications";
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // icons
 import { BarChart2, Briefcase, CheckCircle, LayoutGrid } from "lucide-react";
 // mobx store

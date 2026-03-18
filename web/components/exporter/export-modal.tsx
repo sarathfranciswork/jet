@@ -9,7 +9,7 @@ import { ProjectExportService } from "services/project";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, CustomSearchSelect } from "@plane/ui";
+import { Button, CustomSearchSelect } from "@jet/ui";
 // types
 import { IUser, IImporterService } from "types";
 

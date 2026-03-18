@@ -11,7 +11,7 @@ import { IEstimate } from "types";
 // icons
 import { AlertTriangle } from "lucide-react";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 
 type Props = {
   isOpen: boolean;

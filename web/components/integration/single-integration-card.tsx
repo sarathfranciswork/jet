@@ -11,7 +11,7 @@ import { IntegrationService } from "services/integrations";
 import useToast from "hooks/use-toast";
 import useIntegrationPopup from "hooks/use-integration-popup";
 // ui
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 // icons
 import GithubLogo from "public/services/github.png";
 import SlackLogo from "public/services/slack.png";
@@ -29,12 +29,12 @@ const integrationDetails: { [key: string]: any } = {
   github: {
     logo: GithubLogo,
     installed: "Activate GitHub on individual projects to sync with specific repositories.",
-    notInstalled: "Connect with GitHub with your Plane workspace to sync project issues.",
+    notInstalled: "Connect with GitHub with your Jet workspace to sync project issues.",
   },
   slack: {
     logo: SlackLogo,
     installed: "Activate Slack on individual projects to sync with specific channels.",
-    notInstalled: "Connect with Slack with your Plane workspace to sync project issues.",
+    notInstalled: "Connect with Slack with your Jet workspace to sync project issues.",
   },
 };
 

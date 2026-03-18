@@ -6,7 +6,7 @@ import { AlertTriangle } from "lucide-react";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // types
 import type { IIssue } from "types";
 

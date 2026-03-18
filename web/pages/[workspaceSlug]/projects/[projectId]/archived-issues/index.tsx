@@ -5,7 +5,7 @@ import { AppLayout } from "layouts/app-layout";
 // contexts
 import { IssueViewContextProvider } from "contexts/issue-view.context";
 // ui
-import { ArchiveIcon } from "@plane/ui";
+import { ArchiveIcon } from "@jet/ui";
 import { ProjectArchivedIssuesHeader } from "components/headers";
 // icons
 import { X } from "lucide-react";

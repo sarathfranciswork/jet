@@ -7,11 +7,11 @@ import useUser from "hooks/use-user";
 // components
 import { TourSidebar } from "components/onboarding";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { X } from "lucide-react";
 // images
-import PlaneWhiteLogo from "public/plane-logos/white-horizontal.svg";
+import JetWhiteLogo from "public/jet-logos/white-horizontal.svg";
 import IssuesTour from "public/onboarding/issues.webp";
 import CyclesTour from "public/onboarding/cycles.webp";
 import ModulesTour from "public/onboarding/modules.webp";
@@ -36,7 +36,7 @@ const TOUR_STEPS: {
     key: "issues",
     title: "Plan with issues",
     description:
-      "The issue is the building block of the Plane. Most concepts in Plane are either associated with issues and their properties.",
+      "The issue is the building block of Jet. Most concepts in Jet are either associated with issues and their properties.",
     image: IssuesTour,
     nextStep: "cycles",
   },
@@ -89,14 +89,14 @@ export const TourRoot: React.FC<Props> = ({ onComplete }) => {
         <div className="w-4/5 md:w-1/2 lg:w-2/5 h-3/4 bg-custom-background-100 rounded-[10px] overflow-hidden">
           <div className="h-full overflow-hidden">
             <div className="h-3/5 bg-custom-primary-100 grid place-items-center">
-              <Image src={PlaneWhiteLogo} alt="Plane White Logo" />
+              <Image src={JetWhiteLogo} alt="Jet White Logo" />
             </div>
             <div className="h-2/5 overflow-y-auto p-6">
               <h3 className="font-semibold sm:text-xl">
-                Welcome to Plane, {user?.first_name} {user?.last_name}
+                Welcome to Jet, {user?.first_name} {user?.last_name}
               </h3>
               <p className="text-custom-text-200 text-sm mt-3">
-                We{"'"}re glad that you decided to try out Plane. You can now manage your projects with ease. Get
+                We{"'"}re glad that you decided to try out Jet. You can now manage your projects with ease. Get
                 started by creating a project.
               </p>
               <div className="flex items-center gap-6 mt-8">

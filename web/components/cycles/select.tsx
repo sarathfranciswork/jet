@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 import { Listbox, Transition } from "@headlessui/react";
 // icons
-import { ContrastIcon } from "@plane/ui";
+import { ContrastIcon } from "@jet/ui";
 import { Plus } from "lucide-react";
 // services
 import { CycleService } from "services/cycle.service";

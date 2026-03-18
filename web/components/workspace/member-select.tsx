@@ -2,7 +2,7 @@ import React, { FC, useState, Fragment } from "react";
 // popper js
 import { usePopper } from "react-popper";
 // ui
-import { Avatar, Input } from "@plane/ui";
+import { Avatar, Input } from "@jet/ui";
 import { Listbox } from "@headlessui/react";
 // icons
 import { Check, Search, User2 } from "lucide-react";

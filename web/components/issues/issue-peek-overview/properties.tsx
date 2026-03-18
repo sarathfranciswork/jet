@@ -5,7 +5,7 @@ import { observer } from "mobx-react-lite";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui icons
-import { DiceIcon, DoubleCircleIcon, UserGroupIcon } from "@plane/ui";
+import { DiceIcon, DoubleCircleIcon, UserGroupIcon } from "@jet/ui";
 import { CalendarDays, ContrastIcon, Link2, Plus, Signal, Tag, Triangle, User2 } from "lucide-react";
 import {
   SidebarAssigneeSelect,

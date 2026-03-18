@@ -3,7 +3,7 @@ import Image from "next/image";
 
 // mobx
 import { observer } from "mobx-react-lite";
-import planeLogo from "public/plane-logo.svg";
+import jetLogo from "public/jet-logo.svg";
 // components
 import IssueNavbar from "components/issues/navbar";
 
@@ -15,16 +15,16 @@ const ProjectLayout = ({ children }: { children: React.ReactNode }) => (
     <div className="w-full h-full relative bg-custom-background-90 overflow-hidden">{children}</div>
 
     <a
-      href="https://plane.so"
+      href="https://jetpm.app"
       className="fixed !z-[999999] bottom-2.5 right-5 bg-custom-background-100 rounded shadow-custom-shadow-2xs border border-custom-border-200 py-1 px-2 flex items-center gap-1"
       target="_blank"
       rel="noreferrer noopener"
     >
       <div className="w-6 h-6 relative grid place-items-center">
-        <Image src={planeLogo} alt="Plane logo" className="w-6 h-6" height="24" width="24" />
+        <Image src={jetLogo} alt="Jet logo" className="w-6 h-6" height="24" width="24" />
       </div>
       <div className="text-xs">
-        Powered by <span className="font-semibold">Plane Deploy</span>
+        Powered by <span className="font-semibold">Jet Deploy</span>
       </div>
     </a>
   </div>

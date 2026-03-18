@@ -5,7 +5,7 @@ import { usePopper } from "react-popper";
 import { Combobox } from "@headlessui/react";
 import { Check, ChevronDown, Search, User2 } from "lucide-react";
 // ui
-import { Avatar, AvatarGroup, Tooltip } from "@plane/ui";
+import { Avatar, AvatarGroup, Tooltip } from "@jet/ui";
 // types
 import { Placement } from "@popperjs/core";
 

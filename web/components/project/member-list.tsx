@@ -10,7 +10,7 @@ import useUser from "hooks/use-user";
 // components
 import { ProjectMemberListItem, SendProjectInvitationModal } from "components/project";
 // ui
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 // icons
 import { Search } from "lucide-react";
 

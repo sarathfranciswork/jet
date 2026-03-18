@@ -1,8 +1,8 @@
-# @plane/rich-text-editor
+# @jet/rich-text-editor
 
 ## Description
 
-The `@plane/rich-text-editor` package extends from the `editor-core` package, inheriting its base functionality while adding its own unique features of Slash Commands and many more.
+The `@jet/rich-text-editor` package extends from the `editor-core` package, inheriting its base functionality while adding its own unique features of Slash Commands and many more.
 
 ## Key Features
 

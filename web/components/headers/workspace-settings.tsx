@@ -3,7 +3,7 @@ import { FC } from "react";
 import { useRouter } from "next/router";
 
 // ui
-import { Breadcrumbs } from "@plane/ui";
+import { Breadcrumbs } from "@jet/ui";
 import { Settings } from "lucide-react";
 
 // hooks

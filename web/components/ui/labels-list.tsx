@@ -1,6 +1,6 @@
 import { FC } from "react";
 // ui
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // types
 import { IIssueLabels } from "types";
 

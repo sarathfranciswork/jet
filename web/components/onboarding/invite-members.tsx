@@ -9,7 +9,7 @@ import { WorkspaceService } from "services/workspace.service";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // hooks
 import useDynamicDropdownPosition from "hooks/use-dynamic-dropdown";
 // icons

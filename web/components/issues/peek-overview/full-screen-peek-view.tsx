@@ -7,7 +7,7 @@ import {
   TPeekOverviewModes,
 } from "components/issues";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // types
 import { IIssue } from "types";
 

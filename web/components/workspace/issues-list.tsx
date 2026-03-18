@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // icons
 import { AlertTriangle } from "lucide-react";
-import { LayersIcon, Loader } from "@plane/ui";
+import { LayersIcon, Loader } from "@jet/ui";
 // helpers
 import { renderShortDateWithYearFormat } from "helpers/date-time.helper";
 import { truncateText } from "helpers/string.helper";

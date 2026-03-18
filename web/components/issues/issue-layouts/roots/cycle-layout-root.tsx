@@ -16,7 +16,7 @@ import {
 } from "components/issues";
 import { TransferIssues, TransferIssuesModal } from "components/cycles";
 // ui
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 // helpers
 import { getDateRangeStatus } from "helpers/date-time.helper";
 

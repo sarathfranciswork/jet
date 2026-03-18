@@ -1,7 +1,7 @@
 {
-  "name": "@plane/editor-core",
+  "name": "@jet/editor-core",
   "version": "0.0.1",
-  "description": "Core Editor that powers Plane",
+  "description": "Core Editor that powers Jet",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",

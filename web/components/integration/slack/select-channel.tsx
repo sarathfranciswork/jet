@@ -4,7 +4,7 @@ import useSWR, { mutate } from "swr";
 // services
 import { AppInstallationService } from "services/app_installation.service";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // hooks
 import useIntegrationPopup from "hooks/use-integration-popup";
 // types

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // types
 import { IPage } from "types";
 

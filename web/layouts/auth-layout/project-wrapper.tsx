@@ -5,7 +5,7 @@ import useSWR from "swr";
 // hooks
 import { useMobxStore } from "lib/mobx/store-provider";
 // components
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 import { JoinProject } from "components/auth-screens";
 import { EmptyState } from "components/common";
 // images

@@ -40,8 +40,8 @@ services:
     env_file:
       - ./apiserver/.env
     depends_on:
-      - plane-db
-      - plane-redis
+      - jet-db
+      - jet-redis
 
   worker:
     container_name: bgworker
@@ -56,8 +56,8 @@ services:
       - ./apiserver/.env
     depends_on:
       - api
-      - plane-db
-      - plane-redis
+      - jet-db
+      - jet-redis
 
   beat-worker:
     container_name: beatworker
@@ -72,11 +72,11 @@ services:
       - ./apiserver/.env
     depends_on:
       - api
-      - plane-db
-      - plane-redis
+      - jet-db
+      - jet-redis
 
-  plane-db:
-    container_name: plane-db
+  jet-db:
+    container_name: jet-db
     image: postgres:15.2-alpine
     restart: always
     command: postgres -c 'max_connections=1000'
@@ -90,15 +90,15 @@ services:
       POSTGRES_PASSWORD: ${PGPASSWORD}
       PGDATA: /var/lib/postgresql/data
 
-  plane-redis:
-    container_name: plane-redis
+  jet-redis:
+    container_name: jet-redis
     image: redis:6.2.7-alpine
     restart: always
     volumes:
       - redisdata:/data
 
-  plane-minio:
-    container_name: plane-minio
+  jet-minio:
+    container_name: jet-minio
     image: minio/minio
     restart: always
     command: server /export --console-address ":9090"
@@ -111,11 +111,11 @@ services:
   createbuckets:
     image: minio/mc
     entrypoint: >
-      /bin/sh -c " /usr/bin/mc config host add plane-minio http://plane-minio:9000 \$AWS_ACCESS_KEY_ID \$AWS_SECRET_ACCESS_KEY; /usr/bin/mc mb plane-minio/\$AWS_S3_BUCKET_NAME; /usr/bin/mc anonymous set download plane-minio/\$AWS_S3_BUCKET_NAME; exit 0; "
+      /bin/sh -c " /usr/bin/mc config host add jet-minio http://jet-minio:9000 \$AWS_ACCESS_KEY_ID \$AWS_SECRET_ACCESS_KEY; /usr/bin/mc mb jet-minio/\$AWS_S3_BUCKET_NAME; /usr/bin/mc anonymous set download jet-minio/\$AWS_S3_BUCKET_NAME; exit 0; "
     env_file:
       - .env
     depends_on:
-      - plane-minio
+      - jet-minio
 
   # Comment this if you already have a reverse proxy running
   proxy:

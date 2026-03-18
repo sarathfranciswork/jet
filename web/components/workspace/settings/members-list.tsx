@@ -8,7 +8,7 @@ import { WorkspaceService } from "services/workspace.service";
 // components
 import { WorkspaceMembersListItem } from "components/workspace";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 
 const workspaceService = new WorkspaceService();
 export const WorkspaceMembersList: React.FC<{ searchQuery: string }> = observer(({ searchQuery }) => {

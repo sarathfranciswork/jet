@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useRouter } from "next/router";
 
 // ui
-import { Breadcrumbs } from "@plane/ui";
+import { Breadcrumbs } from "@jet/ui";
 // helper
 import { renderEmoji } from "helpers/emoji.helper";
 // hooks

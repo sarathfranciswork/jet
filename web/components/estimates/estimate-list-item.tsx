@@ -8,7 +8,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, CustomMenu } from "@plane/ui";
+import { Button, CustomMenu } from "@jet/ui";
 //icons
 import { Pencil, Trash2 } from "lucide-react";
 // helpers

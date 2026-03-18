@@ -7,7 +7,7 @@ import { WorkspaceService } from "services/workspace.service";
 // hooks
 import useUser from "hooks/use-user";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { CheckCircle } from "lucide-react";
 // helpers

@@ -98,13 +98,13 @@ export const SignInView = observer(() => {
       <div className="fixed grid place-items-center bg-custom-background-100 sm:py-5 top-11 sm:top-12 left-7 sm:left-16 lg:left-28">
         <div className="grid place-items-center bg-custom-background-100">
           <div className="h-[30px] w-[30px]">
-            <img src={`${imagePrefix}/plane-logos/blue-without-text.png`} alt="Plane Logo" />
+            <img src={`${imagePrefix}/jet-logos/blue-without-text.png`} alt="Jet Logo" />
           </div>
         </div>
       </div>
       <div className="grid place-items-center h-full overflow-y-auto py-5 px-7">
         <div>
-          <h1 className="text-center text-2xl sm:text-2.5xl font-semibold text-custom-text-100">Sign in to Plane</h1>
+          <h1 className="text-center text-2xl sm:text-2.5xl font-semibold text-custom-text-100">Sign in to Jet</h1>
           {data?.email_password_login && <EmailPasswordForm onSubmit={handlePasswordSignIn} />}
 
           {data?.magic_login && (
@@ -122,7 +122,7 @@ export const SignInView = observer(() => {
           <p className="pt-16 text-custom-text-200 text-sm text-center">
             By signing up, you agree to the{" "}
             <a
-              href="https://plane.so/terms-and-conditions"
+              href="https://jetpm.app/terms-and-conditions"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium underline"

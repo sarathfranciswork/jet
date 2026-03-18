@@ -22,7 +22,7 @@ import {
   SpreadsheetUpdatedOnColumn,
 } from "components/issues";
 // ui
-import { CustomMenu } from "@plane/ui";
+import { CustomMenu } from "@jet/ui";
 // types
 import {
   IIssue,

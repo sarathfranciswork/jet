@@ -21,7 +21,7 @@ import {
   GithubImportConfirm,
 } from "components/integration";
 // icons
-import { UserGroupIcon } from "@plane/ui";
+import { UserGroupIcon } from "@jet/ui";
 import { ArrowLeft, Check, List, Settings, UploadCloud } from "lucide-react";
 // images
 import GithubLogo from "public/services/github.png";

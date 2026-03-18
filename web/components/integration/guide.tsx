@@ -13,7 +13,7 @@ import { IntegrationService } from "services/integrations";
 // components
 import { DeleteImportModal, GithubImporterRoot, JiraImporterRoot, SingleImport } from "components/integration";
 // ui
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 // icons
 import { RefreshCw } from "lucide-react";
 // types
@@ -62,17 +62,17 @@ const IntegrationGuide = () => {
                 <div className="text-lg font-medium">Relocation Guide</div>
                 <div className="text-sm">
                   You can now transfer all the issues that you{"'"}ve created in other tracking
-                  services. This tool will guide you to relocate the issue to Plane.
+                  services. This tool will guide you to relocate the issue to Jet.
                 </div>
               </div>
               <a
-                href="https://docs.plane.so/importers/github"
+                href="https://docs.jetpm.app/importers/github"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <div className="flex flex-shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap text-sm font-medium text-[#3F76FF] hover:text-opacity-80">
+                <div className="flex flex-shrink-0 cursor-pointer items-center gap-2 whitespace-nowrap text-sm font-medium text-[#3B82F6] hover:text-opacity-80">
                   Read More
-                  <ArrowRightIcon width={"18px"} color={"#3F76FF"} />
+                  <ArrowRightIcon width={"18px"} color={"#3B82F6"} />
                 </div>
               </a>
             </div> */}

@@ -9,7 +9,7 @@ import { WorkspaceService } from "services/workspace.service";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, CustomSelect, Input } from "@plane/ui";
+import { Button, CustomSelect, Input } from "@jet/ui";
 // types
 import { IWorkspace } from "types";
 // constants

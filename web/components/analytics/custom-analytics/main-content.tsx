@@ -4,7 +4,7 @@ import { mutate } from "swr";
 // components
 import { AnalyticsGraph, AnalyticsTable } from "components/analytics";
 // ui
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 // helpers
 import { convertResponseToBarGraphData } from "helpers/analytics.helper";
 // types

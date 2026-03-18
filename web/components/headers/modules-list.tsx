@@ -6,7 +6,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // hooks
 import useLocalStorage from "hooks/use-local-storage";
 // ui
-import { Breadcrumbs, Button, Tooltip, DiceIcon } from "@plane/ui";
+import { Breadcrumbs, Button, Tooltip, DiceIcon } from "@jet/ui";
 // helper
 import { replaceUnderscoreIfSnakeCase } from "helpers/string.helper";
 import { renderEmoji } from "helpers/emoji.helper";

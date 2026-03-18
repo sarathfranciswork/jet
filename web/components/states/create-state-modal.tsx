@@ -10,7 +10,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, CustomSelect, Input, TextArea } from "@plane/ui";
+import { Button, CustomSelect, Input, TextArea } from "@jet/ui";
 // icons
 import { ChevronDown } from "lucide-react";
 // types

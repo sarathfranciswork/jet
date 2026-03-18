@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { ModuleService } from "services/module.service";
 import { IssueService } from "services/issue";
 // components
-import { CustomMenu } from "@plane/ui";
+import { CustomMenu } from "@jet/ui";
 import { CreateUpdateIssueModal } from "components/issues/modal";
 import { ExistingIssuesListModal } from "components/core";
 // lucide icons

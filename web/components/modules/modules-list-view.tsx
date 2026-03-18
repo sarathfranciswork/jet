@@ -9,7 +9,7 @@ import useLocalStorage from "hooks/use-local-storage";
 import { ModuleCardItem, ModuleListItem, ModulePeekOverview, ModulesListGanttChartView } from "components/modules";
 import { EmptyState } from "components/common";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // assets
 import emptyModule from "public/empty-state/module.svg";
 

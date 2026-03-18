@@ -18,7 +18,7 @@ import {
   StateGroupIcon,
   PriorityIcon,
   Avatar,
-} from "@plane/ui";
+} from "@jet/ui";
 // components
 import ProgressChart from "components/core/sidebar/progress-chart";
 import { ActiveCycleProgressStats } from "components/cycles";
@@ -193,7 +193,7 @@ export const ActiveCycleDetails: React.FC<IActiveCycleDetails> = (props) => {
                           : cycleStatus === "upcoming"
                           ? "#F7AE59"
                           : cycleStatus === "completed"
-                          ? "#3F76FF"
+                          ? "#3B82F6"
                           : cycleStatus === "draft"
                           ? "rgb(var(--color-text-200))"
                           : ""

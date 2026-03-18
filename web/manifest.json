@@ -1,12 +1,12 @@
 {
-  "theme_color": "#3579f6",
+  "theme_color": "#09090B",
   "background_color": "#ffffff",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
-  "name": "Plane | Accelerate software development with peace.",
-  "short_name": "Plane",
-  "description": "Plane accelerated the software development by order of magnitude for agencies and product companies.",
+  "name": "Jet | Ship faster with Jet",
+  "short_name": "Jet",
+  "description": "Jet - Open-source project management at speed",
   "icons": [
     {
       "src": "/icon-192x192.png",

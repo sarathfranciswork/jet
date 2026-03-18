@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="jetFuelBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="20" cy="20" r="1" fill="white" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#jetFuelBg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <!-- Logo mark (large, centered) -->
+  <g transform="translate(420, 80) scale(0.7)">
+    <path d="M 288 64 L 352 64 L 352 320 C 352 380 320 420 272 448 L 160 448 L 192 384 L 264 384 C 296 384 288 352 288 320 Z" fill="white"/>
+    <path d="M 160 64 L 368 64 L 336 128 L 160 128 Z" fill="white"/>
+    <path d="M 96 256 L 224 256 L 192 288 L 96 288 Z" fill="white" opacity="0.6"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="600" y="480" text-anchor="middle" font-family="'Space Grotesk', 'Inter', system-ui, sans-serif" font-weight="700" font-size="72" fill="white">Jet</text>
+  <!-- Tagline -->
+  <text x="600" y="540" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="400" font-size="28" fill="white" opacity="0.85">Ship faster with Jet</text>
+</svg>

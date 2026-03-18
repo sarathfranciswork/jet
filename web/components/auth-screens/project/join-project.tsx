@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { ClipboardList } from "lucide-react";
 // images

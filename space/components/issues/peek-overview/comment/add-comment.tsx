@@ -11,7 +11,7 @@ import { SecondaryButton } from "components/ui";
 // types
 import { Comment } from "types/issue";
 // components
-import { LiteTextEditorWithRef } from "@plane/lite-text-editor";
+import { LiteTextEditorWithRef } from "@jet/lite-text-editor";
 // service
 import fileService from "services/file.service";
 

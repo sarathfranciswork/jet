@@ -29,10 +29,10 @@ ADD requirements ./requirements
 
 RUN pip install -r requirements.txt --compile --no-cache-dir
 
-RUN addgroup -S plane && \
-    adduser -S captain -G plane
+RUN addgroup -S jet && \
+    adduser -S captain -G jet
 
-RUN chown captain.plane /code
+RUN chown captain.jet /code
 
 USER captain
 

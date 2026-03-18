@@ -4,7 +4,7 @@ import { observer } from "mobx-react-lite";
 import { HeaderGroupByCard } from "./group-by-card";
 import { HeaderSubGroupByCard } from "./sub-group-by-card";
 // ui
-import { Avatar } from "@plane/ui";
+import { Avatar } from "@jet/ui";
 
 export interface IAssigneesHeader {
   column_id: string;

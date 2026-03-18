@@ -15,9 +15,9 @@ import useOutsideClickDetector from "hooks/use-outside-click-detector";
 // components
 import { GptAssistantModal } from "components/core";
 import { CreateUpdateBlockInline } from "components/pages";
-import { RichTextEditor } from "@plane/rich-text-editor";
+import { RichTextEditor } from "@jet/rich-text-editor";
 // ui
-import { CustomMenu, LayersIcon, TextArea } from "@plane/ui";
+import { CustomMenu, LayersIcon, TextArea } from "@jet/ui";
 // icons
 import { RefreshCw, LinkIcon, Zap, Check, MoreVertical, Pencil, Sparkle, Trash2 } from "lucide-react";
 // helpers

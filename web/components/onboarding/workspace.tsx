@@ -1,6 +1,6 @@
 import { useState } from "react";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // types
 import { IUser, IWorkspace, TOnboardingSteps } from "types";
 // constants

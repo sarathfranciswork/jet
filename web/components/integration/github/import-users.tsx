@@ -3,7 +3,7 @@ import { FC } from "react";
 // react-hook-form
 import { UseFormWatch } from "react-hook-form";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // types
 import { IUserDetails, SingleUserSelect, TFormValues, TIntegrationSteps } from "components/integration";
 

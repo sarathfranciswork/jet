@@ -5,7 +5,7 @@ import { MoreHorizontal, Pencil, Trash2, ChevronRight, Link } from "lucide-react
 // hooks
 import useToast from "hooks/use-toast";
 // components
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // helpers
 import { copyUrlToClipboard } from "helpers/string.helper";
 // types

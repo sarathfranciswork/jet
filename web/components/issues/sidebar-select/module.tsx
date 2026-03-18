@@ -4,7 +4,7 @@ import useSWR, { mutate } from "swr";
 // services
 import { ModuleService } from "services/module.service";
 // ui
-import { CustomSearchSelect, DiceIcon, Tooltip } from "@plane/ui";
+import { CustomSearchSelect, DiceIcon, Tooltip } from "@jet/ui";
 // types
 import { IIssue } from "types";
 // fetch-keys

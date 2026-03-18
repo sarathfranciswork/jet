@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <pattern id="blueprint" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <line x1="0" y1="20" x2="20" y2="20" stroke="#3B82F6" stroke-width="0.3" opacity="0.1"/>
+      <line x1="20" y1="0" x2="20" y2="20" stroke="#3B82F6" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#blueprint)"/>
+  <!-- Page/document icon -->
+  <path d="M 170 70 L 210 70 L 230 90 L 230 170 L 170 170 Z" stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M 210 70 L 210 90 L 230 90" stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <!-- Text lines -->
+  <line x1="182" y1="105" x2="218" y2="105" stroke="#3B82F6" stroke-width="1.5" opacity="0.2" stroke-linecap="round"/>
+  <line x1="182" y1="118" x2="210" y2="118" stroke="#3B82F6" stroke-width="1.5" opacity="0.15" stroke-linecap="round"/>
+  <line x1="182" y1="131" x2="215" y2="131" stroke="#06B6D4" stroke-width="1.5" opacity="0.15" stroke-linecap="round"/>
+  <line x1="182" y1="144" x2="205" y2="144" stroke="#3B82F6" stroke-width="1.5" opacity="0.1" stroke-linecap="round"/>
+  <!-- Pen icon -->
+  <line x1="240" y1="150" x2="255" y2="135" stroke="#06B6D4" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <text x="200" y="210" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="500" font-size="18" fill="#A1A1AA">No pages yet</text>
+  <text x="200" y="236" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="400" font-size="14" fill="#71717A">Start documenting with your first page</text>
+</svg>

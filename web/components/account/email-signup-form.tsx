@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Controller, useForm } from "react-hook-form";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // types
 type EmailPasswordFormValues = {
   email: string;

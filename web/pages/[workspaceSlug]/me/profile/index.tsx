@@ -15,7 +15,7 @@ import { WorkspaceSettingLayout } from "layouts/settings-layout";
 import { ImagePickerPopover, ImageUploadModal } from "components/core";
 import { WorkspaceSettingHeader } from "components/headers";
 // ui
-import { Button, CustomSelect, CustomSearchSelect, Input, Spinner } from "@plane/ui";
+import { Button, CustomSelect, CustomSearchSelect, Input, Spinner } from "@jet/ui";
 // icons
 import { User2, UserCircle2 } from "lucide-react";
 // types

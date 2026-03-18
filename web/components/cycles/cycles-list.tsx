@@ -3,7 +3,7 @@ import { FC } from "react";
 import { CyclePeekOverview, CyclesListItem } from "components/cycles";
 
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // types
 import { ICycle } from "types";
 

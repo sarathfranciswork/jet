@@ -3,7 +3,7 @@ import { PlusIcon } from "lucide-react";
 import { EmptyState } from "components/common";
 // assets
 import emptyIssue from "public/empty-state/issue.svg";
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 
 type Props = {
   openIssuesListModal: () => void;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 // component
-import { CustomSelect, ToggleSwitch } from "@plane/ui";
+import { CustomSelect, ToggleSwitch } from "@jet/ui";
 import { SelectMonthModal } from "components/automation";
 // icon
 import { ArchiveRestore } from "lucide-react";
@@ -38,7 +38,7 @@ export const AutoArchiveAutomation: React.FC<Props> = ({ projectDetails, handleC
             <div className="">
               <h4 className="text-sm font-medium">Auto-archive closed issues</h4>
               <p className="text-sm text-custom-text-200 tracking-tight">
-                Plane will auto archive issues that have been completed or cancelled.
+                Jet will auto archive issues that have been completed or cancelled.
               </p>
             </div>
           </div>

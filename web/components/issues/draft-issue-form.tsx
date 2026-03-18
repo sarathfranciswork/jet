@@ -23,13 +23,13 @@ import { CreateStateModal } from "components/states";
 import { CreateLabelModal } from "components/labels";
 // ui
 import {} from "components/ui";
-import { Button, CustomMenu, Input, ToggleSwitch } from "@plane/ui";
+import { Button, CustomMenu, Input, ToggleSwitch } from "@jet/ui";
 // icons
 import { Sparkle, X } from "lucide-react";
 // types
 import type { IUser, IIssue, ISearchIssueResponse } from "types";
 // components
-import { RichTextEditorWithRef } from "@plane/rich-text-editor";
+import { RichTextEditorWithRef } from "@jet/rich-text-editor";
 import useEditorSuggestions from "hooks/use-editor-suggestions";
 
 const aiService = new AIService();

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <!-- Empty State: No Issues - Blueprint style -->
+  <defs>
+    <pattern id="blueprint" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <line x1="0" y1="20" x2="20" y2="20" stroke="#3B82F6" stroke-width="0.3" opacity="0.1"/>
+      <line x1="20" y1="0" x2="20" y2="20" stroke="#3B82F6" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#blueprint)"/>
+  <!-- Checkmark in circle -->
+  <circle cx="200" cy="120" r="50" stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <polyline points="178,120 194,136 222,108" stroke="#3B82F6" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Speed lines -->
+  <line x1="100" y1="110" x2="130" y2="110" stroke="#3B82F6" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+  <line x1="110" y1="130" x2="140" y2="130" stroke="#06B6D4" stroke-width="1" opacity="0.2" stroke-linecap="round"/>
+  <line x1="260" y1="100" x2="290" y2="100" stroke="#06B6D4" stroke-width="1" opacity="0.3" stroke-linecap="round"/>
+  <line x1="270" y1="140" x2="300" y2="140" stroke="#3B82F6" stroke-width="1" opacity="0.2" stroke-linecap="round"/>
+  <!-- Text -->
+  <text x="200" y="210" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="500" font-size="18" fill="#A1A1AA">Clear skies</text>
+  <text x="200" y="236" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="400" font-size="14" fill="#71717A">Create your first issue to get started</text>
+</svg>

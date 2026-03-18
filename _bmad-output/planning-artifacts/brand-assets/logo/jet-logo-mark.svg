@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Chevron "J" Mark - Angular, geometric, speed-inspired -->
+  <defs>
+    <linearGradient id="jetFuel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <!-- Main "J" shape built from angular chevrons -->
+  <path d="M 288 64 L 352 64 L 352 320 C 352 380 320 420 272 448 L 160 448 L 192 384 L 264 384 C 296 384 288 352 288 320 Z" fill="url(#jetFuel)"/>
+  <!-- Top chevron bar -->
+  <path d="M 160 64 L 368 64 L 336 128 L 160 128 Z" fill="url(#jetFuel)"/>
+  <!-- Speed accent line -->
+  <path d="M 96 256 L 224 256 L 192 288 L 96 288 Z" fill="url(#jetFuel)" opacity="0.6"/>
+</svg>

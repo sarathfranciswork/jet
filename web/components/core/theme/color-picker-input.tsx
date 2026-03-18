@@ -14,7 +14,7 @@ import {
 import { ColorResult, SketchPicker } from "react-color";
 // component
 import { Popover, Transition } from "@headlessui/react";
-import { Input } from "@plane/ui";
+import { Input } from "@jet/ui";
 // icons
 import { Palette } from "lucide-react";
 // types

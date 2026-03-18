@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // components
 import { FilterHeader, FilterOption } from "components/issues";
 // ui
-import { Loader, StateGroupIcon } from "@plane/ui";
+import { Loader, StateGroupIcon } from "@jet/ui";
 // helpers
 import { getStatesList } from "helpers/state.helper";
 // types

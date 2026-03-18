@@ -5,7 +5,7 @@ import { observer } from "mobx-react-lite";
 // hooks
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Breadcrumbs, LayersIcon } from "@plane/ui";
+import { Breadcrumbs, LayersIcon } from "@jet/ui";
 // types
 import { IIssue } from "types";
 // constants

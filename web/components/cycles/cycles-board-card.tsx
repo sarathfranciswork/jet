@@ -6,7 +6,7 @@ import useToast from "hooks/use-toast";
 // components
 import { CycleCreateUpdateModal, CycleDeleteModal } from "components/cycles";
 // ui
-import { Avatar, AvatarGroup, CustomMenu, Tooltip, LayersIcon, CycleGroupIcon } from "@plane/ui";
+import { Avatar, AvatarGroup, CustomMenu, Tooltip, LayersIcon, CycleGroupIcon } from "@jet/ui";
 // icons
 import { Info, LinkIcon, Pencil, Star, Trash2 } from "lucide-react";
 // helpers

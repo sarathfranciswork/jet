@@ -1,7 +1,7 @@
 {
-  "name": "@plane/rich-text-editor",
+  "name": "@jet/rich-text-editor",
   "version": "0.0.1",
-  "description": "Rich Text Editor that powers Plane",
+  "description": "Rich Text Editor that powers Jet",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
@@ -28,7 +28,7 @@
     "@tiptap/core": "^2.1.11"
   },
   "dependencies": {
-    "@plane/editor-core": "*",
+    "@jet/editor-core": "*",
     "@tiptap/extension-code-block-lowlight": "^2.1.11",
     "@tiptap/extension-horizontal-rule": "^2.1.11",
     "@tiptap/extension-placeholder": "^2.1.11",

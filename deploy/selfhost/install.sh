@@ -2,30 +2,30 @@
 
 BRANCH=${BRANCH:-master}
 SCRIPT_DIR=$PWD
-PLANE_INSTALL_DIR=$PWD/plane-app
-mkdir -p $PLANE_INSTALL_DIR/archive
+JET_INSTALL_DIR=$PWD/jet-app
+mkdir -p $JET_INSTALL_DIR/archive
 
 function install(){
     echo 
-    echo "Installing on $PLANE_INSTALL_DIR"
+    echo "Installing on $JET_INSTALL_DIR"
     download
 }
 function download(){
     cd $SCRIPT_DIR
     TS=$(date +%s)
-    if [ -f "$PLANE_INSTALL_DIR/docker-compose.yaml" ]
+    if [ -f "$JET_INSTALL_DIR/docker-compose.yaml" ]
     then
-        mv $PLANE_INSTALL_DIR/docker-compose.yaml $PLANE_INSTALL_DIR/archive/$TS.docker-compose.yaml
+        mv $JET_INSTALL_DIR/docker-compose.yaml $JET_INSTALL_DIR/archive/$TS.docker-compose.yaml
     fi
 
-    curl -H 'Cache-Control: no-cache, no-store' -s -o $PLANE_INSTALL_DIR/docker-compose.yaml  https://raw.githubusercontent.com/makeplane/plane/$BRANCH/deploy/selfhost/docker-compose.yml?$(date +%s)
-    curl -H 'Cache-Control: no-cache, no-store' -s -o $PLANE_INSTALL_DIR/variables-upgrade.env https://raw.githubusercontent.com/makeplane/plane/$BRANCH/deploy/selfhost/variables.env?$(date +%s)
+    curl -H 'Cache-Control: no-cache, no-store' -s -o $JET_INSTALL_DIR/docker-compose.yaml  https://raw.githubusercontent.com/makeplane/jet/$BRANCH/deploy/selfhost/docker-compose.yml?$(date +%s)
+    curl -H 'Cache-Control: no-cache, no-store' -s -o $JET_INSTALL_DIR/variables-upgrade.env https://raw.githubusercontent.com/makeplane/jet/$BRANCH/deploy/selfhost/variables.env?$(date +%s)
 
-    if [ -f "$PLANE_INSTALL_DIR/.env" ];
+    if [ -f "$JET_INSTALL_DIR/.env" ];
     then
-        cp $PLANE_INSTALL_DIR/.env $PLANE_INSTALL_DIR/archive/$TS.env
+        cp $JET_INSTALL_DIR/.env $JET_INSTALL_DIR/archive/$TS.env
     else
-        mv $PLANE_INSTALL_DIR/variables-upgrade.env $PLANE_INSTALL_DIR/.env
+        mv $JET_INSTALL_DIR/variables-upgrade.env $JET_INSTALL_DIR/.env
     fi
 
 
@@ -37,17 +37,17 @@ function download(){
 
 }
 function startServices(){
-    cd $PLANE_INSTALL_DIR
+    cd $JET_INSTALL_DIR
     docker compose up -d
     cd $SCRIPT_DIR
 }
 function stopServices(){
-    cd $PLANE_INSTALL_DIR
+    cd $JET_INSTALL_DIR
     docker compose down
     cd $SCRIPT_DIR
 }
 function restartServices(){
-    cd $PLANE_INSTALL_DIR
+    cd $JET_INSTALL_DIR
     docker compose restart
     cd $SCRIPT_DIR
 }

@@ -1,6 +1,6 @@
 import { useState, FC } from "react";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // helpers
 import { renderShortDateWithYearFormat } from "helpers/date-time.helper";
 // types

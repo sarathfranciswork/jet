@@ -10,7 +10,7 @@ import { UserService } from "services/user.service";
 // hooks
 import useUser from "hooks/use-user";
 // ui
-import { Loader, Tooltip } from "@plane/ui";
+import { Loader, Tooltip } from "@jet/ui";
 // icons
 import { ChevronDown, Pencil } from "lucide-react";
 // helpers
@@ -182,7 +182,7 @@ export const ProfileSidebar = () => {
                                 <div
                                   className="h-1 rounded"
                                   style={{
-                                    backgroundColor: "#3f76ff",
+                                    backgroundColor: "#3B82F6",
                                     width: `${(project.assigned_issues / totalIssues) * 100}%`,
                                   }}
                                 />
@@ -212,7 +212,7 @@ export const ProfileSidebar = () => {
                               </div>
                               <div className="flex items-center justify-between gap-2">
                                 <div className="flex items-center gap-2">
-                                  <div className="h-2.5 w-2.5 bg-[#3f76ff] rounded-sm" />
+                                  <div className="h-2.5 w-2.5 bg-[#3B82F6] rounded-sm" />
                                   Assigned
                                 </div>
                                 <div className="font-medium">{project.assigned_issues} Issues</div>

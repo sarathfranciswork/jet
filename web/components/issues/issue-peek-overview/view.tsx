@@ -7,7 +7,7 @@ import useSWR from "swr";
 import { PeekOverviewIssueDetails } from "./issue-detail";
 import { PeekOverviewProperties } from "./properties";
 import { IssueComment } from "./activity";
-import { Button, CenterPanelIcon, CustomSelect, FullScreenPanelIcon, SidePanelIcon } from "@plane/ui";
+import { Button, CenterPanelIcon, CustomSelect, FullScreenPanelIcon, SidePanelIcon } from "@jet/ui";
 import { DeleteIssueModal } from "../delete-issue-modal";
 // types
 import { IIssue } from "types";

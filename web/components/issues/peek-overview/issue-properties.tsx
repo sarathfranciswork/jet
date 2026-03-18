@@ -1,6 +1,6 @@
 import { FC } from "react";
 // components
-import { DoubleCircleIcon, StateGroupIcon, UserGroupIcon } from "@plane/ui";
+import { DoubleCircleIcon, StateGroupIcon, UserGroupIcon } from "@jet/ui";
 // hooks
 import useToast from "hooks/use-toast";
 // components

@@ -7,7 +7,7 @@ import useToast from "hooks/use-toast";
 // icons
 import { AlertTriangle } from "lucide-react";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // types
 import type { IProject } from "types";
 // fetch-keys

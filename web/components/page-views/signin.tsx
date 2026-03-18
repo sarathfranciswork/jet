@@ -18,9 +18,9 @@ import {
   EmailPasswordFormValues,
 } from "components/account";
 // ui
-import { Loader, Spinner } from "@plane/ui";
+import { Loader, Spinner } from "@jet/ui";
 // images
-import BluePlaneLogoWithoutText from "public/plane-logos/blue-without-text.png";
+import BlueJetLogoWithoutText from "public/jet-logos/blue-without-text.png";
 // types
 import { IUser, IUserSettings } from "types";
 
@@ -184,7 +184,7 @@ export const SignInView = observer(() => {
             <div className="fixed grid place-items-center bg-custom-background-100 sm:py-5 top-11 sm:top-12 left-7 sm:left-16 lg:left-28">
               <div className="grid place-items-center bg-custom-background-100">
                 <div className="h-[30px] w-[30px]">
-                  <Image src={BluePlaneLogoWithoutText} alt="Plane Logo" />
+                  <Image src={BlueJetLogoWithoutText} alt="Jet Logo" />
                 </div>
               </div>
             </div>
@@ -192,7 +192,7 @@ export const SignInView = observer(() => {
           <div className="grid place-items-center h-full overflow-y-auto py-5 px-7">
             <div>
               <h1 className="text-center text-2xl sm:text-2.5xl font-semibold text-custom-text-100">
-                Sign in to Plane
+                Sign in to Jet
               </h1>
 
               {!data && !appConfigError ? (
@@ -226,7 +226,7 @@ export const SignInView = observer(() => {
                   <p className="pt-16 text-custom-text-200 text-sm text-center">
                     By signing up, you agree to the{" "}
                     <a
-                      href="https://plane.so/terms-and-conditions"
+                      href="https://jetpm.app/terms-and-conditions"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-medium underline"

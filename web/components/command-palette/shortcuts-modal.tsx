@@ -4,7 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 // icons
 import { Command, Search, X } from "lucide-react";
 // ui
-import { Input } from "@plane/ui";
+import { Input } from "@jet/ui";
 
 type Props = {
   isOpen: boolean;

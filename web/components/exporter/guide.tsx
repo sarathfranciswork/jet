@@ -13,7 +13,7 @@ import { IntegrationService } from "services/integrations";
 // components
 import { Exporter, SingleExport } from "components/exporter";
 // ui
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 // icons
 import { MoveLeft, MoveRight, RefreshCw } from "lucide-react";
 // fetch-keys

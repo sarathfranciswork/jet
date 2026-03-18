@@ -3,7 +3,7 @@ import React from "react";
 // react hook form
 import { Controller, FieldError, Control } from "react-hook-form";
 // ui
-import { CustomSelect, DoubleCircleIcon, ModuleStatusIcon } from "@plane/ui";
+import { CustomSelect, DoubleCircleIcon, ModuleStatusIcon } from "@jet/ui";
 // types
 import type { IModule } from "types";
 // constants

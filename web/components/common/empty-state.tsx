@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/image";
 
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 
 type Props = {
   title: string;

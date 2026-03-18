@@ -18,7 +18,7 @@ import {
   Table,
 } from "lucide-react";
 import { UploadImage } from "../";
-import { cn, insertTableCommand, toggleBlockquote, toggleBulletList, toggleOrderedList, toggleTaskList, insertImageCommand, toggleHeadingOne, toggleHeadingTwo, toggleHeadingThree } from "@plane/editor-core";
+import { cn, insertTableCommand, toggleBlockquote, toggleBulletList, toggleOrderedList, toggleTaskList, insertImageCommand, toggleHeadingOne, toggleHeadingTwo, toggleHeadingThree } from "@jet/editor-core";
 
 interface CommandItemProps {
   title: string;

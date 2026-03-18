@@ -1,9 +1,9 @@
 import { ChangeEvent, FC, useCallback, useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 // packages
-import { RichTextEditor } from "@plane/rich-text-editor";
+import { RichTextEditor } from "@jet/rich-text-editor";
 // components
-import { TextArea } from "@plane/ui";
+import { TextArea } from "@jet/ui";
 import { IssueReaction } from "./reactions";
 // hooks
 import { useDebouncedCallback } from "use-debounce";

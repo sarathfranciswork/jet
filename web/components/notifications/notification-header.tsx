@@ -1,7 +1,7 @@
 import React from "react";
 
 // components
-import { ArchiveIcon, CustomMenu, Tooltip } from "@plane/ui";
+import { ArchiveIcon, CustomMenu, Tooltip } from "@jet/ui";
 
 //icon
 import { ArrowLeft, CheckCheck, Clock, ListFilter, MoreVertical, RefreshCw, X } from "lucide-react";

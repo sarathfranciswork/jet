@@ -10,7 +10,7 @@ import { IssueLabelService } from "services/issue";
 // hooks
 import useUser from "hooks/use-user";
 // ui
-import { Input } from "@plane/ui";
+import { Input } from "@jet/ui";
 import { IssueLabelSelect } from "../select";
 // icons
 import { Plus, X } from "lucide-react";

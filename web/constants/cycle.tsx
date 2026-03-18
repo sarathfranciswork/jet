@@ -55,7 +55,7 @@ export const CYCLE_STATUS: {
   {
     label: "Yet to start",
     value: "upcoming",
-    color: "#3F76FF",
+    color: "#3B82F6",
     textColor: "text-blue-500",
     bgColor: "bg-indigo-50",
   },

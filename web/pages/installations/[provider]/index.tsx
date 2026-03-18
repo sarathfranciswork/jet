@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 // services
 import { AppInstallationService } from "services/app_installation.service";
 // ui
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 // types
 import { NextPageWithLayout } from "types/app";
 

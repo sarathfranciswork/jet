@@ -7,7 +7,7 @@ import useSWR from "swr";
 // services
 import { ProjectStateService } from "services/project";
 // ui
-import { CustomSearchSelect, StateGroupIcon } from "@plane/ui";
+import { CustomSearchSelect, StateGroupIcon } from "@jet/ui";
 // helpers
 import { getStatesList } from "helpers/state.helper";
 import { addSpaceIfCamelCase } from "helpers/string.helper";

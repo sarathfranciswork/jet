@@ -5,7 +5,7 @@ import { Controller, useForm } from "react-hook-form";
 // headless ui
 import { Dialog, Transition } from "@headlessui/react";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // types
 import type { IIssueLink, linkDetails, ModuleLink } from "types";
 

@@ -12,7 +12,7 @@ import { IntegrationCard } from "components/project";
 import { ProjectSettingHeader } from "components/headers";
 // ui
 import { EmptyState } from "components/common";
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // images
 import emptyIntegration from "public/empty-state/integration.svg";
 // types

@@ -7,14 +7,14 @@ File is available in the project root folder​
 
 ```
 # Database Settings
-PGUSER="plane"
-PGPASSWORD="plane"
-PGHOST="plane-db"
-PGDATABASE="plane"
+PGUSER="jet"
+PGPASSWORD="jet"
+PGHOST="jet-db"
+PGDATABASE="jet"
 DATABASE_URL=postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}
 ​
 # Redis Settings
-REDIS_HOST="plane-redis"
+REDIS_HOST="jet-redis"
 REDIS_PORT="6379"
 REDIS_URL="redis://${REDIS_HOST}:6379/"
 ​
@@ -22,7 +22,7 @@ REDIS_URL="redis://${REDIS_HOST}:6379/"
 AWS_REGION=""
 AWS_ACCESS_KEY_ID="access-key"
 AWS_SECRET_ACCESS_KEY="secret-key"
-AWS_S3_ENDPOINT_URL="http://plane-minio:9000"
+AWS_S3_ENDPOINT_URL="http://jet-minio:9000"
 # Changing this requires change in the nginx.conf for uploads if using minio setup
 AWS_S3_BUCKET_NAME="uploads"
 # Maximum file upload limit
@@ -64,20 +64,20 @@ NEXT_PUBLIC_ENABLE_OAUTH=0
 # Backend
 # Debug value for api server use it as 0 for production use
 DEBUG=0
-DJANGO_SETTINGS_MODULE="plane.settings.selfhosted"
+DJANGO_SETTINGS_MODULE="jet.settings.selfhosted"
 ​
 # Error logs
 SENTRY_DSN=""
 ​
 # Database Settings
-PGUSER="plane"
-PGPASSWORD="plane"
-PGHOST="plane-db"
-PGDATABASE="plane"
+PGUSER="jet"
+PGPASSWORD="jet"
+PGHOST="jet-db"
+PGDATABASE="jet"
 DATABASE_URL=postgresql://${PGUSER}:${PGPASSWORD}@${PGHOST}/${PGDATABASE}
 ​
 # Redis Settings
-REDIS_HOST="plane-redis"
+REDIS_HOST="jet-redis"
 REDIS_PORT="6379"
 REDIS_URL="redis://${REDIS_HOST}:6379/"
 ​
@@ -86,7 +86,7 @@ EMAIL_HOST=""
 EMAIL_HOST_USER=""
 EMAIL_HOST_PASSWORD=""
 EMAIL_PORT=587
-EMAIL_FROM="Team Plane <team@mailer.plane.so>"
+EMAIL_FROM="Team Jet <team@mailer.jetpm.app>"
 EMAIL_USE_TLS="1"
 EMAIL_USE_SSL="0"
 ​
@@ -94,7 +94,7 @@ EMAIL_USE_SSL="0"
 AWS_REGION=""
 AWS_ACCESS_KEY_ID="access-key"
 AWS_SECRET_ACCESS_KEY="secret-key"
-AWS_S3_ENDPOINT_URL="http://plane-minio:9000"
+AWS_S3_ENDPOINT_URL="http://jet-minio:9000"
 # Changing this requires change in the nginx.conf for uploads if using minio setup
 AWS_S3_BUCKET_NAME="uploads"
 # Maximum file upload limit
@@ -117,7 +117,7 @@ USE_MINIO=1
 NGINX_PORT=80
 ​
 # Default Creds
-DEFAULT_EMAIL="captain@plane.so"
+DEFAULT_EMAIL="admin@jetpm.app"
 DEFAULT_PASSWORD="password123"
 ​
 # SignUps
@@ -129,6 +129,6 @@ WEB_URL="http://localhost"
 ## Updates​
 - The environment variable NEXT_PUBLIC_API_BASE_URL has been removed from both the web and space projects.
 - The naming convention for containers and images has been updated.
-- The plane-worker image will no longer be maintained, as it has been merged with plane-backend.
+- The jet-worker image will no longer be maintained, as it has been merged with jet-backend.
 - The Tiptap pro-extension dependency has been removed, eliminating the need for Tiptap API keys.
-- The image name for Plane deployment has been changed to plane-space.
+- The image name for Jet deployment has been changed to jet-space.

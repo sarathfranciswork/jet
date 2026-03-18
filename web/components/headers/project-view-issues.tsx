@@ -6,7 +6,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { DisplayFiltersSelection, FiltersDropdown, FilterSelection, LayoutSelection } from "components/issues";
 // ui
-import { Breadcrumbs, CustomMenu, PhotoFilterIcon } from "@plane/ui";
+import { Breadcrumbs, CustomMenu, PhotoFilterIcon } from "@jet/ui";
 // helpers
 import { truncateText } from "helpers/string.helper";
 import { renderEmoji } from "helpers/emoji.helper";

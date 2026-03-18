@@ -25,6 +25,6 @@ const Item: React.FC<ItemProps> = ({ height = "auto", width = "auto" }) => (
 
 Loader.Item = Item;
 
-Loader.displayName = "plane-ui-loader";
+Loader.displayName = "jet-ui-loader";
 
 export { Loader };

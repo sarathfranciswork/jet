@@ -6,7 +6,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // ui
 import { Combobox } from "@headlessui/react";
 // icons
-import { ContrastIcon } from "@plane/ui";
+import { ContrastIcon } from "@jet/ui";
 // icons
 import { Check, Search } from "lucide-react";
 

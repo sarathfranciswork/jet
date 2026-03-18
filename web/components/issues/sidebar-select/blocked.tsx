@@ -12,7 +12,7 @@ import { IssueService } from "services/issue";
 import { ExistingIssuesListModal } from "components/core";
 // icons
 import { X } from "lucide-react";
-import { BlockedIcon } from "@plane/ui";
+import { BlockedIcon } from "@jet/ui";
 // types
 import { BlockeIssueDetail, IIssue, ISearchIssueResponse } from "types";
 

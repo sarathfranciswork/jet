@@ -16,7 +16,7 @@ import {
   ModuleSpreadsheetLayout,
 } from "components/issues";
 // ui
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 
 type Props = {
   openIssuesListModal: () => void;

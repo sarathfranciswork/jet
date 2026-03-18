@@ -80,7 +80,7 @@ export const issueGroupColors: {
   [key: string]: string;
 } = {
   backlog: "#d9d9d9",
-  unstarted: "#3f76ff",
+  unstarted: "#3B82F6",
   started: "#f59e0b",
   completed: "#16a34a",
   cancelled: "#dc2626",
@@ -97,8 +97,8 @@ export const issueGroups: IIssueGroup[] = [
   {
     key: "unstarted",
     title: "Unstarted",
-    color: "#3f76ff",
-    className: `text-[#3f76ff] bg-[#3f76ff]/10`,
+    color: "#3B82F6",
+    className: `text-[#3B82F6] bg-[#3B82F6]/10`,
     icon: UnstartedStateIcon,
   },
   {

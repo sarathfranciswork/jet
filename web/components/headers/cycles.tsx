@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useRouter } from "next/router";
 import { Plus } from "lucide-react";
 // ui
-import { Breadcrumbs, Button, ContrastIcon } from "@plane/ui";
+import { Breadcrumbs, Button, ContrastIcon } from "@jet/ui";
 // helpers
 import { renderEmoji } from "helpers/emoji.helper";
 // hooks

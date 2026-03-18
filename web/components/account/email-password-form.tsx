@@ -2,7 +2,7 @@ import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useRouter } from "next/router";
 // ui
-import { Input, Button } from "@plane/ui";
+import { Input, Button } from "@jet/ui";
 
 export interface EmailPasswordFormValues {
   email: string;

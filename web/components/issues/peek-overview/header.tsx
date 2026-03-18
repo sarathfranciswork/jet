@@ -3,7 +3,7 @@ import Link from "next/link";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { CenterPanelIcon, CustomSelect, FullScreenPanelIcon, SidePanelIcon } from "@plane/ui";
+import { CenterPanelIcon, CustomSelect, FullScreenPanelIcon, SidePanelIcon } from "@jet/ui";
 // icons
 import { LinkIcon, MoveDiagonal, MoveRight, Trash2 } from "lucide-react";
 // helpers

@@ -8,7 +8,7 @@ RUN yarn global add turbo
 RUN apk add tree
 COPY . .
 
-RUN turbo prune --scope=app --scope=plane-deploy --docker
+RUN turbo prune --scope=app --scope=jet-deploy --docker
 CMD tree -I node_modules/
 
 # Add lockfile and package.json's of isolated subworkspace
@@ -43,7 +43,7 @@ FROM python:3.11.1-alpine3.17 AS backend
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 
-ENV DJANGO_SETTINGS_MODULE plane.settings.production
+ENV DJANGO_SETTINGS_MODULE jet.settings.production
 ENV DOCKERIZED 1
 
 WORKDIR /code
@@ -78,7 +78,7 @@ RUN apk add --no-cache --virtual .build-deps \
 
 # Add in Django deps and generate Django's static files
 COPY apiserver/manage.py manage.py
-COPY apiserver/plane plane/
+COPY apiserver/jet jet/
 COPY apiserver/templates templates/
 
 COPY apiserver/gunicorn.config.py ./
@@ -93,7 +93,7 @@ RUN chmod -R 777 /code
 WORKDIR /app
 
 # Don't run production as root
-RUN addgroup --system --gid 1001 plane
+RUN addgroup --system --gid 1001 jet
 RUN adduser --system --uid 1001 captain
 
 COPY --from=installer /app/apps/app/next.config.js .
@@ -101,12 +101,12 @@ COPY --from=installer /app/apps/app/package.json .
 COPY --from=installer /app/apps/space/next.config.js .
 COPY --from=installer /app/apps/space/package.json .
 
-COPY --from=installer --chown=captain:plane /app/apps/app/.next/standalone ./
+COPY --from=installer --chown=captain:jet /app/apps/app/.next/standalone ./
 
-COPY --from=installer --chown=captain:plane /app/apps/app/.next/static ./apps/app/.next/static
+COPY --from=installer --chown=captain:jet /app/apps/app/.next/static ./apps/app/.next/static
 
-COPY --from=installer --chown=captain:plane /app/apps/space/.next/standalone ./
-COPY --from=installer --chown=captain:plane /app/apps/space/.next ./apps/space/.next
+COPY --from=installer --chown=captain:jet /app/apps/space/.next/standalone ./
+COPY --from=installer --chown=captain:jet /app/apps/space/.next ./apps/space/.next
 
 ENV NEXT_TELEMETRY_DISABLED 1
 

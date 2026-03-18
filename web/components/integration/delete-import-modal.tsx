@@ -11,7 +11,7 @@ import { IntegrationService } from "services/integrations/integration.service";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // icons
 import { AlertTriangle } from "lucide-react";
 // types

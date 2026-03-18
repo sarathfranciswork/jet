@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Favicon-optimized Chevron J - simplified for small sizes -->
+  <rect width="32" height="32" rx="6" fill="#09090B"/>
+  <path d="M 17 5 L 21 5 L 21 20 C 21 24.5 19 27 16 28.5 L 10 28.5 L 11.5 25 L 15.5 25 C 17.5 25 17 23 17 20.5 Z" fill="#3B82F6"/>
+  <path d="M 10 5 L 22 5 L 20.5 8 L 10 8 Z" fill="#3B82F6"/>
+  <path d="M 6 16 L 14 16 L 12.5 18 L 6 18 Z" fill="#3B82F6" opacity="0.5"/>
+</svg>

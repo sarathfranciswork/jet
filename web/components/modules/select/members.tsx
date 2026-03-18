@@ -4,7 +4,7 @@ import useSWR from "swr";
 // services
 import { ProjectService } from "services/project";
 // ui
-import { Avatar, AvatarGroup, CustomSearchSelect, UserGroupIcon } from "@plane/ui";
+import { Avatar, AvatarGroup, CustomSearchSelect, UserGroupIcon } from "@jet/ui";
 // fetch-keys
 import { PROJECT_MEMBERS } from "constants/fetch-keys";
 

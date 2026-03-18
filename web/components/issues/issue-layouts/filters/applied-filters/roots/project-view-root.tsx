@@ -7,7 +7,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { AppliedFiltersList } from "components/issues";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // helpers
 import { areFiltersDifferent } from "helpers/filter.helper";
 // types

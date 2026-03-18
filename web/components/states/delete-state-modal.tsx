@@ -10,7 +10,7 @@ import { AlertTriangle } from "lucide-react";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // types
 import type { IState } from "types";
 

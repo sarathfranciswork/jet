@@ -9,7 +9,7 @@ import { ProjectService } from "services/project";
 // hooks
 import useDebounce from "hooks/use-debounce";
 // ui
-import { LayersIcon, Loader, ToggleSwitch, Tooltip } from "@plane/ui";
+import { LayersIcon, Loader, ToggleSwitch, Tooltip } from "@jet/ui";
 // icons
 import { Rocket, Search } from "lucide-react";
 // types

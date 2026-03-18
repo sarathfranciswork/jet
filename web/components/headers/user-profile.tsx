@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useRouter } from "next/router";
 
 // ui
-import { Breadcrumbs } from "@plane/ui";
+import { Breadcrumbs } from "@jet/ui";
 import { UserCircle2 } from "lucide-react";
 // hooks
 import { observer } from "mobx-react-lite";

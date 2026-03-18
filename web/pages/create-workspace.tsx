@@ -11,8 +11,8 @@ import { UserAuthWrapper } from "layouts/auth-layout";
 // components
 import { CreateWorkspaceForm } from "components/workspace";
 // images
-import BlackHorizontalLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
-import WhiteHorizontalLogo from "public/plane-logos/white-horizontal-with-blue-logo.svg";
+import BlackHorizontalLogo from "public/jet-logos/black-horizontal-with-blue-logo.svg";
+import WhiteHorizontalLogo from "public/jet-logos/white-horizontal-with-blue-logo.svg";
 // types
 import { IWorkspace } from "types";
 import { NextPageWithLayout } from "types/app";
@@ -47,9 +47,9 @@ const CreateWorkspacePage: NextPageWithLayout = observer(() => {
         >
           <div className="h-[30px] w-[133px]">
             {theme === "light" ? (
-              <Image src={BlackHorizontalLogo} alt="Plane black logo" />
+              <Image src={BlackHorizontalLogo} alt="Jet black logo" />
             ) : (
-              <Image src={WhiteHorizontalLogo} alt="Plane white logo" />
+              <Image src={WhiteHorizontalLogo} alt="Jet white logo" />
             )}
           </div>
         </button>

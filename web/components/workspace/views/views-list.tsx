@@ -7,7 +7,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { GlobalViewListItem } from "components/workspace";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 
 type Props = {
   searchQuery: string;

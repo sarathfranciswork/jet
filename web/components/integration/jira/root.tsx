@@ -21,7 +21,7 @@ import { JiraImporterService } from "services/integrations";
 import { IMPORTER_SERVICES_LIST } from "constants/fetch-keys";
 
 // components
-import { Button, UserGroupIcon } from "@plane/ui";
+import { Button, UserGroupIcon } from "@jet/ui";
 import {
   JiraGetImportDetail,
   JiraProjectDetail,

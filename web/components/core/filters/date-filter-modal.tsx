@@ -6,7 +6,7 @@ import { Dialog, Transition } from "@headlessui/react";
 // components
 import { DateFilterSelect } from "./date-filter-select";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { X } from "lucide-react";
 // helpers

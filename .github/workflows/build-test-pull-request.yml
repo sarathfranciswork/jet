@@ -33,13 +33,13 @@ jobs:
             deploy:
               - space/**
 
-      - name: Build Plane's Main App
+      - name: Build Jet's Main App
         if: steps.changed-files.outputs.web_any_changed == 'true'
         run: |
           yarn
           yarn build --filter=web
 
-      - name: Build Plane's Deploy App
+      - name: Build Jet's Deploy App
         if: steps.changed-files.outputs.deploy_any_changed == 'true'
         run: |
           yarn 

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <defs>
+    <pattern id="blueprint" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="none"/>
+      <line x1="0" y1="20" x2="20" y2="20" stroke="#3B82F6" stroke-width="0.3" opacity="0.1"/>
+      <line x1="20" y1="0" x2="20" y2="20" stroke="#3B82F6" stroke-width="0.3" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#blueprint)"/>
+  <!-- Bell icon -->
+  <path d="M 200 80 C 200 80 175 80 175 110 L 175 135 L 165 145 L 235 145 L 225 135 L 225 110 C 225 80 200 80 200 80 Z" stroke="#3B82F6" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <line x1="192" y1="145" x2="192" y2="155" stroke="#3B82F6" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <line x1="208" y1="145" x2="208" y2="155" stroke="#3B82F6" stroke-width="1.5" opacity="0.3" stroke-linecap="round"/>
+  <circle cx="200" cy="160" r="5" stroke="#06B6D4" stroke-width="1" fill="none" opacity="0.3"/>
+  <!-- ZZZ (sleeping) -->
+  <text x="240" y="90" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="14" fill="#3B82F6" opacity="0.3">z</text>
+  <text x="252" y="80" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="12" fill="#06B6D4" opacity="0.2">z</text>
+  <text x="262" y="72" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="10" fill="#3B82F6" opacity="0.15">z</text>
+  <text x="200" y="210" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="500" font-size="18" fill="#A1A1AA">All caught up</text>
+  <text x="200" y="236" text-anchor="middle" font-family="'Inter', system-ui, sans-serif" font-weight="400" font-size="14" fill="#71717A">No new notifications right now</text>
+</svg>

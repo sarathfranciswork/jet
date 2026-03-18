@@ -4,7 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 // icons
 import { CheckCircle } from "lucide-react";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // types
 import type { IInboxIssue } from "types";
 

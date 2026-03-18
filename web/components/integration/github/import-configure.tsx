@@ -1,5 +1,5 @@
 // components
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 import { GithubAuth, TIntegrationSteps } from "components/integration";
 // types
 import { IAppIntegration, IWorkspaceIntegration } from "types";

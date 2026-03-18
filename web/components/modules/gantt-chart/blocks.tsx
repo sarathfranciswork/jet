@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
 // ui
-import { Tooltip, ModuleStatusIcon } from "@plane/ui";
+import { Tooltip, ModuleStatusIcon } from "@jet/ui";
 // helpers
 import { renderShortDate } from "helpers/date-time.helper";
 // types

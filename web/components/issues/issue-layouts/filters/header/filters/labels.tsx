@@ -3,7 +3,7 @@ import React, { useState } from "react";
 // components
 import { FilterHeader, FilterOption } from "components/issues";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // types
 import { IIssueLabels } from "types";
 

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { CustomMenu } from "@plane/ui";
+import { CustomMenu } from "@jet/ui";
 import { Copy, Link, Pencil, Trash2 } from "lucide-react";
 // hooks
 import useToast from "hooks/use-toast";

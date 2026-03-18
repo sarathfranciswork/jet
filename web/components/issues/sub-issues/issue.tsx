@@ -7,7 +7,7 @@ import { IssuePeekOverview } from "../issue-peek-overview";
 import { SubIssuesRootList } from "./issues-list";
 import { IssueProperty } from "./properties";
 // ui
-import { CustomMenu, Tooltip } from "@plane/ui";
+import { CustomMenu, Tooltip } from "@jet/ui";
 // types
 import { IUser, IIssue } from "types";
 import { ISubIssuesRootLoaders, ISubIssuesRootLoadersHandler } from "./root";

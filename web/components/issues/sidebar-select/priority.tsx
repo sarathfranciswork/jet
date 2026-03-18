@@ -1,7 +1,7 @@
 import React from "react";
 
 // ui
-import { CustomSelect, PriorityIcon } from "@plane/ui";
+import { CustomSelect, PriorityIcon } from "@jet/ui";
 // types
 import { TIssuePriorities } from "types";
 // constants

@@ -13,7 +13,7 @@ import {
   StrikeThroughItem,
   TableItem,
   UnderLineItem,
-} from "@plane/editor-core";
+} from "@jet/editor-core";
 import { Tooltip } from "../../tooltip";
 import { UploadImage } from "../..";
 

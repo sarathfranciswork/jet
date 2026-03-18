@@ -9,14 +9,14 @@ import { useMobxStore } from "lib/mobx/store-provider";
 import useOutsideClickDetector from "hooks/use-outside-click-detector";
 // icons
 import { FileText, HelpCircle, MessagesSquare, MoveLeft, Zap } from "lucide-react";
-import { DiscordIcon, GithubIcon } from "@plane/ui";
+import { DiscordIcon, GithubIcon } from "@jet/ui";
 // assets
 import packageJson from "package.json";
 
 const helpOptions = [
   {
     name: "Documentation",
-    href: "https://docs.plane.so/",
+    href: "https://docs.jetpm.app/",
     Icon: FileText,
   },
   {
@@ -26,7 +26,7 @@ const helpOptions = [
   },
   {
     name: "Report a bug",
-    href: "https://github.com/makeplane/plane/issues/new/choose",
+    href: "https://github.com/makeplane/jet/issues/new/choose",
     Icon: GithubIcon,
   },
   {

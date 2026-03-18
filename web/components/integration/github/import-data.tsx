@@ -7,7 +7,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { SelectRepository, TFormValues, TIntegrationSteps } from "components/integration";
 // ui
-import { Button, CustomSearchSelect, ToggleSwitch } from "@plane/ui";
+import { Button, CustomSearchSelect, ToggleSwitch } from "@jet/ui";
 // helpers
 import { truncateText } from "helpers/string.helper";
 // types

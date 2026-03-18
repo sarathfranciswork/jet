@@ -1,5 +1,5 @@
 // ui
-import { CustomMenu } from "@plane/ui";
+import { CustomMenu } from "@jet/ui";
 // icons
 import { Trash2 } from "lucide-react";
 // helpers

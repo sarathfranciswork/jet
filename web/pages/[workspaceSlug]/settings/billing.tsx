@@ -5,7 +5,7 @@ import { WorkspaceSettingLayout } from "layouts/settings-layout";
 // component
 import { WorkspaceSettingHeader } from "components/headers";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // types
 import { NextPageWithLayout } from "types/app";
 
@@ -20,7 +20,7 @@ const BillingSettingsPage: NextPageWithLayout = () => (
       <div>
         <h4 className="text-md mb-1 leading-6">Current plan</h4>
         <p className="mb-3 text-sm text-custom-text-200">You are currently using the free plan</p>
-        <a href="https://plane.so/pricing" target="_blank" rel="noreferrer">
+        <a href="https://jetpm.app/pricing" target="_blank" rel="noreferrer">
           <Button variant="neutral-primary">View Plans</Button>
         </a>
       </div>

@@ -13,7 +13,7 @@ import { FileService } from "services/file.service";
 // hooks
 import useOutsideClickDetector from "hooks/use-outside-click-detector";
 // components
-import { Button, Input, Loader } from "@plane/ui";
+import { Button, Input, Loader } from "@jet/ui";
 
 const tabOptions = [
   {

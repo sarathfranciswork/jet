@@ -5,7 +5,7 @@ import { AppLayout } from "layouts/app-layout";
 import { GlobalDefaultViewListItem, GlobalViewsList } from "components/workspace";
 import { GlobalIssuesHeader } from "components/headers";
 // ui
-import { Input } from "@plane/ui";
+import { Input } from "@jet/ui";
 // icons
 import { Search } from "lucide-react";
 // types

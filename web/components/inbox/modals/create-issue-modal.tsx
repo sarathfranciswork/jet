@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
 import { Dialog, Transition } from "@headlessui/react";
 import { Controller, useForm } from "react-hook-form";
-import { RichTextEditorWithRef } from "@plane/rich-text-editor";
+import { RichTextEditorWithRef } from "@jet/rich-text-editor";
 
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
@@ -12,7 +12,7 @@ import { FileService } from "services/file.service";
 // components
 import { IssuePrioritySelect } from "components/issues/select";
 // ui
-import { Button, Input, ToggleSwitch } from "@plane/ui";
+import { Button, Input, ToggleSwitch } from "@jet/ui";
 // types
 import { IIssue } from "types";
 

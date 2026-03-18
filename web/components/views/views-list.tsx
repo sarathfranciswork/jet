@@ -8,7 +8,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 import { ProjectViewListItem } from "components/views";
 import { EmptyState } from "components/common";
 // ui
-import { Input, Loader } from "@plane/ui";
+import { Input, Loader } from "@jet/ui";
 // assets
 import emptyView from "public/empty-state/view.svg";
 // icons

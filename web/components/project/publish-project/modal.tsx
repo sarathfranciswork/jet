@@ -6,7 +6,7 @@ import { Dialog, Transition } from "@headlessui/react";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui components
-import { Button, Loader, ToggleSwitch } from "@plane/ui";
+import { Button, Loader, ToggleSwitch } from "@jet/ui";
 import { Check, CircleDot, Globe2 } from "lucide-react";
 import { CustomPopover } from "./popover";
 import { IProjectPublishSettings, TProjectPublishViews } from "store/project";
@@ -56,10 +56,10 @@ export const PublishProjectModal: React.FC<Props> = observer((props) => {
   const [isUnpublishing, setIsUnpublishing] = useState(false);
   const [isUpdateRequired, setIsUpdateRequired] = useState(false);
 
-  let plane_deploy_url = process.env.NEXT_PUBLIC_DEPLOY_URL;
+  let jet_deploy_url = process.env.NEXT_PUBLIC_DEPLOY_URL;
 
-  if (typeof window !== "undefined" && !plane_deploy_url)
-    plane_deploy_url = window.location.protocol + "//" + window.location.host + "/spaces";
+  if (typeof window !== "undefined" && !jet_deploy_url)
+    jet_deploy_url = window.location.protocol + "//" + window.location.host + "/spaces";
 
   const router = useRouter();
   const { workspaceSlug } = router.query;
@@ -137,7 +137,7 @@ export const PublishProjectModal: React.FC<Props> = observer((props) => {
       .publishProject(workspaceSlug.toString(), project.id, payload)
       .then((res) => {
         handleClose();
-        // window.open(`${plane_deploy_url}/${workspaceSlug}/${project.id}`, "_blank");
+        // window.open(`${jet_deploy_url}/${workspaceSlug}/${project.id}`, "_blank");
         return res;
       })
       .catch((err) => err);
@@ -320,10 +320,10 @@ export const PublishProjectModal: React.FC<Props> = observer((props) => {
                         <>
                           <div className="border border-custom-border-100 bg-custom-background-80 rounded-md px-3 py-2 relative flex gap-2 items-center">
                             <div className="truncate flex-grow text-sm">
-                              {`${plane_deploy_url}/${workspaceSlug}/${project.id}`}
+                              {`${jet_deploy_url}/${workspaceSlug}/${project.id}`}
                             </div>
                             <div className="flex-shrink-0 relative flex items-center gap-1">
-                              <CopyLinkToClipboard copy_link={`${plane_deploy_url}/${workspaceSlug}/${project.id}`} />
+                              <CopyLinkToClipboard copy_link={`${jet_deploy_url}/${workspaceSlug}/${project.id}`} />
                             </div>
                           </div>
                           <div className="flex items-center gap-1 text-custom-primary-100 mt-3">

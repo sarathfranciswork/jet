@@ -7,7 +7,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { CreateUpdateStateInline, DeleteStateModal, ProjectSettingListItem, StateGroup } from "components/states";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // icons
 import { Plus } from "lucide-react";
 // helpers

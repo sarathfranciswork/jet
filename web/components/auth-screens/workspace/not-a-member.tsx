@@ -3,7 +3,7 @@ import Link from "next/link";
 // layouts
 import DefaultLayout from "layouts/default-layout";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 
 export const NotAWorkspaceMember = () => (
   <DefaultLayout>

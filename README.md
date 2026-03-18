@@ -1,45 +1,45 @@
 <br /><br />
 
 <p align="center">
-<a href="https://plane.so">
-  <img src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_logo_.webp" alt="Plane Logo" width="70">
+<a href="https://jetpm.app">
+  <img src="./web/public/jet-logos/white-horizontal-with-blue-logo.svg" alt="Jet Logo" width="200">
 </a>
 </p>
 
-<h3 align="center"><b>Plane</b></h3>
-<p align="center"><b>Open-source, self-hosted project planning tool</b></p>
+<h3 align="center"><b>Jet</b></h3>
+<p align="center"><b>Ship faster with Jet</b></p>
 
 <p align="center">
 <a href="https://discord.com/invite/A92xrEGCge">
 <img alt="Discord online members" src="https://img.shields.io/discord/1031547764020084846?color=5865F2&label=Discord&style=for-the-badge" />
 </a>
-<img alt="Commit activity per month" src="https://img.shields.io/github/commit-activity/m/makeplane/plane?style=for-the-badge" />
+<img alt="Commit activity per month" src="https://img.shields.io/github/commit-activity/m/makeplane/jet?style=for-the-badge" />
 </p>
 
 <p>
-    <a href="https://app.plane.so/#gh-light-mode-only" target="_blank">
+    <a href="https://app.jetpm.app/#gh-light-mode-only" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screen.webp"
-        alt="Plane Screens"
+        alt="Jet Screens"
         width="100%"
       />
     </a>
-    <a href="https://app.plane.so/#gh-dark-mode-only" target="_blank">
+    <a href="https://app.jetpm.app/#gh-dark-mode-only" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screens_dark_mode.webp"
-        alt="Plane Screens"
+        alt="Jet Screens"
         width="100%"
       />
     </a>
 </p>
 
-Meet [Plane](https://plane.so). An open-source software development tool to manage issues, sprints, and product roadmaps with peace of mind 🧘‍♀️.
+Meet [Jet](https://jetpm.app). An open-source software development tool to manage issues, sprints, and product roadmaps with peace of mind.
 
-> Plane is still in its early days, not everything will be perfect yet, and hiccups may happen. Please let us know of any suggestions, ideas, or bugs that you encounter on our [Discord](https://discord.com/invite/A92xrEGCge) or GitHub issues, and we will use your feedback to improve on our upcoming releases.
+> Jet is still in its early days, not everything will be perfect yet, and hiccups may happen. Please let us know of any suggestions, ideas, or bugs that you encounter on our [Discord](https://discord.com/invite/A92xrEGCge) or GitHub issues, and we will use your feedback to improve on our upcoming releases.
 
-The easiest way to get started with Plane is by creating a [Plane Cloud](https://app.plane.so) account. Plane Cloud offers a hosted solution for Plane. If you prefer to self-host Plane, please refer to our [deployment documentation](https://docs.plane.so/self-hosting).
+The easiest way to get started with Jet is by creating a [Jet Cloud](https://app.jetpm.app) account. Jet Cloud offers a hosted solution for Jet. If you prefer to self-host Jet, please refer to our [deployment documentation](https://docs.jetpm.app/self-hosting).
 
-## ⚡️ Contributors Quick Start
+## Contributors Quick Start
 
 ### Prerequisite
 
@@ -49,8 +49,8 @@ Development system must have docker engine installed and running.
 
 Setting up local environment is extremely easy and straight forward. Follow the below step and you will be ready to contribute
 
-1. Clone the code locally using `git clone https://github.com/makeplane/plane.git`
-1. Switch to the code folder `cd plane`
+1. Clone the code locally using `git clone https://github.com/makeplane/jet.git`
+1. Switch to the code folder `cd jet`
 1. Create your feature or fix branch you plan to work on using `git checkout -b <feature-branch-name>`
 1. Open terminal and run `./setup.sh`
 1. Open the code on VSCode or similar equivalent IDE
@@ -61,15 +61,15 @@ Setting up local environment is extremely easy and straight forward. Follow the 
 ./setup.sh
 ```
 
-You are ready to make changes to the code. Do not forget to refresh the browser (in case id does not auto-reload)
+You are ready to make changes to the code. Do not forget to refresh the browser (in case it does not auto-reload)
 
 Thats it!
 
-## 🍙 Self Hosting
+## Self Hosting
 
-For self hosting environment setup, visit the [Self Hosting](https://docs.plane.so/self-hosting) documentation page
+For self hosting environment setup, visit the [Self Hosting](https://docs.jetpm.app/self-hosting) documentation page
 
-## 🚀 Features
+## Features
 
 - **Issue Planning and Tracking**: Quickly create issues and add details using a powerful rich text editor that supports file uploads. Add sub-properties and references to issues for better organization and tracking.
 - **Issue Attachments**: Collaborate effectively by attaching files to issues, making it easy for your team to find and share important project-related documents.
@@ -77,83 +77,83 @@ For self hosting environment setup, visit the [Self Hosting](https://docs.plane.
 - **Cycles**: Plan sprints with Cycles to keep your team on track and productive. Gain insights into your project's progress with burn-down charts and other useful features.
 - **Modules**: Break down your large projects into smaller, more manageable modules. Assign modules between teams to easily track and plan your project's progress.
 - **Views**: Create custom filters to display only the issues that matter to you. Save and share your filters in just a few clicks.
-- **Pages**: Plane pages function as an AI-powered notepad, allowing you to easily document issues, cycle plans, and module details, and then synchronize them with your issues.
+- **Pages**: Jet pages function as an AI-powered notepad, allowing you to easily document issues, cycle plans, and module details, and then synchronize them with your issues.
 - **Command K**: Enjoy a better user experience with the new Command + K menu. Easily manage and navigate through your projects from one convenient location.
-- **GitHub Sync**: Streamline your planning process by syncing your GitHub issues with Plane. Keep all your issues in one place for better tracking and collaboration.
+- **GitHub Sync**: Streamline your planning process by syncing your GitHub issues with Jet. Keep all your issues in one place for better tracking and collaboration.
 
-## 📸 Screenshots
+## Screenshots
 
 <p>
-    <a href="https://plane.so" target="_blank">
+    <a href="https://jetpm.app" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_views_dark_mode.webp"
-        alt="Plane Views"
+        alt="Jet Views"
         width="100%"
       />
     </a>
   </p>
 <p>
-    <a href="https://plane.so" target="_blank">
+    <a href="https://jetpm.app" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_issue_detail_dark_mode.webp"
-        alt="Plane Issue Details"
+        alt="Jet Issue Details"
         width="100%"
       />
     </a>
   </p>
   <p>
-    <a href="https://plane.so" target="_blank">
+    <a href="https://jetpm.app" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_cycles_modules_dark_mode.webp"
-        alt="Plane Cycles and Modules"
+        alt="Jet Cycles and Modules"
         width="100%"
       />
     </a>
   </p>
   <p>
-    <a href="https://plane.so" target="_blank">
+    <a href="https://jetpm.app" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_analytics_dark_mode.webp"
-        alt="Plane Analytics"
+        alt="Jet Analytics"
         width="100%"
       />
     </a>
   </p>
    <p>
-    <a href="https://plane.so" target="_blank">
+    <a href="https://jetpm.app" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_pages_dark_mode.webp"
-        alt="Plane Pages"
+        alt="Jet Pages"
         width="100%"
       />
     </a>
   </p>
 </p>
    <p>
-    <a href="https://plane.so" target="_blank">
+    <a href="https://jetpm.app" target="_blank">
       <img
         src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_commad_k_dark_mode.webp"
-        alt="Plane Command Menu"
+        alt="Jet Command Menu"
         width="100%"
       />
     </a>
   </p>
 </p>
 
-## 📚Documentation
+## Documentation
 
-For full documentation, visit [docs.plane.so](https://docs.plane.so/)
+For full documentation, visit [docs.jetpm.app](https://docs.jetpm.app/)
 
-To see how to Contribute, visit [here](https://github.com/makeplane/plane/blob/master/CONTRIBUTING.md).
+To see how to Contribute, visit [here](https://github.com/makeplane/jet/blob/master/CONTRIBUTING.md).
 
-## ❤️ Community
+## Community
 
-The Plane community can be found on GitHub Discussions, where you can ask questions, voice ideas, and share your projects.
+The Jet community can be found on GitHub Discussions, where you can ask questions, voice ideas, and share your projects.
 
-To chat with other community members you can join the [Plane Discord](https://discord.com/invite/A92xrEGCge).
+To chat with other community members you can join the [Jet Discord](https://discord.com/invite/A92xrEGCge).
 
-Our [Code of Conduct](https://github.com/makeplane/plane/blob/master/CODE_OF_CONDUCT.md) applies to all Plane community channels.
+Our [Code of Conduct](https://github.com/makeplane/jet/blob/master/CODE_OF_CONDUCT.md) applies to all Jet community channels.
 
-## ⛓️ Security
+## Security
 
-If you believe you have found a security vulnerability in Plane, we encourage you to responsibly disclose this and not open a public issue. We will investigate all legitimate reports. Email engineering@plane.so to disclose any security vulnerabilities.
+If you believe you have found a security vulnerability in Jet, we encourage you to responsibly disclose this and not open a public issue. We will investigate all legitimate reports. Email engineering@jetpm.app to disclose any security vulnerabilities.

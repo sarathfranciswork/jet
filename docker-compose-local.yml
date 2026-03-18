@@ -11,8 +11,8 @@ volumes:
   
 
 services:
-  plane-redis:
-    container_name: plane-redis
+  jet-redis:
+    container_name: jet-redis
     image: redis:6.2.7-alpine
     restart: unless-stopped
     networks:
@@ -20,8 +20,8 @@ services:
     volumes:
       - redisdata:/data
  
-  plane-minio:
-    container_name: plane-minio
+  jet-minio:
+    container_name: jet-minio
     image: minio/minio
     restart: unless-stopped
     networks:
@@ -40,14 +40,14 @@ services:
     networks:
       - dev_env
     entrypoint: >
-      /bin/sh -c " /usr/bin/mc config host add plane-minio http://plane-minio:9000 \$AWS_ACCESS_KEY_ID \$AWS_SECRET_ACCESS_KEY; /usr/bin/mc mb plane-minio/\$AWS_S3_BUCKET_NAME; /usr/bin/mc anonymous set download plane-minio/\$AWS_S3_BUCKET_NAME; exit 0; "
+      /bin/sh -c " /usr/bin/mc config host add jet-minio http://jet-minio:9000 \$AWS_ACCESS_KEY_ID \$AWS_SECRET_ACCESS_KEY; /usr/bin/mc mb jet-minio/\$AWS_S3_BUCKET_NAME; /usr/bin/mc anonymous set download jet-minio/\$AWS_S3_BUCKET_NAME; exit 0; "
     env_file:
       - .env
     depends_on:
-      - plane-minio
+      - jet-minio
  
-  plane-db:
-    container_name: plane-db
+  jet-db:
+    container_name: jet-db
     image: postgres:15.2-alpine
     restart: unless-stopped
     networks:
@@ -110,12 +110,12 @@ services:
       - dev_env
     volumes:
       - ./apiserver:/code
-    command: /bin/sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000 --settings=plane.settings.local"
+    command: /bin/sh -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000 --settings=jet.settings.local"
     env_file:
       - ./apiserver/.env
     depends_on:
-      - plane-db
-      - plane-redis
+      - jet-db
+      - jet-redis
   
   worker:
     container_name: bgworker
@@ -129,13 +129,13 @@ services:
       - dev_env
     volumes:
       - ./apiserver:/code
-    command: /bin/sh -c "celery -A plane worker -l info"
+    command: /bin/sh -c "celery -A jet worker -l info"
     env_file:
       - ./apiserver/.env
     depends_on:
       - api
-      - plane-db
-      - plane-redis
+      - jet-db
+      - jet-redis
 
   beat-worker:
     container_name: beatworker
@@ -149,13 +149,13 @@ services:
       - dev_env
     volumes:
       - ./apiserver:/code
-    command: /bin/sh -c "celery -A plane beat -l info"
+    command: /bin/sh -c "celery -A jet beat -l info"
     env_file:
       - ./apiserver/.env
     depends_on:
       - api
-      - plane-db
-      - plane-redis
+      - jet-db
+      - jet-redis
 
   proxy:
     container_name: proxy

@@ -3,16 +3,16 @@ import uuid
 
 sys.path.append("/code")
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "plane.settings.production")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "jet.settings.production")
 import django
 
 django.setup()
 
-from plane.db.models import User
+from jet.db.models import User
 
 
 def populate():
-    default_email = os.environ.get("DEFAULT_EMAIL", "captain@plane.so")
+    default_email = os.environ.get("DEFAULT_EMAIL", "admin@jetpm.app")
     default_password = os.environ.get("DEFAULT_PASSWORD", "password123")
 
     if not User.objects.filter(email=default_email).exists():

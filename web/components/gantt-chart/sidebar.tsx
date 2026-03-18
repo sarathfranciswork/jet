@@ -5,7 +5,7 @@ import { MoreVertical } from "lucide-react";
 // hooks
 import { useChart } from "./hooks";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // components
 import { GanttInlineCreateIssueForm } from "components/issues";
 // helpers

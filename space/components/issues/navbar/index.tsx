@@ -90,7 +90,7 @@ const IssueNavbar = observer(() => {
           {projectStore?.project && projectStore?.project?.emoji ? (
             renderEmoji(projectStore?.project?.emoji)
           ) : (
-            <Image src="/plane-logo.webp" alt="plane logo" className="w-[24px] h-[24px]" height="24" width="24" />
+            <Image src="/jet-logo.webp" alt="jet logo" className="w-[24px] h-[24px]" height="24" width="24" />
           )}
         </div>
         <div className="font-medium text-lg max-w-[300px] line-clamp-1 overflow-hidden">

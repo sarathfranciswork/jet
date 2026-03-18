@@ -1,6 +1,6 @@
 import { FC } from "react";
 // components
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 
 export interface IProjectDetailsFormLoader {}
 

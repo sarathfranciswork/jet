@@ -1,5 +1,5 @@
 // icons
-import { ContrastIcon, DiceIcon, LayersIcon, PhotoFilterIcon } from "@plane/ui";
+import { ContrastIcon, DiceIcon, LayersIcon, PhotoFilterIcon } from "@jet/ui";
 import { FileText } from "lucide-react";
 // types
 import { TTourSteps } from "./root";
@@ -40,7 +40,7 @@ export const TourSidebar: React.FC<Props> = ({ step, setStep }) => (
     <h3 className="font-medium text-lg">
       Let{"'"}s get started!
       <br />
-      Get more out of Plane.
+      Get more out of Jet.
     </h3>
     <div className="mt-8 space-y-5">
       {sidebarOptions.map((option) => (

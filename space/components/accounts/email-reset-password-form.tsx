@@ -8,7 +8,7 @@ import userService from "services/user.service";
 // import useToast from "hooks/use-toast";
 // ui
 import { Input } from "components/ui";
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // types
 type Props = {
   setIsResettingPassword: React.Dispatch<React.SetStateAction<boolean>>;

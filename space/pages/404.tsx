@@ -18,7 +18,7 @@ const Custom404Error = () => (
 
       <div className="text-center flex justify-center items-center">
         <a
-          href={`https://app.plane.so/`}
+          href={`https://app.jetpm.app/`}
           className="transition-all border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-700 hover:text-gray-800 cursor-pointer p-1.5 px-2.5 rounded-sm text-sm font-medium hover:scale-105 select-none"
         >
           Go to your Workspace

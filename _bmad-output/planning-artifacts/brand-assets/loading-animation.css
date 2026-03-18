@@ -1,0 +1,77 @@
+/* Jet Trail Loading Animation */
+/* Drop this into globals.css or use as a component */
+
+.jet-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+}
+
+.jet-loader__trail {
+  position: relative;
+  width: 48px;
+  height: 48px;
+}
+
+.jet-loader__trail::before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+  animation: jet-trail 1.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.jet-loader__trail::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background: linear-gradient(135deg, #3B82F6 0%, #06B6D4 100%);
+  opacity: 0.3;
+  animation: jet-trail 1.5s ease-in-out infinite;
+  animation-delay: 0.15s;
+}
+
+@keyframes jet-trail {
+  0% {
+    transform: translate(0, 24px) rotate(45deg) scale(1);
+    opacity: 1;
+  }
+  25% {
+    transform: translate(24px, 0) rotate(45deg) scale(0.8);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(48px, 24px) rotate(45deg) scale(0.6);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translate(24px, 48px) rotate(45deg) scale(0.8);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(0, 24px) rotate(45deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Simple fallback spinner */
+.jet-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid #27272A;
+  border-top-color: #3B82F6;
+  border-radius: 50%;
+  animation: jet-spin 0.8s linear infinite;
+}
+
+@keyframes jet-spin {
+  to { transform: rotate(360deg); }
+}

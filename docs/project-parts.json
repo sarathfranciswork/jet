@@ -1,0 +1,130 @@
+{
+  "repository_type": "monorepo",
+  "monorepo_tools": ["yarn-workspaces", "turbo"],
+  "parts": [
+    {
+      "part_id": "web",
+      "name": "Web Dashboard",
+      "project_type": "web",
+      "root_path": "web/",
+      "language": "TypeScript",
+      "framework": "Next.js 12.3.2",
+      "port": 3000,
+      "description": "Main project management dashboard application"
+    },
+    {
+      "part_id": "space",
+      "name": "Space (Public Sharing)",
+      "project_type": "web",
+      "root_path": "space/",
+      "language": "TypeScript",
+      "framework": "Next.js 12.3.2",
+      "port": 4000,
+      "description": "Public project board viewing and interaction"
+    },
+    {
+      "part_id": "apiserver",
+      "name": "API Server",
+      "project_type": "backend",
+      "root_path": "apiserver/",
+      "language": "Python 3.11",
+      "framework": "Django 4.2.5 + DRF 3.14.0",
+      "port": 8000,
+      "description": "REST API backend with Celery background tasks"
+    },
+    {
+      "part_id": "packages",
+      "name": "Shared Packages",
+      "project_type": "library",
+      "root_path": "packages/",
+      "language": "TypeScript",
+      "framework": "React",
+      "sub_packages": [
+        {"name": "@plane/ui", "path": "packages/ui/"},
+        {"name": "@plane/editor-core", "path": "packages/editor/core/"},
+        {"name": "@plane/rich-text-editor", "path": "packages/editor/rich-text-editor/"},
+        {"name": "@plane/lite-text-editor", "path": "packages/editor/lite-text-editor/"},
+        {"name": "eslint-config-custom", "path": "packages/eslint-config-custom/"},
+        {"name": "tailwind-config-custom", "path": "packages/tailwind-config-custom/"},
+        {"name": "tsconfig", "path": "packages/tsconfig/"}
+      ],
+      "description": "Shared UI components, editors, and configuration"
+    },
+    {
+      "part_id": "infra",
+      "name": "Infrastructure",
+      "project_type": "infra",
+      "root_path": "deploy/",
+      "additional_paths": ["nginx/", "Dockerfile", "docker-compose.yml", ".github/workflows/"],
+      "description": "Docker, Nginx, CI/CD deployment infrastructure"
+    }
+  ],
+  "integration_points": [
+    {
+      "from": "web",
+      "to": "apiserver",
+      "type": "REST API",
+      "details": "Axios HTTP calls via service classes, JWT auth, routed through Nginx /api/"
+    },
+    {
+      "from": "space",
+      "to": "apiserver",
+      "type": "REST API",
+      "details": "Public API endpoints (no auth), routed through Nginx /api/"
+    },
+    {
+      "from": "web",
+      "to": "packages",
+      "type": "npm import",
+      "details": "Build-time imports of @plane/ui, @plane/rich-text-editor, @plane/lite-text-editor"
+    },
+    {
+      "from": "space",
+      "to": "packages",
+      "type": "npm import",
+      "details": "Build-time imports of @plane/ui"
+    },
+    {
+      "from": "apiserver",
+      "to": "postgresql",
+      "type": "Database",
+      "details": "Django ORM via psycopg, DATABASE_URL connection"
+    },
+    {
+      "from": "apiserver",
+      "to": "redis",
+      "type": "Cache/Broker",
+      "details": "Django cache + Celery broker/results backend"
+    },
+    {
+      "from": "apiserver",
+      "to": "minio",
+      "type": "S3 Storage",
+      "details": "File uploads via django-s3-storage + boto3"
+    },
+    {
+      "from": "nginx",
+      "to": "web",
+      "type": "Reverse Proxy",
+      "details": "Route / → web:3000"
+    },
+    {
+      "from": "nginx",
+      "to": "apiserver",
+      "type": "Reverse Proxy",
+      "details": "Route /api/ → api:8000"
+    },
+    {
+      "from": "nginx",
+      "to": "space",
+      "type": "Reverse Proxy",
+      "details": "Route /spaces/ → space:3000"
+    },
+    {
+      "from": "nginx",
+      "to": "minio",
+      "type": "Reverse Proxy",
+      "details": "Route /uploads/ → plane-minio:9000"
+    }
+  ]
+}

@@ -10,7 +10,7 @@ import useUser from "hooks/use-user";
 // layouts
 import DefaultLayout from "layouts/default-layout";
 // ui
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 // icons
 import { EmptySpace, EmptySpaceItem } from "components/ui/empty-space";
 // types
@@ -69,7 +69,7 @@ const WorkspaceInvitationPage: NextPageWithLayout = () => {
                 <>
                   <EmptySpace
                     title={`You are already a member of ${invitationDetail.workspace.name}`}
-                    description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Plane account."
+                    description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Jet account."
                   >
                     <EmptySpaceItem Icon={Boxes} title="Continue to Dashboard" action={() => router.push("/")} />
                   </EmptySpace>
@@ -77,7 +77,7 @@ const WorkspaceInvitationPage: NextPageWithLayout = () => {
               ) : (
                 <EmptySpace
                   title={`You have been invited to ${invitationDetail.workspace.name}`}
-                  description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Plane account."
+                  description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Jet account."
                 >
                   <EmptySpaceItem Icon={Check} title="Accept" action={handleAccept} />
                   <EmptySpaceItem
@@ -95,7 +95,7 @@ const WorkspaceInvitationPage: NextPageWithLayout = () => {
       ) : error ? (
         <EmptySpace
           title="This invitation link is not active anymore."
-          description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Plane account."
+          description="Your workspace is where you'll create projects, collaborate on your issues, and organize different streams of work in your Jet account."
           link={{ text: "Or start from an empty project", href: "/" }}
         >
           {!user ? (
@@ -119,7 +119,7 @@ const WorkspaceInvitationPage: NextPageWithLayout = () => {
             Icon={Star}
             title="Star us on GitHub"
             action={() => {
-              router.push("https://github.com/makeplane");
+              router.push("https://github.com/makeplane/jet");
             }}
           />
           <EmptySpaceItem

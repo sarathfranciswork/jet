@@ -3,7 +3,7 @@ import { observer } from "mobx-react-lite";
 // components
 import { HeaderGroupByCard } from "./group-by-card";
 // ui
-import { Avatar } from "@plane/ui";
+import { Avatar } from "@jet/ui";
 
 export interface IAssigneesHeader {
   column_id: string;

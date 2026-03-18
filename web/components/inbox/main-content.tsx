@@ -11,7 +11,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 import { IssueDescriptionForm, IssueDetailsSidebar, IssueReaction } from "components/issues";
 import { InboxIssueActivity } from "components/inbox";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // helpers
 import { renderShortDateWithYearFormat } from "helpers/date-time.helper";
 // types

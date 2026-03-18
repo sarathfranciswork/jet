@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 
 // ui
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 import { DeleteAttachmentModal } from "./delete-attachment-modal";
 // icons
 import { getFileIcon } from "components/icons";

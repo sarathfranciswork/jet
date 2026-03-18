@@ -1,5 +1,5 @@
 // components
-import { Breadcrumbs } from "@plane/ui";
+import { Breadcrumbs } from "@jet/ui";
 
 export const ProfilePreferencesHeader = () => (
   <div

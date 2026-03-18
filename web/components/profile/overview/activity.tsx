@@ -8,7 +8,7 @@ import { UserService } from "services/user.service";
 import { ActivityMessage } from "components/core";
 // ui
 import { ProfileEmptyState } from "components/ui";
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 import { Rocket } from "lucide-react";
 // image
 import recentActivityEmptyState from "public/empty-state/recent_activity.svg";

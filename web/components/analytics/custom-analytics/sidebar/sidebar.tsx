@@ -11,7 +11,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { CustomAnalyticsSidebarHeader, CustomAnalyticsSidebarProjectsList } from "components/analytics";
 // ui
-import { Button, LayersIcon } from "@plane/ui";
+import { Button, LayersIcon } from "@jet/ui";
 // icons
 import { CalendarDays, Download, RefreshCw } from "lucide-react";
 // helpers

@@ -1,4 +1,4 @@
-import { BulletListItem, cn, CodeItem, HeadingOneItem, HeadingThreeItem, HeadingTwoItem, NumberedListItem, QuoteItem, TodoListItem } from "@plane/editor-core";
+import { BulletListItem, cn, CodeItem, HeadingOneItem, HeadingThreeItem, HeadingTwoItem, NumberedListItem, QuoteItem, TodoListItem } from "@jet/editor-core";
 import { Editor } from "@tiptap/react";
 import {
   Check,

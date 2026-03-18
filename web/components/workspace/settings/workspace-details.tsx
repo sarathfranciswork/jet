@@ -13,7 +13,7 @@ import useToast from "hooks/use-toast";
 import { DeleteWorkspaceModal } from "components/workspace";
 import { ImageUploadModal } from "components/core";
 // ui
-import { Button, CustomSelect, Input, Spinner } from "@plane/ui";
+import { Button, CustomSelect, Input, Spinner } from "@jet/ui";
 // types
 import { IWorkspace } from "types";
 // constants

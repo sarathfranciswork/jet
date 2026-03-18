@@ -9,7 +9,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 import useToast from "hooks/use-toast";
 import { useWorkspaceMyMembership } from "contexts/workspace-member.context";
 // ui
-import { Button, CustomSelect, Input, TextArea } from "@plane/ui";
+import { Button, CustomSelect, Input, TextArea } from "@jet/ui";
 // components
 import { WorkspaceMemberSelect } from "components/workspace";
 import { ImagePickerPopover } from "components/core";

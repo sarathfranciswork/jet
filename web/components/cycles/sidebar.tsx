@@ -16,7 +16,7 @@ import ProgressChart from "components/core/sidebar/progress-chart";
 import { CycleDeleteModal } from "components/cycles/delete-modal";
 // ui
 import { CustomRangeDatePicker } from "components/ui";
-import { Avatar, CustomMenu, Loader, LayersIcon } from "@plane/ui";
+import { Avatar, CustomMenu, Loader, LayersIcon } from "@jet/ui";
 // icons
 import { ChevronDown, LinkIcon, Trash2, UserCircle2, AlertCircle, ChevronRight, MoveRight } from "lucide-react";
 // helpers

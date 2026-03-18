@@ -7,7 +7,7 @@ import useSWR from "swr";
 // services
 import { ProjectStateService } from "services/project";
 // ui
-import { CustomSearchSelect, DoubleCircleIcon, StateGroupIcon } from "@plane/ui";
+import { CustomSearchSelect, DoubleCircleIcon, StateGroupIcon } from "@jet/ui";
 // icons
 import { Plus } from "lucide-react";
 // helpers

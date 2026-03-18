@@ -2,8 +2,8 @@
 import uuid
 import random
 from django.contrib.auth.hashers import make_password
-from plane.db.models import ProjectIdentifier
-from plane.db.models import (
+from jet.db.models import ProjectIdentifier
+from jet.db.models import (
     Issue,
     IssueComment,
     User,

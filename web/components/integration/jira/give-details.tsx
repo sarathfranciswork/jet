@@ -8,7 +8,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // icons
 import { Plus } from "lucide-react";
 // components
-import { CustomSelect, Input } from "@plane/ui";
+import { CustomSelect, Input } from "@jet/ui";
 // types
 import { IJiraImporterForm } from "types";
 

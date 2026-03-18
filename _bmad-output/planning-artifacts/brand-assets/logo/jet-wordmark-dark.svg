@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" fill="none">
+  <defs>
+    <linearGradient id="jetFuel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+  <!-- Chevron J mark (compact) -->
+  <g transform="translate(20, 20) scale(0.32)">
+    <path d="M 288 64 L 352 64 L 352 320 C 352 380 320 420 272 448 L 160 448 L 192 384 L 264 384 C 296 384 288 352 288 320 Z" fill="url(#jetFuel)"/>
+    <path d="M 160 64 L 368 64 L 336 128 L 160 128 Z" fill="url(#jetFuel)"/>
+    <path d="M 96 256 L 224 256 L 192 288 L 96 288 Z" fill="url(#jetFuel)" opacity="0.6"/>
+  </g>
+  <!-- "Jet" wordmark for light backgrounds -->
+  <text x="200" y="140" font-family="'Space Grotesk', 'Inter', system-ui, sans-serif" font-weight="700" font-size="120" fill="#09090B" letter-spacing="-4">Jet</text>
+</svg>

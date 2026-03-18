@@ -5,7 +5,7 @@ import {
   EditorContentWrapper,
   getEditorClassNames,
   useEditor,
-} from "@plane/editor-core";
+} from "@jet/editor-core";
 import { FixedMenu } from "./menus/fixed-menu";
 import { LiteTextEditorExtensions } from "./extensions";
 

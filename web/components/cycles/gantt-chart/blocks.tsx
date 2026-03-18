@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 
 // ui
-import { Tooltip, ContrastIcon } from "@plane/ui";
+import { Tooltip, ContrastIcon } from "@jet/ui";
 // helpers
 import { getDateRangeStatus, renderShortDate } from "helpers/date-time.helper";
 // types
@@ -23,7 +23,7 @@ export const CycleGanttBlock = ({ data }: { data: ICycle }) => {
             : cycleStatus === "upcoming"
             ? "#f7ae59"
             : cycleStatus === "completed"
-            ? "#3f76ff"
+            ? "#3B82F6"
             : cycleStatus === "draft"
             ? "rgb(var(--color-text-200))"
             : "",
@@ -67,7 +67,7 @@ export const CycleGanttSidebarBlock = ({ data }: { data: ICycle }) => {
             : cycleStatus === "upcoming"
             ? "#f7ae59"
             : cycleStatus === "completed"
-            ? "#3f76ff"
+            ? "#3B82F6"
             : cycleStatus === "draft"
             ? "rgb(var(--color-text-200))"
             : ""

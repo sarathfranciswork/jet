@@ -1,0 +1,9 @@
+<svg width="155" height="155" viewBox="0 0 155 155" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chevron "J" Mark — standalone icon in Jet Blue -->
+  <!-- Upper-right L-shaped chevron arm -->
+  <polygon points="48,10 145,10 145,55 97,55 97,100 48,100" fill="#3B82F6"/>
+  <!-- Lower-left square block -->
+  <rect x="10" y="55" width="45" height="45" fill="#3B82F6"/>
+  <!-- Bottom-right descender step -->
+  <polygon points="55,100 105,100 105,145 25,145 25,120 55,120" fill="#3B82F6"/>
+</svg>

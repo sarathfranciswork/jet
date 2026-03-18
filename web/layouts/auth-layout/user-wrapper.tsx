@@ -2,7 +2,7 @@ import { FC, ReactNode } from "react";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 // ui
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 // store
 import { useMobxStore } from "lib/mobx/store-provider";
 

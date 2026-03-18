@@ -6,7 +6,7 @@ import { Ban } from "lucide-react";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Avatar, CustomSearchSelect } from "@plane/ui";
+import { Avatar, CustomSearchSelect } from "@jet/ui";
 
 type Props = {
   value: any;

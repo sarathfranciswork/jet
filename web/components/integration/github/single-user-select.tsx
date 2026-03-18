@@ -3,7 +3,7 @@ import useSWR from "swr";
 // services
 import { WorkspaceService } from "services/workspace.service";
 // ui
-import { Avatar, CustomSelect, CustomSearchSelect, Input } from "@plane/ui";
+import { Avatar, CustomSelect, CustomSearchSelect, Input } from "@jet/ui";
 // types
 import { IGithubRepoCollaborator } from "types";
 import { IUserDetails } from "./root";

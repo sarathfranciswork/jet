@@ -4,7 +4,7 @@ import { observer } from "mobx-react-lite";
 import { Draggable } from "@hello-pangea/dnd";
 // components
 import { IssuePeekOverview } from "components/issues/issue-peek-overview";
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // types
 import { IIssue } from "types";
 

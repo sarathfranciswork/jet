@@ -7,7 +7,7 @@ import useEstimateOption from "hooks/use-estimate-option";
 // services
 import { IssueLabelService } from "services/issue";
 // icons
-import { Tooltip, BlockedIcon, BlockerIcon, RelatedIcon, LayersIcon, DiceIcon } from "@plane/ui";
+import { Tooltip, BlockedIcon, BlockerIcon, RelatedIcon, LayersIcon, DiceIcon } from "@jet/ui";
 import {
   TagIcon,
   CopyPlus,

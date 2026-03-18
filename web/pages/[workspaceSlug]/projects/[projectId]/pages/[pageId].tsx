@@ -22,7 +22,7 @@ import { CreateBlock } from "components/pages/create-block";
 import { PageDetailsHeader } from "components/headers/page-details";
 // ui
 import { EmptyState } from "components/common";
-import { CustomSearchSelect, TextArea, Loader, ToggleSwitch, Tooltip } from "@plane/ui";
+import { CustomSearchSelect, TextArea, Loader, ToggleSwitch, Tooltip } from "@jet/ui";
 // images
 import emptyPage from "public/empty-state/page.svg";
 // icons

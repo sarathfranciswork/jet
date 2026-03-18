@@ -1,5 +1,5 @@
 // icons
-import { ExternalLinkIcon } from "@plane/ui";
+import { ExternalLinkIcon } from "@jet/ui";
 import { Pencil, Trash2, LinkIcon } from "lucide-react";
 // helpers
 import { timeAgo } from "helpers/date-time.helper";

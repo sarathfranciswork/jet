@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // components
 import { FilterHeader, FilterOption } from "components/issues";
 // ui
-import { Avatar, Loader } from "@plane/ui";
+import { Avatar, Loader } from "@jet/ui";
 // types
 import { IUserLite } from "types";
 

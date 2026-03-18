@@ -9,7 +9,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // headless ui
 import { Popover, Transition } from "@headlessui/react";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // types
 import { IIssueLabels } from "types";
 // fetch-keys

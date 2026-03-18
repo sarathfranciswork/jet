@@ -8,9 +8,9 @@ import { Check, Globe2, Lock, MessageSquare, Pencil, Trash2, X } from "lucide-re
 // hooks
 import useUser from "hooks/use-user";
 // ui
-import { CustomMenu } from "@plane/ui";
+import { CustomMenu } from "@jet/ui";
 import { CommentReaction } from "components/issues";
-import { LiteTextEditorWithRef, LiteReadOnlyEditorWithRef } from "@plane/lite-text-editor";
+import { LiteTextEditorWithRef, LiteReadOnlyEditorWithRef } from "@jet/lite-text-editor";
 // helpers
 import { timeAgo } from "helpers/date-time.helper";
 // types

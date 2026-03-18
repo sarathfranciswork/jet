@@ -3,7 +3,7 @@ import { usePopper } from "react-popper";
 import { Popover, Transition } from "@headlessui/react";
 import { Placement } from "@popperjs/core";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { ChevronUp } from "lucide-react";
 

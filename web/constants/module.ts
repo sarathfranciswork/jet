@@ -18,7 +18,7 @@ export const MODULE_STATUS: {
   {
     label: "Planned",
     value: "planned",
-    color: "#3f76ff",
+    color: "#3B82F6",
     textColor: "text-blue-500",
     bgColor: "bg-indigo-50",
   },

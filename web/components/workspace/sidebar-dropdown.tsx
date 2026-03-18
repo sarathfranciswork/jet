@@ -11,7 +11,7 @@ import useToast from "hooks/use-toast";
 // services
 import { AuthService } from "services/auth.service";
 // ui
-import { Avatar, Loader } from "@plane/ui";
+import { Avatar, Loader } from "@jet/ui";
 // types
 import { IWorkspace } from "types";
 

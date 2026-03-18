@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import { ActivityIcon, ActivityMessage } from "components/core";
 import { CommentCard } from "components/issues/comment";
 // ui
-import { Loader, Tooltip } from "@plane/ui";
+import { Loader, Tooltip } from "@jet/ui";
 // helpers
 import { render24HourFormatTime, renderLongDateFormat, timeAgo } from "helpers/date-time.helper";
 // types
@@ -100,7 +100,7 @@ export const IssueActivitySection: React.FC<Props> = ({
                     <div className="min-w-0 flex-1 py-3">
                       <div className="text-xs text-custom-text-200 break-words">
                         {activityItem.field === "archived_at" && activityItem.new_value !== "restore" ? (
-                          <span className="text-gray font-medium">Plane</span>
+                          <span className="text-gray font-medium">Jet</span>
                         ) : activityItem.actor_detail.is_bot ? (
                           <span className="text-gray font-medium">{activityItem.actor_detail.first_name} Bot</span>
                         ) : (

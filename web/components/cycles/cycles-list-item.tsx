@@ -9,7 +9,7 @@ import useToast from "hooks/use-toast";
 // components
 import { CycleCreateUpdateModal, CycleDeleteModal } from "components/cycles";
 // ui
-import { CustomMenu, Tooltip, CircularProgressIndicator, CycleGroupIcon, AvatarGroup, Avatar } from "@plane/ui";
+import { CustomMenu, Tooltip, CircularProgressIndicator, CycleGroupIcon, AvatarGroup, Avatar } from "@jet/ui";
 // icons
 import { Check, Info, LinkIcon, Pencil, Star, Trash2, User2 } from "lucide-react";
 // helpers

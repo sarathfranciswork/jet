@@ -13,7 +13,7 @@ import { ProjectIssueDetailsHeader } from "components/headers";
 import { IssueDetailsSidebar, IssueMainContent } from "components/issues";
 // ui
 import { EmptyState } from "components/common";
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // images
 import emptyIssue from "public/empty-state/issue.svg";
 // types

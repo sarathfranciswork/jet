@@ -4,7 +4,7 @@ import { observer } from "mobx-react-lite";
 // components
 import { SpreadsheetColumnsList, SpreadsheetIssuesColumn, SpreadsheetInlineCreateIssueForm } from "components/issues";
 import { IssuePeekOverview } from "components/issues/issue-peek-overview";
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 // types
 import {
   IIssue,

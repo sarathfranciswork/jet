@@ -10,7 +10,7 @@ import { Command } from "cmdk";
 import { IssueService } from "services/issue";
 import { ProjectStateService } from "services/project";
 // ui
-import { Spinner, StateGroupIcon } from "@plane/ui";
+import { Spinner, StateGroupIcon } from "@jet/ui";
 // icons
 import { Check } from "lucide-react";
 // helpers

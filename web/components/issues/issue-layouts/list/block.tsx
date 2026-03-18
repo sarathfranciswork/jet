@@ -2,7 +2,7 @@
 import { KanBanProperties } from "./properties";
 import { IssuePeekOverview } from "components/issues/issue-peek-overview";
 // ui
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // types
 import { IIssue } from "types";
 

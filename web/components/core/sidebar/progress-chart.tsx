@@ -80,12 +80,12 @@ const ProgressChart: React.FC<Props> = ({ distribution, startDate, endDate, tota
         data={[
           {
             id: "pending",
-            color: "#3F76FF",
+            color: "#3B82F6",
             data: chartData.map((item, index) => ({
               index,
               x: item.currentDate,
               y: item.pending,
-              color: "#3F76FF",
+              color: "#3B82F6",
             })),
             enableArea: true,
           },
@@ -114,7 +114,7 @@ const ProgressChart: React.FC<Props> = ({ distribution, startDate, endDate, tota
         }}
         enablePoints={false}
         enableArea
-        colors={(datum) => datum.color ?? "#3F76FF"}
+        colors={(datum) => datum.color ?? "#3B82F6"}
         customYAxisTickValues={[0, totalIssues]}
         gridXValues={chartData.map((item, index) => (index % 2 === 0 ? item.currentDate : ""))}
         enableSlices="x"

@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 // ui
-import { Tooltip, PriorityIcon } from "@plane/ui";
+import { Tooltip, PriorityIcon } from "@jet/ui";
 // icons
 import { AlertTriangle, CalendarDays, CheckCircle2, Clock, Copy, XCircle } from "lucide-react";
 // helpers

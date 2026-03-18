@@ -19,7 +19,7 @@ import {
 } from "components/issues";
 import { SubIssuesRoot } from "./sub-issues";
 // ui
-import { CustomMenu, LayersIcon } from "@plane/ui";
+import { CustomMenu, LayersIcon } from "@jet/ui";
 // icons
 import { MinusCircle } from "lucide-react";
 // types

@@ -11,7 +11,7 @@ import { CreateUpdateIssueModal, DeleteIssueModal } from "components/issues";
 import { SubIssuesRootList } from "./issues-list";
 import { ProgressBar } from "./progressbar";
 // ui
-import { CustomMenu } from "@plane/ui";
+import { CustomMenu } from "@jet/ui";
 // hooks
 import useToast from "hooks/use-toast";
 // helpers

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Chevron "J" Mark - Solid Jet Blue -->
+  <path d="M 288 64 L 352 64 L 352 320 C 352 380 320 420 272 448 L 160 448 L 192 384 L 264 384 C 296 384 288 352 288 320 Z" fill="#3B82F6"/>
+  <path d="M 160 64 L 368 64 L 336 128 L 160 128 Z" fill="#3B82F6"/>
+  <path d="M 96 256 L 224 256 L 192 288 L 96 288 Z" fill="#3B82F6" opacity="0.6"/>
+</svg>

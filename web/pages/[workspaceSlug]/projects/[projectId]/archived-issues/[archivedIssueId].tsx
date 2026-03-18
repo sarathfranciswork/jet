@@ -13,7 +13,7 @@ import { AppLayout } from "layouts/app-layout";
 import { IssueDetailsSidebar, IssueMainContent } from "components/issues";
 import { ProjectArchivedIssueDetailsHeader } from "components/headers";
 // ui
-import { ArchiveIcon, Loader } from "@plane/ui";
+import { ArchiveIcon, Loader } from "@jet/ui";
 // icons
 import { History } from "lucide-react";
 // types
@@ -141,7 +141,7 @@ const ArchivedIssueDetailsPage: NextPageWithLayout = () => {
               <div className="flex items-center justify-between gap-2 px-2.5 py-2 text-sm border rounded-md text-custom-text-200 border-custom-border-200 bg-custom-background-90">
                 <div className="flex gap-2 items-center">
                   <ArchiveIcon className="h-3.5 w-3.5" />
-                  <p>This issue has been archived by Plane.</p>
+                  <p>This issue has been archived by Jet.</p>
                 </div>
                 <button
                   className="flex items-center gap-2 p-1.5 text-sm rounded-md border border-custom-border-200"

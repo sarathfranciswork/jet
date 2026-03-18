@@ -1,5 +1,5 @@
 import React from "react";
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 
 type Props = {
   data: any;

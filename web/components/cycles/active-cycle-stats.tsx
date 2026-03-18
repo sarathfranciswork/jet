@@ -5,7 +5,7 @@ import useLocalStorage from "hooks/use-local-storage";
 // components
 import { SingleProgressStats } from "components/core";
 // ui
-import { Avatar } from "@plane/ui";
+import { Avatar } from "@jet/ui";
 // types
 import { ICycle } from "types";
 

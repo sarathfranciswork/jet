@@ -1,7 +1,7 @@
 // hooks
 import useIntegrationPopup from "hooks/use-integration-popup";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // types
 import { IWorkspaceIntegration } from "types";
 

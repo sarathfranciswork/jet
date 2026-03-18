@@ -9,7 +9,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 import { TourRoot } from "components/onboarding";
 import { UserGreetingsView } from "components/user";
 import { CompletedIssuesGraph, IssuesList, IssuesPieChart, IssuesStats } from "components/workspace";
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // images
 import emptyDashboard from "public/empty-state/dashboard.svg";
 

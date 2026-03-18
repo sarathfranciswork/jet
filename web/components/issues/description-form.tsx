@@ -4,8 +4,8 @@ import { Controller, useForm } from "react-hook-form";
 import useReloadConfirmations from "hooks/use-reload-confirmation";
 import { useDebouncedCallback } from "use-debounce";
 // components
-import { TextArea } from "@plane/ui";
-import { RichTextEditor } from "@plane/rich-text-editor";
+import { TextArea } from "@jet/ui";
+import { RichTextEditor } from "@jet/rich-text-editor";
 // types
 import { IIssue } from "types";
 // services

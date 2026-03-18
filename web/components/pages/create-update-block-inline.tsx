@@ -12,8 +12,8 @@ import { FileService } from "services/file.service";
 import useToast from "hooks/use-toast";
 // components
 import { GptAssistantModal } from "components/core";
-import { Button, TextArea } from "@plane/ui";
-import { RichTextEditorWithRef } from "@plane/rich-text-editor";
+import { Button, TextArea } from "@jet/ui";
+import { RichTextEditorWithRef } from "@jet/rich-text-editor";
 // types
 import { IUser, IPageBlock } from "types";
 // fetch-keys

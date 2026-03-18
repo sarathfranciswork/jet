@@ -10,7 +10,7 @@ import { Controller, useForm } from "react-hook-form";
 
 import { MemberSelect } from "components/project";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // types
 import { IProject, IUserLite, IWorkspace } from "types";
 // fetch-keys

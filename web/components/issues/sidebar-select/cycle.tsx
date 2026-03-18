@@ -8,7 +8,7 @@ import useSWR, { mutate } from "swr";
 import { IssueService } from "services/issue";
 import { CycleService } from "services/cycle.service";
 // ui
-import { ContrastIcon, CustomSearchSelect, Tooltip } from "@plane/ui";
+import { ContrastIcon, CustomSearchSelect, Tooltip } from "@jet/ui";
 // types
 import { IIssue } from "types";
 // fetch-keys

@@ -9,7 +9,7 @@ import useToast from "hooks/use-toast";
 // layouts
 import DefaultLayout from "layouts/default-layout";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 
 // services
 const authService = new AuthService();
@@ -41,8 +41,8 @@ const CustomErrorComponent = () => {
             <p className="text-sm text-custom-text-200 w-1/2 mx-auto">
               We{"'"}re Sorry! An exception has been detected, and our engineering team has been notified. We apologize
               for any inconvenience this may have caused. Please reach out to our engineering team at{" "}
-              <a href="mailto:support@plane.so" className="text-custom-primary">
-                support@plane.so
+              <a href="mailto:admin@jetpm.app" className="text-custom-primary">
+                admin@jetpm.app
               </a>{" "}
               or on our{" "}
               <a

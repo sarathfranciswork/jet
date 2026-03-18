@@ -7,7 +7,7 @@ import { CycleService } from "services/cycle.service";
 // hooks
 import useToast from "hooks/use-toast";
 //icons
-import { ContrastIcon, TransferIcon } from "@plane/ui";
+import { ContrastIcon, TransferIcon } from "@jet/ui";
 import { AlertCircle, Search, X } from "lucide-react";
 // fetch-key
 import { INCOMPLETE_CYCLES_LIST } from "constants/fetch-keys";

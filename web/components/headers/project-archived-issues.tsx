@@ -4,7 +4,7 @@ import { observer } from "mobx-react-lite";
 // hooks
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Breadcrumbs, LayersIcon } from "@plane/ui";
+import { Breadcrumbs, LayersIcon } from "@jet/ui";
 // helper
 import { renderEmoji } from "helpers/emoji.helper";
 

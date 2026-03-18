@@ -14,7 +14,7 @@ import {
   ProjectSettingLabelGroup,
 } from "components/labels";
 // ui
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 import { EmptyState } from "components/common";
 // images
 import emptyLabel from "public/empty-state/label.svg";

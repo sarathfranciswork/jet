@@ -1,4 +1,4 @@
-import { IMentionHighlight, IMentionSuggestion } from "@plane/lite-text-editor";
+import { IMentionHighlight, IMentionSuggestion } from "@jet/lite-text-editor";
 import { RootStore } from "../root";
 import { computed, makeObservable } from "mobx";
 

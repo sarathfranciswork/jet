@@ -9,7 +9,7 @@ import { CircleDashed, Plus } from "lucide-react";
 // components
 import { CreateUpdateIssueModal } from "components/issues/modal";
 import { ExistingIssuesListModal } from "components/core";
-import { CustomMenu } from "@plane/ui";
+import { CustomMenu } from "@jet/ui";
 // hooks
 import useUser from "hooks/use-user";
 import useToast from "hooks/use-toast";

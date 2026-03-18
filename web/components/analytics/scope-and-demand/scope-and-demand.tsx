@@ -7,7 +7,7 @@ import { AnalyticsService } from "services/analytics.service";
 // components
 import { AnalyticsDemand, AnalyticsLeaderBoard, AnalyticsScope, AnalyticsYearWiseIssues } from "components/analytics";
 // ui
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 // fetch-keys
 import { DEFAULT_ANALYTICS } from "constants/fetch-keys";
 

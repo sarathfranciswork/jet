@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CircularProgressIndicator } from "@plane/ui";
+import { CircularProgressIndicator } from "@jet/ui";
 
 type TSingleProgressStatsProps = {
   title: any;

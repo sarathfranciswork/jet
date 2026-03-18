@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import useSWR from "swr";
 
 // component
-import { Button, TransferIcon } from "@plane/ui";
+import { Button, TransferIcon } from "@jet/ui";
 // icon
 import { AlertCircle } from "lucide-react";
 // services

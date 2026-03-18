@@ -8,7 +8,7 @@ import { ChevronDown, Plus, X } from "lucide-react";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Avatar, Button, CustomSelect, CustomSearchSelect } from "@plane/ui";
+import { Avatar, Button, CustomSelect, CustomSearchSelect } from "@jet/ui";
 // services
 import { ProjectService } from "services/project";
 import { WorkspaceService } from "services/workspace.service";

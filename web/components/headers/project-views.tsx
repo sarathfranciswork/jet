@@ -7,7 +7,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { CreateUpdateProjectViewModal } from "components/views";
 // components
-import { Breadcrumbs, PhotoFilterIcon, Button } from "@plane/ui";
+import { Breadcrumbs, PhotoFilterIcon, Button } from "@jet/ui";
 // helpers
 import { renderEmoji } from "helpers/emoji.helper";
 

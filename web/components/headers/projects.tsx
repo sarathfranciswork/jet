@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { Search, Plus, Briefcase } from "lucide-react";
 // ui
-import { Breadcrumbs, Button } from "@plane/ui";
+import { Breadcrumbs, Button } from "@jet/ui";
 // hooks
 import { useMobxStore } from "lib/mobx/store-provider";
 import { observer } from "mobx-react-lite";

@@ -9,7 +9,7 @@ import useToast from "hooks/use-toast";
 // components
 import { CreateUpdateModuleModal, DeleteModuleModal } from "components/modules";
 // ui
-import { Avatar, AvatarGroup, CircularProgressIndicator, CustomMenu, Tooltip } from "@plane/ui";
+import { Avatar, AvatarGroup, CircularProgressIndicator, CustomMenu, Tooltip } from "@jet/ui";
 // icons
 import { Check, Info, LinkIcon, Pencil, Star, Trash2, User2 } from "lucide-react";
 // helpers

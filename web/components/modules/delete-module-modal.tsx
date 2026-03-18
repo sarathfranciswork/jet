@@ -4,7 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { AlertTriangle } from "lucide-react";
 // types

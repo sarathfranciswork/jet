@@ -9,7 +9,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { Button, Input, TextArea } from "@plane/ui";
+import { Button, Input, TextArea } from "@jet/ui";
 // helpers
 import { checkDuplicates } from "helpers/array.helper";
 // types

@@ -14,7 +14,7 @@ import { IIssue, IUser, TIssuePriorities } from "types";
 import { ISSUE_DETAILS, PROJECT_ISSUES_ACTIVITY } from "constants/fetch-keys";
 import { PRIORITIES } from "constants/project";
 // icons
-import { PriorityIcon } from "@plane/ui";
+import { PriorityIcon } from "@jet/ui";
 import { Check } from "lucide-react";
 
 type Props = {

@@ -19,7 +19,7 @@ export const THEME_OPTIONS: I_THEME_OPTION[] = [
     icon: {
       border: "#DEE2E6",
       color1: "#FAFAFA",
-      color2: "#3F76FF",
+      color2: "#3B82F6",
     },
   },
   {
@@ -29,7 +29,7 @@ export const THEME_OPTIONS: I_THEME_OPTION[] = [
     icon: {
       border: "#DEE2E6",
       color1: "#FAFAFA",
-      color2: "#3F76FF",
+      color2: "#3B82F6",
     },
   },
   {
@@ -49,7 +49,7 @@ export const THEME_OPTIONS: I_THEME_OPTION[] = [
     icon: {
       border: "#000000",
       color1: "#FFFFFF",
-      color2: "#3F76FF",
+      color2: "#3B82F6",
     },
   },
   {

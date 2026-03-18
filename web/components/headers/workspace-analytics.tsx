@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import { ArrowLeft, BarChart2 } from "lucide-react";
 // ui
-import { Breadcrumbs } from "@plane/ui";
+import { Breadcrumbs } from "@jet/ui";
 
 export const WorkspaceAnalyticsHeader = () => {
   const router = useRouter();

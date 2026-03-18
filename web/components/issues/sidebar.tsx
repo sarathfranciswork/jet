@@ -33,7 +33,7 @@ import {
 import { CustomDatePicker } from "components/ui";
 // icons
 import { Bell, CalendarDays, LinkIcon, Plus, Signal, Tag, Trash2, Triangle, User2 } from "lucide-react";
-import { ContrastIcon, DiceIcon, DoubleCircleIcon, UserGroupIcon } from "@plane/ui";
+import { ContrastIcon, DiceIcon, DoubleCircleIcon, UserGroupIcon } from "@jet/ui";
 // helpers
 import { copyTextToClipboard } from "helpers/string.helper";
 // types

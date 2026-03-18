@@ -8,7 +8,7 @@ import { PageService } from "services/page.service";
 // hooks
 import useToast from "hooks/use-toast";
 // ui
-import { TextArea } from "@plane/ui";
+import { TextArea } from "@jet/ui";
 // types
 import { IUser, IPageBlock } from "types";
 // fetch-keys

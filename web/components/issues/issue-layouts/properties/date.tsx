@@ -8,7 +8,7 @@ import DatePicker from "react-datepicker";
 // mobx
 import { observer } from "mobx-react-lite";
 // components
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // hooks
 import useDynamicDropdownPosition from "hooks/use-dynamic-dropdown";
 // helpers

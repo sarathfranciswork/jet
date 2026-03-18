@@ -1,8 +1,8 @@
-# @plane/lite-text-editor
+# @jet/lite-text-editor
 
 ## Description
 
-The `@plane/lite-text-editor` package extends from the `editor-core` package, inheriting its base functionality while adding its own unique features of Custom control over Enter key, etc.
+The `@jet/lite-text-editor` package extends from the `editor-core` package, inheriting its base functionality while adding its own unique features of Custom control over Enter key, etc.
 
 ## Key Features
 

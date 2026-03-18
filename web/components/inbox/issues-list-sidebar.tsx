@@ -6,7 +6,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { InboxIssueCard, InboxFiltersList } from "components/inbox";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 
 export const InboxIssuesListSidebar = observer(() => {
   const router = useRouter();

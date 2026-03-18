@@ -1,7 +1,7 @@
 import { PlusIcon } from "lucide-react";
 // components
 import { EmptyState } from "components/common";
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // assets
 import emptyIssue from "public/empty-state/issue.svg";
 

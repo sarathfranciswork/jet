@@ -8,7 +8,7 @@ import useEstimateOption from "hooks/use-estimate-option";
 // ui
 import { Check, ChevronDown, Search, Triangle } from "lucide-react";
 import { Combobox } from "@headlessui/react";
-import { Tooltip } from "@plane/ui";
+import { Tooltip } from "@jet/ui";
 // types
 import { Placement } from "@popperjs/core";
 

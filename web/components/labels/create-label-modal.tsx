@@ -8,7 +8,7 @@ import { Dialog, Popover, Transition } from "@headlessui/react";
 import { observer } from "mobx-react-lite";
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // icons
 import { ChevronDown } from "lucide-react";
 // types

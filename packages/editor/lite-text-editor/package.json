@@ -1,7 +1,7 @@
 {
-  "name": "@plane/lite-text-editor",
+  "name": "@jet/lite-text-editor",
   "version": "0.0.1",
-  "description": "Package that powers Plane's Comment Editor",
+  "description": "Package that powers Jet's Comment Editor",
   "main": "./dist/index.mjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.mts",
@@ -27,7 +27,7 @@
     "react-dom": "18.2.0"
   },
   "dependencies": {
-    "@plane/editor-core": "*",
+    "@jet/editor-core": "*",
     "@tiptap/extension-list-item": "^2.1.11",
     "@types/node": "18.15.3",
     "@types/react": "^18.2.5",

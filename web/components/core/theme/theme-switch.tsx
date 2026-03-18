@@ -2,7 +2,7 @@ import { FC } from "react";
 // constants
 import { THEME_OPTIONS, I_THEME_OPTION } from "constants/themes";
 // ui
-import { CustomSelect } from "@plane/ui";
+import { CustomSelect } from "@jet/ui";
 
 type Props = {
   value: I_THEME_OPTION | null;

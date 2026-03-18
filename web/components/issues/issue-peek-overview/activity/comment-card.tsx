@@ -5,8 +5,8 @@ import { Check, Globe2, Lock, MessageSquare, Pencil, Trash2, X } from "lucide-re
 // services
 import { FileService } from "services/file.service";
 // ui
-import { CustomMenu } from "@plane/ui";
-import { LiteTextEditorWithRef, LiteReadOnlyEditorWithRef } from "@plane/lite-text-editor";
+import { CustomMenu } from "@jet/ui";
+import { LiteTextEditorWithRef, LiteReadOnlyEditorWithRef } from "@jet/lite-text-editor";
 // components
 import { IssueCommentReaction } from "./comment-reaction";
 // helpers

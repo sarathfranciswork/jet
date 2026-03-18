@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useMobxStore } from "lib/mobx/store-provider";
 // assets
 import UserLoggedInImage from "public/user-logged-in.svg";
-import PlaneLogo from "public/plane-logos/black-horizontal-with-blue-logo.svg";
+import JetLogo from "public/jet-logos/black-horizontal-with-blue-logo.svg";
 
 export const UserLoggedIn = () => {
   const { user: userStore } = useMobxStore();
@@ -16,7 +16,7 @@ export const UserLoggedIn = () => {
     <div className="h-screen w-screen flex flex-col">
       <div className="px-6 py-5 relative w-full flex items-center justify-between gap-4 border-b border-custom-border-200">
         <div>
-          <Image src={PlaneLogo} alt="User already logged in" />
+          <Image src={JetLogo} alt="User already logged in" />
         </div>
         <div className="border border-custom-border-200 rounded flex items-center gap-2 p-2">
           {user.avatar && user.avatar !== "" ? (

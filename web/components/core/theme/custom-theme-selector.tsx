@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // ui
-import { Button, InputColorPicker } from "@plane/ui";
+import { Button, InputColorPicker } from "@jet/ui";
 // types
 import { IUserTheme } from "types";
 
@@ -39,7 +39,7 @@ export const CustomThemeSelector: React.FC = observer(() => {
     defaultValues: {
       background: userTheme?.background !== "" ? userTheme?.background : "#0d101b",
       text: userTheme?.text !== "" ? userTheme?.text : "#c5c5c5",
-      primary: userTheme?.primary !== "" ? userTheme?.primary : "#3f76ff",
+      primary: userTheme?.primary !== "" ? userTheme?.primary : "#3B82F6",
       sidebarBackground: userTheme?.sidebarBackground !== "" ? userTheme?.sidebarBackground : "#0d101b",
       sidebarText: userTheme?.sidebarText !== "" ? userTheme?.sidebarText : "#c5c5c5",
       darkPalette: userTheme?.darkPalette || false,
@@ -143,7 +143,7 @@ export const CustomThemeSelector: React.FC = observer(() => {
                       name="primary"
                       value={value}
                       onChange={(val) => handleValueChange(val, onChange)}
-                      placeholder="#3f76ff"
+                      placeholder="#3B82F6"
                       className="w-full"
                       style={{
                         backgroundColor: value,

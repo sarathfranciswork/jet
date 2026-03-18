@@ -9,12 +9,12 @@ import { WorkspaceSettingLayout } from "layouts/settings-layout";
 import { AppLayout } from "layouts/app-layout";
 // components
 import { ActivityIcon, ActivityMessage } from "components/core";
-import { RichReadOnlyEditor } from "@plane/rich-text-editor";
+import { RichReadOnlyEditor } from "@jet/rich-text-editor";
 import { WorkspaceSettingHeader } from "components/headers";
 // icons
 import { History, MessageSquare } from "lucide-react";
 // ui
-import { ExternalLinkIcon, Loader } from "@plane/ui";
+import { ExternalLinkIcon, Loader } from "@jet/ui";
 // fetch-keys
 import { USER_ACTIVITY } from "constants/fetch-keys";
 // helper
@@ -156,7 +156,7 @@ const ProfileActivityPage: NextPageWithLayout = () => {
                             <div className="min-w-0 flex-1 py-4 border-b border-custom-border-200">
                               <div className="text-sm text-custom-text-200 break-words">
                                 {activityItem.field === "archived_at" && activityItem.new_value !== "restore" ? (
-                                  <span className="text-gray font-medium">Plane</span>
+                                  <span className="text-gray font-medium">Jet</span>
                                 ) : activityItem.actor_detail.is_bot ? (
                                   <span className="text-gray font-medium">
                                     {activityItem.actor_detail.first_name} Bot

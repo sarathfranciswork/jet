@@ -1,5 +1,5 @@
 "use client"
-import { EditorContainer, EditorContentWrapper, getEditorClassNames, useReadOnlyEditor } from '@plane/editor-core';
+import { EditorContainer, EditorContentWrapper, getEditorClassNames, useReadOnlyEditor } from '@jet/editor-core';
 import * as React from 'react';
 
 interface IRichTextReadOnlyEditor {

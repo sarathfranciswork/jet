@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { observer } from "mobx-react-lite";
 
 // ui
-import { Breadcrumbs, LayersIcon } from "@plane/ui";
+import { Breadcrumbs, LayersIcon } from "@jet/ui";
 // helper
 import { renderEmoji } from "helpers/emoji.helper";
 // services

@@ -26,7 +26,7 @@ import { IProject } from "types";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // components
-import { CustomMenu, Tooltip, ArchiveIcon, PhotoFilterIcon, DiceIcon, ContrastIcon, LayersIcon } from "@plane/ui";
+import { CustomMenu, Tooltip, ArchiveIcon, PhotoFilterIcon, DiceIcon, ContrastIcon, LayersIcon } from "@jet/ui";
 import { LeaveProjectModal, DeleteProjectModal, PublishProjectModal } from "components/project";
 
 type Props = {

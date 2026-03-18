@@ -5,7 +5,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { AlertTriangleIcon } from "lucide-react";
 import { observer } from "mobx-react-lite";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // mobx store
 import { useMobxStore } from "lib/mobx/store-provider";
 // hooks

@@ -9,7 +9,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 import { DisplayFiltersSelection, FiltersDropdown, FilterSelection, LayoutSelection } from "components/issues";
 import { ProjectAnalyticsModal } from "components/analytics";
 // ui
-import { Breadcrumbs, Button, LayersIcon } from "@plane/ui";
+import { Breadcrumbs, Button, LayersIcon } from "@jet/ui";
 // types
 import { IIssueDisplayFilterOptions, IIssueDisplayProperties, IIssueFilterOptions, TIssueLayouts } from "types";
 // constants

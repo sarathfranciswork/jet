@@ -11,7 +11,7 @@ import { SingleIntegrationCard } from "components/integration";
 import { WorkspaceSettingHeader } from "components/headers";
 // ui
 import { IntegrationAndImportExportBanner } from "components/ui";
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // types
 import { NextPageWithLayout } from "types/app";
 // fetch-keys

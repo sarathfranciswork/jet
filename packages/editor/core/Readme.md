@@ -1,8 +1,8 @@
-# @plane/editor-core
+# @jet/editor-core
 
 ## Description
 
-The `@plane/editor-core` package serves as the foundation for our editor system. It provides the base functionality for our other editor packages, but it will not be used directly in any of the projects but only for extending other editors.
+The `@jet/editor-core` package serves as the foundation for our editor system. It provides the base functionality for our other editor packages, but it will not be used directly in any of the projects but only for extending other editors.
 
 ## Utilities
 
@@ -17,7 +17,7 @@ This allows for extensive customization and flexibility in the Editors created u
 
 ### Here's a detailed overview of what's exported
 
-1. useEditor - A hook that you can use to extend the Plane editor.
+1. useEditor - A hook that you can use to extend the Jet editor.
 
     | Prop | Type | Description |
     | --- | --- | --- |
@@ -65,30 +65,30 @@ const customEditorClassNames = getEditorClassNames({ noBorder, borderOnFocus, cu
       "cache": false,
       "persistent": true,
       "dependsOn": [
-        "@plane/lite-text-editor#build",
-        "@plane/rich-text-editor#build"
+        "@jet/lite-text-editor#build",
+        "@jet/rich-text-editor#build"
       ]
     },
     "space#develop": {
       "cache": false,
       "persistent": true,
       "dependsOn": [
-        "@plane/lite-text-editor#build",
-        "@plane/rich-text-editor#build"
+        "@jet/lite-text-editor#build",
+        "@jet/rich-text-editor#build"
       ]
     },
     "web#build": {
       "cache": true,
       "dependsOn": [
-        "@plane/lite-text-editor#build",
-        "@plane/rich-text-editor#build"
+        "@jet/lite-text-editor#build",
+        "@jet/rich-text-editor#build"
       ]
     },
     "space#build": {
       "cache": true,
       "dependsOn": [
-        "@plane/lite-text-editor#build",
-        "@plane/rich-text-editor#build"
+        "@jet/lite-text-editor#build",
+        "@jet/rich-text-editor#build"
       ]
     },
 

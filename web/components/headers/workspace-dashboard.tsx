@@ -33,7 +33,7 @@ export const WorkspaceDashboardHeader = () => {
           </button>
           <a
             className="flex items-center gap-1.5 bg-custom-background-80 text-xs font-medium py-1.5 px-3 rounded"
-            href="https://github.com/makeplane/plane"
+            href="https://github.com/makeplane/jet"
             target="_blank"
             rel="noopener noreferrer"
           >

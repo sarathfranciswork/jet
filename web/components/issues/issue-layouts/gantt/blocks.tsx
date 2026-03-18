@@ -1,5 +1,5 @@
 // ui
-import { Tooltip, StateGroupIcon } from "@plane/ui";
+import { Tooltip, StateGroupIcon } from "@jet/ui";
 import { IssuePeekOverview } from "components/issues/issue-peek-overview";
 import { IBlockUpdateData } from "components/gantt-chart";
 // helpers

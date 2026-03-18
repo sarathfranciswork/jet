@@ -5,7 +5,7 @@ import useUserNotification from "hooks/use-user-notifications";
 // components
 import { EmptyState } from "components/common";
 import { SnoozeNotificationModal, NotificationCard, NotificationHeader } from "components/notifications";
-import { Loader, Tooltip } from "@plane/ui";
+import { Loader, Tooltip } from "@jet/ui";
 // icons
 import { Bell } from "lucide-react";
 // images

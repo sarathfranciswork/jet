@@ -3,7 +3,7 @@ import useSWR from "swr";
 import { useRouter } from "next/router";
 // component
 import { SelectMonthModal } from "components/automation";
-import { CustomSelect, CustomSearchSelect, ToggleSwitch, StateGroupIcon, DoubleCircleIcon } from "@plane/ui";
+import { CustomSelect, CustomSearchSelect, ToggleSwitch, StateGroupIcon, DoubleCircleIcon } from "@jet/ui";
 // icons
 import { ArchiveX } from "lucide-react";
 // services
@@ -82,7 +82,7 @@ export const AutoCloseAutomation: React.FC<Props> = ({ projectDetails, handleCha
             <div className="">
               <h4 className="text-sm font-medium">Auto-close issues</h4>
               <p className="text-sm text-custom-text-200 tracking-tight">
-                Plane will automatically close issue that haven’t been completed or cancelled.
+                Jet will automatically close issue that haven’t been completed or cancelled.
               </p>
             </div>
           </div>

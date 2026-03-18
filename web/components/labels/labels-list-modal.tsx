@@ -8,7 +8,7 @@ import { observer } from "mobx-react-lite";
 import { useMobxStore } from "lib/mobx/store-provider";
 
 // icons
-import { LayerStackIcon } from "@plane/ui";
+import { LayerStackIcon } from "@jet/ui";
 import { Search } from "lucide-react";
 // types
 import { IIssueLabels } from "types";

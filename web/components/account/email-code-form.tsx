@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Controller, useForm } from "react-hook-form";
 // ui
-import { Button, Input } from "@plane/ui";
+import { Button, Input } from "@jet/ui";
 // services
 import { AuthService } from "services/auth.service";
 // hooks

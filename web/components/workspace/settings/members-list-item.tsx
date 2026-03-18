@@ -10,7 +10,7 @@ import useToast from "hooks/use-toast";
 // components
 import { ConfirmWorkspaceMemberRemove } from "components/workspace";
 // ui
-import { CustomSelect, Tooltip } from "@plane/ui";
+import { CustomSelect, Tooltip } from "@jet/ui";
 // icons
 import { ChevronDown, XCircle } from "lucide-react";
 // constants

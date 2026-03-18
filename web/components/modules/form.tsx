@@ -4,7 +4,7 @@ import { Controller, useForm } from "react-hook-form";
 import { ModuleLeadSelect, ModuleMembersSelect, ModuleStatusSelect } from "components/modules";
 // ui
 import { DateSelect } from "components/ui";
-import { Button, Input, TextArea } from "@plane/ui";
+import { Button, Input, TextArea } from "@jet/ui";
 // types
 import { IModule } from "types";
 import { IssueProjectSelect } from "components/issues/select";

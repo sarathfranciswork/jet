@@ -5,7 +5,7 @@ import { observer } from "mobx-react-lite";
 import { useMobxStore } from "lib/mobx/store-provider";
 // icons
 import { X } from "lucide-react";
-import { PriorityIcon } from "@plane/ui";
+import { PriorityIcon } from "@jet/ui";
 // helpers
 import { replaceUnderscoreIfSnakeCase } from "helpers/string.helper";
 // types

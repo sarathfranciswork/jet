@@ -11,7 +11,7 @@ import { WorkspaceSettingLayout } from "layouts/settings-layout";
 import { CustomThemeSelector, ThemeSwitch } from "components/core";
 import { WorkspaceSettingHeader } from "components/headers";
 // ui
-import { Spinner } from "@plane/ui";
+import { Spinner } from "@jet/ui";
 // constants
 import { I_THEME_OPTION, THEME_OPTIONS } from "constants/themes";
 // type

@@ -17,7 +17,7 @@ import {
   SelectDuplicateInboxIssueModal,
 } from "components/inbox";
 // ui
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // icons
 import { CheckCircle2, ChevronDown, ChevronUp, Clock, FileStack, Inbox, Trash2, XCircle } from "lucide-react";
 // types

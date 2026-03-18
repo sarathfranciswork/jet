@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <defs>
+    <pattern id="dots" width="32" height="32" patternUnits="userSpaceOnUse">
+      <circle cx="16" cy="16" r="1" fill="#3B82F6" opacity="0.15"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="50%">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#09090B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <!-- Jet Black base -->
+  <rect width="1920" height="1080" fill="#09090B"/>
+  <!-- Subtle dot grid -->
+  <rect width="1920" height="1080" fill="url(#dots)"/>
+  <!-- Center glow -->
+  <rect width="1920" height="1080" fill="url(#glow)"/>
+  <!-- Decorative speed lines -->
+  <line x1="0" y1="400" x2="600" y2="380" stroke="#3B82F6" stroke-width="1" opacity="0.2"/>
+  <line x1="0" y1="500" x2="400" y2="490" stroke="#06B6D4" stroke-width="1" opacity="0.15"/>
+  <line x1="0" y1="600" x2="500" y2="595" stroke="#3B82F6" stroke-width="0.5" opacity="0.1"/>
+  <line x1="1920" y1="300" x2="1400" y2="310" stroke="#06B6D4" stroke-width="1" opacity="0.2"/>
+  <line x1="1920" y1="700" x2="1500" y2="695" stroke="#3B82F6" stroke-width="1" opacity="0.15"/>
+  <!-- Corner accent -->
+  <path d="M 0 0 L 120 0 L 0 120 Z" fill="#3B82F6" opacity="0.05"/>
+  <path d="M 1920 1080 L 1800 1080 L 1920 960 Z" fill="#06B6D4" opacity="0.05"/>
+</svg>

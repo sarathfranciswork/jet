@@ -2,7 +2,7 @@ import React from "react";
 
 // ui
 import { Disclosure, Transition } from "@headlessui/react";
-import { Button, Loader } from "@plane/ui";
+import { Button, Loader } from "@jet/ui";
 // icons
 import { ChevronDown, ChevronUp } from "lucide-react";
 // types

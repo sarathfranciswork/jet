@@ -3,7 +3,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { observer } from "mobx-react-lite";
 import { AlertTriangle } from "lucide-react";
 // components
-import { Button } from "@plane/ui";
+import { Button } from "@jet/ui";
 // hooks
 import useToast from "hooks/use-toast";
 // types

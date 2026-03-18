@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import { X } from "lucide-react";
 // ui
-import { Avatar } from "@plane/ui";
+import { Avatar } from "@jet/ui";
 // types
 import { IUserLite } from "types";
 

@@ -4,7 +4,7 @@ import { BoldIcon } from "lucide-react";
 
 import { NodeSelector } from "./node-selector";
 import { LinkSelector } from "./link-selector";
-import { BoldItem, cn, CodeItem, ItalicItem, StrikeThroughItem, UnderLineItem } from "@plane/editor-core";
+import { BoldItem, cn, CodeItem, ItalicItem, StrikeThroughItem, UnderLineItem } from "@jet/editor-core";
 
 export interface BubbleMenuItem {
   name: string;

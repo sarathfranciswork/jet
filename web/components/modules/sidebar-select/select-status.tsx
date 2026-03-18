@@ -3,7 +3,7 @@ import React from "react";
 // react-hook-form
 import { Control, Controller, UseFormWatch } from "react-hook-form";
 // ui
-import { CustomSelect, DoubleCircleIcon } from "@plane/ui";
+import { CustomSelect, DoubleCircleIcon } from "@jet/ui";
 // types
 import { IModule } from "types";
 // common

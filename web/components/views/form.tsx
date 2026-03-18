@@ -7,7 +7,7 @@ import { useMobxStore } from "lib/mobx/store-provider";
 // components
 import { AppliedFiltersList, FilterSelection, FiltersDropdown } from "components/issues";
 // ui
-import { Button, Input, TextArea } from "@plane/ui";
+import { Button, Input, TextArea } from "@jet/ui";
 // types
 import { IProjectView } from "types";
 // constants

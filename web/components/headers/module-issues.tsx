@@ -9,7 +9,7 @@ import useLocalStorage from "hooks/use-local-storage";
 import { DisplayFiltersSelection, FiltersDropdown, FilterSelection, LayoutSelection } from "components/issues";
 import { ProjectAnalyticsModal } from "components/analytics";
 // ui
-import { Breadcrumbs, Button, CustomMenu, DiceIcon } from "@plane/ui";
+import { Breadcrumbs, Button, CustomMenu, DiceIcon } from "@jet/ui";
 // icons
 import { ArrowRight, ContrastIcon, Plus } from "lucide-react";
 // helpers

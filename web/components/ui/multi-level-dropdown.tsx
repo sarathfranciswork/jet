@@ -3,7 +3,7 @@ import { Fragment, useState } from "react";
 // headless ui
 import { Menu, Transition } from "@headlessui/react";
 // ui
-import { Loader } from "@plane/ui";
+import { Loader } from "@jet/ui";
 // icons
 import { Check, ChevronDown, ChevronLeft, ChevronRight } from "lucide-react";
 

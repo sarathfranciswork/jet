@@ -10,9 +10,9 @@ import { UserService } from "services/user.service";
 // layouts
 import DefaultLayout from "layouts/default-layout";
 // ui
-import { Button, Input, Spinner } from "@plane/ui";
+import { Button, Input, Spinner } from "@jet/ui";
 // images
-import BluePlaneLogoWithoutText from "public/plane-logos/blue-without-text.png";
+import BlueJetLogoWithoutText from "public/jet-logos/blue-without-text.png";
 // types
 import { NextPageWithLayout } from "types/app";
 
@@ -99,7 +99,7 @@ const ResetPasswordPage: NextPageWithLayout = () => {
       <div className="fixed grid place-items-center bg-custom-background-100 sm:py-5 top-11 sm:top-12 left-7 sm:left-16 lg:left-28">
         <div className="grid place-items-center bg-custom-background-100">
           <div className="h-[30px] w-[30px]">
-            <Image src={BluePlaneLogoWithoutText} alt="Plane Logo" />
+            <Image src={BlueJetLogoWithoutText} alt="Jet Logo" />
           </div>
         </div>
       </div>
