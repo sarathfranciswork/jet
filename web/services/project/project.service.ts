@@ -199,7 +199,7 @@ export class ProjectService extends APIService {
   }
 
   async getGithubRepositories(url: string): Promise<GithubRepositoriesResponse> {
-    return this.request(url)
+    return this.get(url)
       .then((response) => response?.data)
       .catch((error) => {
         throw error?.response?.data;
