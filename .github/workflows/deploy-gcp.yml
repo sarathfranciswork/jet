@@ -53,25 +53,21 @@ jobs:
             --zone=${{ env.GCE_ZONE }} \
             --format='value(networkInterfaces[0].accessConfigs[0].natIP)')
 
-          echo "Testing http://${EXTERNAL_IP}/"
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" "http://${EXTERNAL_IP}/")
+          echo "Waiting for services to start..."
+          for i in $(seq 1 12); do
+            API_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "http://${EXTERNAL_IP}/api/configs/" 2>/dev/null || echo "000")
+            WEB_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "http://${EXTERNAL_IP}/" 2>/dev/null || echo "000")
 
-          if [ "$STATUS" = "200" ]; then
-            echo "Web app is responding (HTTP 200)"
-          else
-            echo "Web app returned HTTP $STATUS"
-            exit 1
-          fi
+            echo "Attempt $i: Web=$WEB_STATUS API=$API_STATUS"
 
-          echo "Testing http://${EXTERNAL_IP}/api/configs/"
-          API_STATUS=$(curl -s -o /dev/null -w "%{http_code}" "http://${EXTERNAL_IP}/api/configs/")
+            if [ "$WEB_STATUS" = "200" ] && [ "$API_STATUS" = "200" ]; then
+              echo "Deployment verified successfully!"
+              echo "App URL: http://${EXTERNAL_IP}"
+              exit 0
+            fi
 
-          if [ "$API_STATUS" = "200" ]; then
-            echo "API is responding (HTTP 200)"
-          else
-            echo "API returned HTTP $API_STATUS"
-            exit 1
-          fi
+            sleep 10
+          done
 
-          echo "Deployment verified successfully!"
-          echo "App URL: http://${EXTERNAL_IP}"
+          echo "Health check failed after 2 minutes"
+          exit 1
