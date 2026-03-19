@@ -8,34 +8,1337 @@
   <title>Jet — Ship faster with Jet</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #09090B;
+      color: #e4e4e7;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font: inherit;
+      color: inherit;
+    }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(135deg, #3B82F6, #06B6D4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100%;
+      left: 16px;
+      background: #3B82F6;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+      z-index: 10000;
+      font-size: 14px;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    /* ===== SECTION SHARED ===== */
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #3B82F6;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .section-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      color: #fafafa;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 18px;
+      color: #a1a1aa;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.7; }
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+      .fade-in-up { opacity: 1; transform: none; }
+    }
+
+    /* ===== NAVIGATION ===== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 24px;
+      transition: background 0.3s ease, border-color 0.3s ease, backdrop-filter 0.3s ease;
+      border-bottom: 1px solid transparent;
+    }
+
+    .navbar.scrolled {
+      background: rgba(9, 9, 11, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .navbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 1001;
+    }
+
+    .logo img {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+    }
+
+    .logo-text {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fafafa;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #a1a1aa;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: #fafafa;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, #3B82F6, #06B6D4);
+      color: #fff !important;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 600 !important;
+      font-size: 13px !important;
+      transition: opacity 0.2s ease, transform 0.2s ease !important;
+    }
+
+    .nav-cta:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 1001;
+      padding: 4px;
+    }
+
+    .hamburger-line {
+      width: 22px;
+      height: 2px;
+      background: #fafafa;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .mobile-menu-btn.open .hamburger-line:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .mobile-menu-btn.open .hamburger-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-btn.open .hamburger-line:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(9, 9, 11, 0.97);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .nav-links.open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-links a {
+        font-size: 24px;
+      }
+
+      .nav-cta {
+        font-size: 18px !important;
+        padding: 12px 32px;
+      }
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      padding: 160px 0 80px;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+      animation: pulse-glow 6s ease-in-out infinite;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      top: -20%;
+      right: 10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.1) 0%, transparent 70%);
+      animation: pulse-glow 6s ease-in-out infinite 3s;
+    }
+
+    .hero-grid-lines {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 100px;
+      padding: 6px 16px 6px 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #93c5fd;
+      margin-bottom: 32px;
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      background: #3B82F6;
+      border-radius: 50%;
+      animation: pulse-glow 2s ease-in-out infinite;
+    }
+
+    .hero-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 80px;
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #fafafa;
+      margin-bottom: 24px;
+      animation: fadeInUp 0.6s ease 0.1s forwards;
+      opacity: 0;
+    }
+
+    .hero-sub {
+      font-size: 20px;
+      color: #a1a1aa;
+      max-width: 580px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+      animation: fadeInUp 0.6s ease 0.2s forwards;
+      opacity: 0;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 80px;
+      animation: fadeInUp 0.6s ease 0.3s forwards;
+      opacity: 0;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      border-radius: 10px;
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #3B82F6, #06B6D4);
+      color: #fff;
+      padding: 14px 28px;
+      font-size: 15px;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.4), 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #e4e4e7;
+      padding: 14px 28px;
+      font-size: 15px;
+      border: 1px solid #27272a;
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      border-color: #3f3f46;
+      background: rgba(255, 255, 255, 0.03);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 10px 20px;
+      font-size: 13px;
+      border-radius: 8px;
+    }
+
+    .btn-arrow {
+      transition: transform 0.2s ease;
+      display: inline-block;
+    }
+
+    .btn:hover .btn-arrow {
+      transform: translateX(3px);
+    }
+
+    /* ===== APP SCREENSHOT (KANBAN MOCK) ===== */
+    .hero-visual {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+      animation: fadeInUp 0.8s ease 0.5s forwards;
+      opacity: 0;
+    }
+
+    .screenshot-wrapper {
+      position: relative;
+      perspective: 1200px;
+    }
+
+    .screenshot-glow {
+      position: absolute;
+      inset: -2px;
+      background: linear-gradient(135deg, #3B82F6, #06B6D4, #3B82F6);
+      border-radius: 14px;
+      opacity: 0.4;
+      filter: blur(20px);
+      z-index: 0;
+      animation: pulse-glow 4s ease-in-out infinite;
+    }
+
+    .app-screenshot {
+      position: relative;
+      z-index: 1;
+      background: #0c0c0e;
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      transform: rotateX(2deg);
+      box-shadow:
+        0 0 0 1px rgba(255,255,255,0.05),
+        0 20px 60px rgba(0, 0, 0, 0.5),
+        0 0 80px rgba(59, 130, 246, 0.08);
+    }
+
+    .screenshot-topbar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: #111113;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot.red { background: #ef4444; }
+    .dot.yellow { background: #eab308; }
+    .dot.green { background: #22c55e; }
+
+    .screenshot-title {
+      margin-left: 12px;
+      font-size: 13px;
+      color: #71717a;
+      font-weight: 500;
+    }
+
+    .screenshot-body {
+      display: flex;
+      min-height: 380px;
+    }
+
+    .screenshot-sidebar {
+      width: 200px;
+      background: #0e0e10;
+      border-right: 1px solid #1a1a1a;
+      padding: 16px 12px;
+      flex-shrink: 0;
+    }
+
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 4px;
+      font-size: 13px;
+      color: #71717a;
+      transition: background 0.2s ease;
+    }
+
+    .sidebar-item.active {
+      background: rgba(59, 130, 246, 0.1);
+      color: #93c5fd;
+    }
+
+    .sidebar-icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .screenshot-main {
+      flex: 1;
+      display: flex;
+      gap: 1px;
+      background: #1a1a1a;
+      padding: 1px;
+    }
+
+    .screenshot-col {
+      flex: 1;
+      background: #0c0c0e;
+      padding: 16px 12px;
+    }
+
+    .col-header {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #71717a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .col-count {
+      background: #1a1a1a;
+      color: #52525b;
+      font-size: 11px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .col-header .col-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .col-dot.todo { background: #71717a; }
+    .col-dot.progress { background: #f59e0b; }
+    .col-dot.done { background: #22c55e; }
+
+    .mock-card {
+      background: #111113;
+      border: 1px solid #1f1f23;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 8px;
+      transition: border-color 0.2s ease;
+    }
+
+    .mock-card:hover {
+      border-color: #27272a;
+    }
+
+    .mock-card-id {
+      font-size: 11px;
+      font-weight: 600;
+      color: #3B82F6;
+      margin-bottom: 6px;
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    .mock-card-title {
+      font-size: 13px;
+      color: #d4d4d8;
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+
+    .mock-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .mock-card-tag {
+      font-size: 10px;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .tag-feature { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+    .tag-bug { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+    .tag-improvement { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+    .tag-infra { background: rgba(234, 179, 8, 0.15); color: #fbbf24; }
+    .tag-docs { background: rgba(6, 182, 212, 0.15); color: #22d3ee; }
+
+    .mock-card-avatar {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #3B82F6, #06B6D4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .mock-card-priority {
+      display: flex;
+      gap: 2px;
+    }
+
+    .priority-bar {
+      width: 3px;
+      height: 10px;
+      border-radius: 1px;
+      background: #27272a;
+    }
+
+    .priority-bar.active { background: #f59e0b; }
+    .priority-bar.urgent { background: #ef4444; }
+    .priority-bar.low { background: #22c55e; }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 120px 0 60px;
+        min-height: auto;
+      }
+
+      .hero-heading {
+        font-size: 44px;
+      }
+
+      .hero-sub {
+        font-size: 17px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        margin-bottom: 48px;
+      }
+
+      .screenshot-sidebar {
+        display: none;
+      }
+
+      .app-screenshot {
+        transform: none;
+      }
+
+      .screenshot-main {
+        flex-direction: column;
+      }
+
+      .section-title {
+        font-size: 32px;
+      }
+    }
+
+    /* ===== SOCIAL PROOF BAR ===== */
+    .social-proof {
+      padding: 80px 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .social-proof-label {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 500;
+      color: #52525b;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 40px;
+    }
+
+    .social-proof-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+
+    .social-proof-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #27272a;
+      transition: color 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .social-proof-logo:hover {
+      color: #3f3f46;
+    }
+
+    @media (max-width: 640px) {
+      .social-proof-logos {
+        gap: 32px;
+      }
+      .social-proof-logo {
+        font-size: 16px;
+      }
+    }
+
+    /* ===== FEATURES GRID ===== */
+    .features {
+      padding: 120px 0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .feature-card {
+      position: relative;
+      background: #111111;
+      border: 1px solid #1a1a1a;
+      border-radius: 16px;
+      padding: 32px;
+      transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 16px;
+      padding: 1px;
+      background: linear-gradient(135deg, transparent, transparent);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      transition: background 0.3s ease;
+      pointer-events: none;
+    }
+
+    .feature-card:hover {
+      border-color: transparent;
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-card:hover::before {
+      background: linear-gradient(135deg, #3B82F6, #06B6D4);
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(59, 130, 246, 0.1);
+      border-radius: 12px;
+      margin-bottom: 20px;
+      color: #3B82F6;
+    }
+
+    .feature-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fafafa;
+      margin-bottom: 10px;
+    }
+
+    .feature-desc {
+      font-size: 15px;
+      color: #a1a1aa;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .features {
+        padding: 80px 0;
+      }
+    }
+
+    /* ===== GITHUB INTEGRATION ===== */
+    .github-section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .github-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    .github-section .section-title {
+      text-align: left;
+    }
+
+    .github-section .section-sub {
+      text-align: left;
+      margin: 0 0 32px;
+    }
+
+    .github-features {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .github-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .github-feature-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(6, 182, 212, 0.1);
+      border-radius: 8px;
+      margin-top: 2px;
+    }
+
+    .github-feature span:last-child {
+      font-size: 15px;
+      color: #d4d4d8;
+      line-height: 1.6;
+    }
+
+    .terminal-window {
+      background: #0c0c0e;
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+
+    .terminal-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 16px;
+      background: #111113;
+      border-bottom: 1px solid #1a1a1a;
+    }
+
+    .terminal-title-text {
+      margin-left: 12px;
+      font-size: 13px;
+      color: #52525b;
+      font-weight: 500;
+    }
+
+    .terminal-body {
+      padding: 20px;
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .terminal-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .terminal-line.output {
+      padding-left: 20px;
+    }
+
+    .terminal-line.spacer {
+      height: 16px;
+    }
+
+    .terminal-prompt {
+      color: #22c55e;
+      font-weight: 600;
+    }
+
+    .terminal-cmd {
+      color: #e4e4e7;
+    }
+
+    .terminal-muted {
+      color: #52525b;
+    }
+
+    .terminal-success {
+      color: #22c55e;
+    }
+
+    .terminal-cyan {
+      color: #06B6D4;
+    }
+
+    .terminal-blue {
+      color: #3B82F6;
+    }
+
+    @media (max-width: 768px) {
+      .github-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .github-section {
+        padding: 80px 0;
+      }
+    }
+
+    /* ===== DESKTOP / DOWNLOAD ===== */
+    .desktop-section {
+      padding: 120px 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .platform-card {
+      position: relative;
+      background: #111111;
+      border: 1px solid #1a1a1a;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .platform-card:hover {
+      border-color: #27272a;
+      transform: translateY(-4px);
+    }
+
+    .platform-card .recommended-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: linear-gradient(135deg, #3B82F6, #06B6D4);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 100px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .platform-icon {
+      color: #71717a;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: center;
+      transition: color 0.3s ease;
+    }
+
+    .platform-card:hover .platform-icon {
+      color: #a1a1aa;
+    }
+
+    .platform-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fafafa;
+      margin-bottom: 4px;
+    }
+
+    .platform-arch {
+      font-size: 13px;
+      color: #52525b;
+      margin-bottom: 20px;
+    }
+
+    .desktop-pills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .desktop-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(59, 130, 246, 0.08);
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      padding: 8px 16px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #93c5fd;
+    }
+
+    .desktop-pill svg {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 768px) {
+      .platform-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto 48px;
+      }
+
+      .desktop-section {
+        padding: 80px 0;
+      }
+    }
+
+    /* ===== OPEN SOURCE CTA ===== */
+    .oss-section {
+      padding: 120px 0;
+    }
+
+    .oss-card {
+      position: relative;
+      background: linear-gradient(135deg, #111111, #0c0c0e);
+      border: 1px solid #1a1a1a;
+      border-radius: 24px;
+      padding: 80px;
+      overflow: hidden;
+    }
+
+    .oss-card::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .oss-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .oss-content .section-title {
+      text-align: left;
+    }
+
+    .oss-content .section-sub {
+      text-align: left;
+      margin: 0 0 32px;
+    }
+
+    .oss-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .star-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 215, 0, 0.08);
+      border: 1px solid rgba(255, 215, 0, 0.15);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #fbbf24;
+    }
+
+    .code-block {
+      background: #0c0c0e;
+      border: 1px solid #1a1a1a;
+      border-radius: 12px;
+      padding: 24px;
+      font-family: 'SF Mono', 'Fira Code', 'JetBrains Mono', monospace;
+      font-size: 14px;
+      line-height: 2;
+      overflow-x: auto;
+    }
+
+    .code-comment {
+      color: #52525b;
+    }
+
+    .code-prompt {
+      color: #22c55e;
+      font-weight: 600;
+    }
+
+    .code-success {
+      color: #22c55e;
+    }
+
+    .code-url {
+      color: #06B6D4;
+    }
+
+    @media (max-width: 768px) {
+      .oss-inner {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .oss-card {
+        padding: 40px 24px;
+      }
+
+      .oss-section {
+        padding: 80px 0;
+      }
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 64px 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      max-width: 280px;
+    }
+
+    .footer-brand .logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-tagline {
+      font-size: 14px;
+      color: #52525b;
+      line-height: 1.6;
+    }
+
+    .footer-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #71717a;
+      margin-bottom: 20px;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col a {
+      font-size: 14px;
+      color: #a1a1aa;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: #fafafa;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: #52525b;
+    }
+
+    .footer-social a {
+      color: #52525b;
+      transition: color 0.2s ease;
+    }
+
+    .footer-social a:hover {
+      color: #fafafa;
+    }
+
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Skip Link -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- Navigation -->
+  <!-- ===== NAVIGATION ===== -->
   <header class="navbar" id="navbar">
-    <nav class="navbar-inner container" aria-label="Main navigation">
+    <nav class="navbar-inner" aria-label="Main navigation">
       <a href="/" class="logo" aria-label="Jet Home">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <rect width="36" height="36" rx="8" fill="url(#logo-grad)"/>
-          <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="20" fill="white">J</text>
-          <defs>
-            <linearGradient id="logo-grad" x1="0" y1="0" x2="36" y2="36">
-              <stop stop-color="#3B82F6"/>
-              <stop offset="1" stop-color="#06B6D4"/>
-            </linearGradient>
-          </defs>
-        </svg>
+        <img src="images/jet-icon.png" alt="" width="32" height="32">
         <span class="logo-text">Jet</span>
       </a>
 
-      <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -44,114 +1347,271 @@
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#features">Features</a></li>
         <li><a href="#download">Desktop App</a></li>
-        <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="http://34.55.60.88" class="nav-cta">Try Jet Free</a></li>
+        <li><a href="https://github.com/sarathfranciswork/jet" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="http://34.55.60.88" class="nav-cta">Get Started <span class="btn-arrow">&rarr;</span></a></li>
       </ul>
     </nav>
   </header>
 
   <main id="main">
-    <!-- Hero Section -->
+    <!-- ===== HERO ===== -->
     <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-grid-lines"></div>
+      </div>
+
       <div class="container hero-inner">
-        <div class="hero-content">
-          <h1 id="hero-heading" class="hero-heading">
-            Ship faster with <span class="gradient-text">Jet</span>
-          </h1>
-          <p class="hero-sub">
-            Open-source project management for modern engineering teams. Track issues, plan sprints, ship products.
-          </p>
-          <div class="hero-actions">
-            <a href="http://34.55.60.88" class="btn btn-primary btn-lg">Get Started Free</a>
-            <a href="#download" class="btn btn-secondary btn-lg">Download Desktop</a>
-          </div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Open source &middot; Self-hosted &middot; Free forever
         </div>
+
+        <h1 id="hero-heading" class="hero-heading">
+          Ship <span class="gradient-text">faster</span> with Jet
+        </h1>
+
+        <p class="hero-sub">
+          The open-source project management tool built for modern engineering teams. Track issues, plan sprints, ship products.
+        </p>
+
+        <div class="hero-actions">
+          <a href="http://34.55.60.88" class="btn btn-primary">
+            Get Started &mdash; it's free <span class="btn-arrow">&rarr;</span>
+          </a>
+          <a href="https://github.com/sarathfranciswork/jet" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <!-- App Screenshot Mock -->
         <div class="hero-visual" aria-hidden="true">
-          <div class="app-screenshot">
-            <div class="screenshot-topbar">
-              <span class="dot red"></span>
-              <span class="dot yellow"></span>
-              <span class="dot green"></span>
-              <span class="screenshot-title">Jet &mdash; Active Sprint</span>
-            </div>
-            <div class="screenshot-body">
-              <div class="screenshot-sidebar">
-                <div class="sidebar-item active"></div>
-                <div class="sidebar-item"></div>
-                <div class="sidebar-item"></div>
-                <div class="sidebar-item"></div>
-                <div class="sidebar-item"></div>
+          <div class="screenshot-wrapper">
+            <div class="screenshot-glow"></div>
+            <div class="app-screenshot">
+              <div class="screenshot-topbar">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="screenshot-title">Jet &mdash; Sprint 12 &middot; Active</span>
               </div>
-              <div class="screenshot-main">
-                <div class="screenshot-col">
-                  <div class="col-header">To Do</div>
-                  <div class="card-placeholder"></div>
-                  <div class="card-placeholder short"></div>
-                  <div class="card-placeholder"></div>
+              <div class="screenshot-body">
+                <div class="screenshot-sidebar">
+                  <div class="sidebar-item active">
+                    <span class="sidebar-icon" style="background: linear-gradient(135deg, #3B82F6, #06B6D4);"></span>
+                    Board View
+                  </div>
+                  <div class="sidebar-item">
+                    <span class="sidebar-icon" style="background: #27272a;"></span>
+                    Issues
+                  </div>
+                  <div class="sidebar-item">
+                    <span class="sidebar-icon" style="background: #27272a;"></span>
+                    Cycles
+                  </div>
+                  <div class="sidebar-item">
+                    <span class="sidebar-icon" style="background: #27272a;"></span>
+                    Modules
+                  </div>
+                  <div class="sidebar-item">
+                    <span class="sidebar-icon" style="background: #27272a;"></span>
+                    Pages
+                  </div>
+                  <div class="sidebar-item">
+                    <span class="sidebar-icon" style="background: #27272a;"></span>
+                    Analytics
+                  </div>
                 </div>
-                <div class="screenshot-col">
-                  <div class="col-header in-progress">In Progress</div>
-                  <div class="card-placeholder"></div>
-                  <div class="card-placeholder short"></div>
-                </div>
-                <div class="screenshot-col">
-                  <div class="col-header done">Done</div>
-                  <div class="card-placeholder"></div>
-                  <div class="card-placeholder"></div>
-                  <div class="card-placeholder short"></div>
-                  <div class="card-placeholder"></div>
+                <div class="screenshot-main">
+                  <!-- TODO Column -->
+                  <div class="screenshot-col">
+                    <div class="col-header">
+                      <span class="col-dot todo"></span>
+                      Todo
+                      <span class="col-count">3</span>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-147</div>
+                      <div class="mock-card-title">Add dark mode toggle to settings</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-feature">Feature</span>
+                        <div class="mock-card-priority">
+                          <span class="priority-bar active"></span>
+                          <span class="priority-bar active"></span>
+                          <span class="priority-bar"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-152</div>
+                      <div class="mock-card-title">Keyboard shortcut overlay</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-improvement">Improvement</span>
+                        <div class="mock-card-avatar">S</div>
+                      </div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-155</div>
+                      <div class="mock-card-title">Export Gantt chart as PDF</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-feature">Feature</span>
+                        <div class="mock-card-priority">
+                          <span class="priority-bar active"></span>
+                          <span class="priority-bar"></span>
+                          <span class="priority-bar"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- IN PROGRESS Column -->
+                  <div class="screenshot-col">
+                    <div class="col-header">
+                      <span class="col-dot progress"></span>
+                      In Progress
+                      <span class="col-count">2</span>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-142</div>
+                      <div class="mock-card-title">GitHub bidirectional sync webhook</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-infra">Infra</span>
+                        <div class="mock-card-avatar">A</div>
+                      </div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-149</div>
+                      <div class="mock-card-title">Fix sprint burndown calculation</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-bug">Bug</span>
+                        <div class="mock-card-priority">
+                          <span class="priority-bar urgent"></span>
+                          <span class="priority-bar urgent"></span>
+                          <span class="priority-bar urgent"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DONE Column -->
+                  <div class="screenshot-col">
+                    <div class="col-header">
+                      <span class="col-dot done"></span>
+                      Done
+                      <span class="col-count">4</span>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-138</div>
+                      <div class="mock-card-title">Real-time collaboration cursors</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-feature">Feature</span>
+                        <div class="mock-card-avatar">M</div>
+                      </div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-140</div>
+                      <div class="mock-card-title">API docs for webhooks</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-docs">Docs</span>
+                        <div class="mock-card-priority">
+                          <span class="priority-bar low"></span>
+                          <span class="priority-bar"></span>
+                          <span class="priority-bar"></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-141</div>
+                      <div class="mock-card-title">Module progress percentage</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-improvement">Improvement</span>
+                        <div class="mock-card-avatar">K</div>
+                      </div>
+                    </div>
+                    <div class="mock-card">
+                      <div class="mock-card-id">JET-143</div>
+                      <div class="mock-card-title">Cycle auto-transfer rules</div>
+                      <div class="mock-card-meta">
+                        <span class="mock-card-tag tag-feature">Feature</span>
+                        <div class="mock-card-priority">
+                          <span class="priority-bar active"></span>
+                          <span class="priority-bar active"></span>
+                          <span class="priority-bar active"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="hero-glow" aria-hidden="true"></div>
     </section>
 
-    <!-- Features Section -->
+    <!-- ===== SOCIAL PROOF ===== -->
+    <section class="social-proof fade-in-up" aria-label="Trusted by">
+      <div class="container">
+        <p class="social-proof-label">Trusted by engineering teams worldwide</p>
+        <div class="social-proof-logos">
+          <span class="social-proof-logo">Innovation Labs</span>
+          <span class="social-proof-logo">GridSpace</span>
+          <span class="social-proof-logo">TechPulse</span>
+          <span class="social-proof-logo">NexaFlow</span>
+          <span class="social-proof-logo">ClearStack</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES ===== -->
     <section class="features" id="features" aria-labelledby="features-heading">
       <div class="container">
         <div class="section-header">
+          <span class="section-label">Features</span>
           <h2 id="features-heading" class="section-title">Everything you need to ship</h2>
-          <p class="section-sub">Powerful tools, thoughtfully designed for engineering teams.</p>
+          <p class="section-sub">Powerful tools, thoughtfully designed for the way engineering teams actually work.</p>
         </div>
         <div class="features-grid">
-          <div class="feature-card fade-in">
+          <!-- Card 1 -->
+          <div class="feature-card fade-in-up">
             <div class="feature-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
-                <line x1="12" y1="8" x2="12" y2="12"/>
-                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                <path d="M8 12l2.5 2.5L16 9"/>
               </svg>
             </div>
             <h3 class="feature-title">Issues & Tracking</h3>
             <p class="feature-desc">Track bugs, features, and tasks with flexible views &mdash; list, board, table, spreadsheet, or Gantt.</p>
           </div>
-          <div class="feature-card fade-in">
+          <!-- Card 2 -->
+          <div class="feature-card fade-in-up">
             <div class="feature-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
               </svg>
             </div>
             <h3 class="feature-title">Cycles & Sprints</h3>
             <p class="feature-desc">Plan sprints with burndown charts, velocity tracking, and automated issue transfers.</p>
           </div>
-          <div class="feature-card fade-in">
+          <!-- Card 3 -->
+          <div class="feature-card fade-in-up">
             <div class="feature-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="3" y="3" width="7" height="7"/>
-                <rect x="14" y="3" width="7" height="7"/>
-                <rect x="3" y="14" width="7" height="7"/>
-                <rect x="14" y="14" width="7" height="7"/>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7" rx="1"/>
+                <rect x="14" y="3" width="7" height="7" rx="1"/>
+                <rect x="3" y="14" width="7" height="7" rx="1"/>
+                <rect x="14" y="14" width="7" height="7" rx="1"/>
               </svg>
             </div>
             <h3 class="feature-title">Modules & Roadmaps</h3>
             <p class="feature-desc">Group issues into modules for roadmap planning. Track progress across teams.</p>
           </div>
-          <div class="feature-card fade-in">
+          <!-- Card 4 -->
+          <div class="feature-card fade-in-up">
             <div class="feature-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <polygon points="12 2 2 7 12 12 22 7 12 2"/>
                 <polyline points="2 17 12 22 22 17"/>
                 <polyline points="2 12 12 17 22 12"/>
@@ -160,83 +1620,77 @@
             <h3 class="feature-title">Custom Views</h3>
             <p class="feature-desc">Create saved views with powerful filters. See your work, your way.</p>
           </div>
-          <div class="feature-card fade-in">
+          <!-- Card 5 -->
+          <div class="feature-card fade-in-up">
             <div class="feature-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
                 <polyline points="14 2 14 8 20 8"/>
                 <line x1="16" y1="13" x2="8" y2="13"/>
                 <line x1="16" y1="17" x2="8" y2="17"/>
-                <polyline points="10 9 9 9 8 9"/>
               </svg>
             </div>
             <h3 class="feature-title">Pages & Docs</h3>
-            <p class="feature-desc">Built-in documentation with a rich editor. Link docs to issues seamlessly.</p>
+            <p class="feature-desc">Built-in rich-text documentation with AI assistance. Link docs to issues seamlessly.</p>
           </div>
-          <div class="feature-card fade-in">
+          <!-- Card 6 -->
+          <div class="feature-card fade-in-up">
             <div class="feature-icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="18" y1="20" x2="18" y2="10"/>
                 <line x1="12" y1="20" x2="12" y2="4"/>
                 <line x1="6" y1="20" x2="6" y2="14"/>
               </svg>
             </div>
             <h3 class="feature-title">Analytics & Insights</h3>
-            <p class="feature-desc">Custom analytics with scope-demand analysis, workload views, and export options.</p>
+            <p class="feature-desc">Custom analytics with scope-demand analysis, workload distribution, and export options.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GitHub Integration Section -->
+    <!-- ===== GITHUB INTEGRATION ===== -->
     <section class="github-section" id="github" aria-labelledby="github-heading">
       <div class="container">
         <div class="github-inner">
-          <div class="github-content">
+          <div class="github-content fade-in-up">
+            <span class="section-label">Integration</span>
             <h2 id="github-heading" class="section-title">Native GitHub Integration</h2>
-            <p class="section-sub">Bidirectional sync between GitHub and Jet. Issues, PRs, comments &mdash; everything stays in sync.</p>
+            <p class="section-sub">Bidirectional sync between GitHub and Jet. Issues, PRs, comments &mdash; everything stays in sync automatically.</p>
             <ul class="github-features" role="list">
-              <li class="github-feature fade-in">
+              <li class="github-feature">
                 <span class="github-feature-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="17 1 21 5 17 9"/>
-                    <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-                    <polyline points="7 23 3 19 7 15"/>
-                    <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
                   </svg>
                 </span>
-                <span>Bidirectional issue sync with label triggers</span>
+                <span>Bidirectional issue sync with label-based triggers</span>
               </li>
-              <li class="github-feature fade-in">
+              <li class="github-feature">
                 <span class="github-feature-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="18" cy="18" r="3"/>
-                    <circle cx="6" cy="6" r="3"/>
-                    <path d="M6 21V9a9 9 0 0 0 9 9"/>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
                   </svg>
                 </span>
-                <span>PR automation with state mapping</span>
+                <span>PR automation &mdash; [JET-123] in PR titles maps to issue states</span>
               </li>
-              <li class="github-feature fade-in">
+              <li class="github-feature">
                 <span class="github-feature-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M12 2a5 5 0 0 1 5 5c0 2.76-2.24 5-5 5s-5-2.24-5-5a5 5 0 0 1 5-5z"/>
-                    <path d="M20 21v-2a4 4 0 0 0-3-3.87"/>
-                    <path d="M4 21v-2a4 4 0 0 1 3-3.87"/>
-                    <circle cx="12" cy="17" r="1.5" fill="#06B6D4" stroke="none"/>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#06B6D4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
                   </svg>
                 </span>
-                <span>@claude AI agent picks up issues and delivers PRs</span>
+                <span>@claude AI agent picks up issues and delivers working PRs</span>
               </li>
             </ul>
           </div>
-          <div class="github-visual fade-in" aria-hidden="true">
+          <div class="github-visual fade-in-up" aria-hidden="true">
             <div class="terminal-window">
               <div class="terminal-header">
                 <span class="dot red"></span>
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
-                <span class="terminal-title">GitHub &harr; Jet Sync</span>
+                <span class="terminal-title-text">GitHub &harr; Jet Sync</span>
               </div>
               <div class="terminal-body">
                 <div class="terminal-line">
@@ -244,15 +1698,15 @@
                   <span class="terminal-cmd">gh issue create --label "jet-sync"</span>
                 </div>
                 <div class="terminal-line output">
-                  <span class="terminal-muted">Creating issue in github/repo...</span>
+                  <span class="terminal-muted">Creating issue in repo...</span>
                 </div>
                 <div class="terminal-line output">
                   <span class="terminal-success">&#10003;</span>
-                  <span> Issue #142 created on GitHub</span>
+                  <span class="terminal-cmd"> Issue #142 created on GitHub</span>
                 </div>
                 <div class="terminal-line output">
                   <span class="terminal-cyan">&#8594;</span>
-                  <span> Synced to Jet &middot; Project &middot; Sprint 12</span>
+                  <span class="terminal-cmd"> Synced to Jet &middot; Sprint 12</span>
                 </div>
                 <div class="terminal-line spacer"></div>
                 <div class="terminal-line">
@@ -264,11 +1718,11 @@
                 </div>
                 <div class="terminal-line output">
                   <span class="terminal-success">&#10003;</span>
-                  <span> PR #87 opened &middot; 3 files changed</span>
+                  <span class="terminal-cmd"> PR #87 opened &middot; 3 files changed</span>
                 </div>
                 <div class="terminal-line output">
                   <span class="terminal-cyan">&#8594;</span>
-                  <span> Jet status: In Review</span>
+                  <span class="terminal-cmd"> Jet status: In Review</span>
                 </div>
               </div>
             </div>
@@ -277,112 +1731,118 @@
       </div>
     </section>
 
-    <!-- Desktop App Section -->
+    <!-- ===== DESKTOP / DOWNLOAD ===== -->
     <section class="desktop-section" id="download" aria-labelledby="download-heading">
       <div class="container">
         <div class="section-header">
-          <h2 id="download-heading" class="section-title">Jet Desktop &mdash; Native Performance</h2>
-          <p class="section-sub">All the features of Jet, in a native desktop experience.</p>
+          <span class="section-label">Desktop</span>
+          <h2 id="download-heading" class="section-title">Jet Desktop</h2>
+          <p class="section-sub">All the power of Jet, in a native desktop experience.</p>
         </div>
         <div class="platform-grid">
-          <div class="platform-card fade-in" data-os="macos">
+          <!-- macOS -->
+          <div class="platform-card fade-in-up" data-os="macos">
             <div class="platform-icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
               </svg>
             </div>
             <h3 class="platform-name">macOS</h3>
             <p class="platform-arch">Apple Silicon & Intel</p>
-            <a href="https://github.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Mac</a>
+            <a href="https://github.com/sarathfranciswork/jet/releases" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Mac</a>
           </div>
-          <div class="platform-card fade-in" data-os="windows">
+          <!-- Windows -->
+          <div class="platform-card fade-in-up" data-os="windows">
             <div class="platform-icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M3 12V6.75l6-1.32v6.48L3 12zm6.97.09v6.63l-6.97-1.36V12.09h6.97zm.83-6.95L22 3v8.93h-11.2V5.14zm11.2 7.76V21l-11.2-1.67V12.9H22z"/>
               </svg>
             </div>
             <h3 class="platform-name">Windows</h3>
             <p class="platform-arch">Windows 10+</p>
-            <a href="https://github.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Windows</a>
+            <a href="https://github.com/sarathfranciswork/jet/releases" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Windows</a>
           </div>
-          <div class="platform-card fade-in" data-os="linux">
+          <!-- Linux -->
+          <div class="platform-card fade-in-up" data-os="linux">
             <div class="platform-icon" aria-hidden="true">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.022 1.775 1.021.662 0 1.269-.25 1.708-.632.44-.38.735-.916.914-1.46.18-.546.258-1.15.21-1.699-.04-.468-.158-.89-.356-1.2-.191-.3-.46-.505-.766-.607a2.501 2.501 0 00-.707-.14c-.14-.003-.28.01-.42.03-.28.04-.56.127-.84.2-.14.04-.28.07-.42.07-.14 0-.28-.03-.42-.09a.862.862 0 01-.35-.28c-.14-.18-.28-.42-.42-.62-.28-.4-.56-.68-.84-.82a1.45 1.45 0 00-.42-.14c.56-.9.83-2.02.83-3.12 0-1.08-.27-2.14-.83-3.03.27-.09.48-.25.63-.47.24-.35.33-.82.33-1.29 0-.47-.09-.94-.25-1.37-.25-.68-.7-1.22-1.3-1.49a1.066 1.066 0 00-.63-.15 1.14 1.14 0 00-.56.19c-.28.18-.42.467-.49.757-.06.29-.06.6-.06.87v.09c-.21-.14-.46-.21-.71-.21-.39 0-.73.18-.97.42-.24.24-.42.56-.56.87-.14.33-.21.68-.21 1.03 0 .24.03.48.09.68.09.33.27.6.53.78-.7.94-1.03 2.08-1.03 3.22s.33 2.28 1.03 3.22c-.26.18-.44.45-.53.78-.06.21-.09.45-.09.68 0 .36.07.7.21 1.03.14.31.32.63.56.87.24.24.58.42.97.42.26 0 .5-.07.71-.21v.09c0 .27 0 .58.06.87.07.29.21.577.49.757.18.12.37.19.56.19.22 0 .43-.05.63-.15.6-.27 1.05-.81 1.3-1.49.16-.43.25-.9.25-1.37 0-.47-.09-.94-.33-1.29-.15-.22-.36-.38-.63-.47.56-.89.83-1.95.83-3.03 0-1.1-.27-2.22-.83-3.12.14-.03.28-.07.42-.14.56-.14 1.12-.42 1.12-1.12 0-.28-.07-.56-.21-.78-.14-.24-.35-.42-.56-.53-.42-.24-.91-.35-1.4-.35-.28 0-.56.03-.77.14z"/>
+              <svg width="44" height="44" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.5 2c-1.6 0-2.9 1.3-3 2.9-.5.3-.9.8-1.1 1.4-.3-.1-.6-.1-.9 0-.7.2-1.2.8-1.3 1.5 0 .3 0 .5.1.8-.8.5-1.3 1.3-1.3 2.3 0 .8.3 1.5.9 2-.1.3-.1.5-.1.8 0 1.5 1 2.7 2.4 3.1.1.4.3.7.5 1l-.5 1.6c-.2.5-.3 1.1-.1 1.6.2.5.6.9 1.1 1.1l.6.2c.4.1.7 0 1-.1.3-.2.5-.5.6-.8l.4-1.5h2.4l.4 1.5c.1.3.3.6.6.8.2.1.5.2.7.2h.3l.6-.2c.5-.2.9-.6 1.1-1.1.2-.5.1-1.1-.1-1.6l-.5-1.6c.2-.3.4-.6.5-1 1.4-.4 2.4-1.6 2.4-3.1 0-.3 0-.6-.1-.8.5-.5.9-1.3.9-2 0-1-.5-1.8-1.3-2.3.1-.3.1-.5.1-.8-.1-.7-.6-1.3-1.3-1.5-.3-.1-.6-.1-.9 0-.2-.6-.6-1.1-1.1-1.4-.1-1.6-1.4-2.9-3-2.9zm-1 5.4c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm3 0c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zm-4 3.6h5c0 1.4-1.1 2.5-2.5 2.5s-2.5-1.1-2.5-2.5z"/>
               </svg>
             </div>
             <h3 class="platform-name">Linux</h3>
             <p class="platform-arch">AppImage & .deb</p>
-            <a href="https://github.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Linux</a>
+            <a href="https://github.com/sarathfranciswork/jet/releases" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Linux</a>
           </div>
         </div>
-        <div class="desktop-features fade-in">
-          <div class="desktop-feature">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <div class="desktop-pills fade-in-up">
+          <div class="desktop-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
               <line x1="8" y1="21" x2="16" y2="21"/>
               <line x1="12" y1="17" x2="12" y2="21"/>
             </svg>
-            <span>System tray</span>
+            System Tray
           </div>
-          <div class="desktop-feature">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <div class="desktop-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/>
               <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
             </svg>
-            <span>Native notifications</span>
+            Native Notifications
           </div>
-          <div class="desktop-feature">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <rect x="2" y="4" width="20" height="16" rx="2"/>
-              <path d="M6 8h.01M10 8h.01M14 8h.01"/>
-              <rect x="6" y="12" width="12" height="4" rx="1"/>
-            </svg>
-            <span>Keyboard shortcuts</span>
-          </div>
-          <div class="desktop-feature">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <div class="desktop-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <polyline points="23 4 23 10 17 10"/>
               <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
             </svg>
-            <span>Auto-updates</span>
+            Auto Updates
+          </div>
+          <div class="desktop-pill">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+            </svg>
+            Deep Links
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Open Source Section -->
+    <!-- ===== OPEN SOURCE CTA ===== -->
     <section class="oss-section" id="open-source" aria-labelledby="oss-heading">
       <div class="container">
-        <div class="oss-inner fade-in">
-          <div class="oss-content">
-            <h2 id="oss-heading" class="section-title">Open Source & Self-Hosted</h2>
-            <p class="section-sub">Jet is open source. Deploy on your own infrastructure, keep full control of your data.</p>
-            <div class="oss-actions">
-              <a href="https://github.com" class="btn btn-secondary btn-lg" target="_blank" rel="noopener noreferrer">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                View on GitHub
-              </a>
-              <div class="star-badge" aria-label="GitHub stars">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="1" aria-hidden="true">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                </svg>
-                <span class="star-count">2.1k stars</span>
+        <div class="oss-card fade-in-up">
+          <div class="oss-inner">
+            <div class="oss-content">
+              <span class="section-label">Open Source</span>
+              <h2 id="oss-heading" class="section-title">Open Source & Self-Hosted</h2>
+              <p class="section-sub">Deploy on your infrastructure. Keep full control of your data. No vendor lock-in.</p>
+              <div class="oss-actions">
+                <a href="https://github.com/sarathfranciswork/jet" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Star on GitHub
+                </a>
+                <div class="star-badge" aria-label="GitHub stars">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="1" aria-hidden="true">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                  <span>2.1k stars</span>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="oss-visual" aria-hidden="true">
-            <div class="code-block">
-              <code>
-                <span class="code-comment"># Self-host Jet in minutes</span><br>
-                <span class="code-prompt">$</span> git clone https://github.com/jet/jet.git<br>
-                <span class="code-prompt">$</span> cd jet<br>
-                <span class="code-prompt">$</span> docker compose up -d<br>
-                <br>
-                <span class="code-success">&#10003; Jet is running at http://localhost:3000</span>
-              </code>
+            <div class="oss-visual" aria-hidden="true">
+              <div class="code-block">
+                <code>
+                  <span class="code-comment"># Self-host Jet in minutes</span><br>
+                  <span class="code-prompt">$</span> git clone <span class="code-url">https://github.com/sarathfranciswork/jet.git</span><br>
+                  <span class="code-prompt">$</span> cd jet<br>
+                  <span class="code-prompt">$</span> docker compose up -d<br>
+                  <br>
+                  <span class="code-success">&#10003; Jet is running at http://localhost:3000</span>
+                </code>
+              </div>
             </div>
           </div>
         </div>
@@ -390,25 +1850,16 @@
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- ===== FOOTER ===== -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="/" class="logo" aria-label="Jet Home">
-            <svg width="32" height="32" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <rect width="36" height="36" rx="8" fill="url(#logo-grad-footer)"/>
-              <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-weight="700" font-size="20" fill="white">J</text>
-              <defs>
-                <linearGradient id="logo-grad-footer" x1="0" y1="0" x2="36" y2="36">
-                  <stop stop-color="#3B82F6"/>
-                  <stop offset="1" stop-color="#06B6D4"/>
-                </linearGradient>
-              </defs>
-            </svg>
+            <img src="images/jet-icon.png" alt="" width="28" height="28" style="border-radius: 6px;">
             <span class="logo-text">Jet</span>
           </a>
-          <p class="footer-tagline">Open-source project management for modern teams.</p>
+          <p class="footer-tagline">Open-source project management for modern engineering teams.</p>
         </div>
         <div class="footer-col">
           <h4 class="footer-heading">Product</h4>
@@ -422,7 +1873,7 @@
           <h4 class="footer-heading">Resources</h4>
           <ul role="list">
             <li><a href="http://34.55.60.88" target="_blank" rel="noopener noreferrer">Docs</a></li>
-            <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://github.com/sarathfranciswork/jet" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="http://34.55.60.88" target="_blank" rel="noopener noreferrer">API</a></li>
           </ul>
         </div>
@@ -431,13 +1882,14 @@
           <ul role="list">
             <li><a href="#">About</a></li>
             <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Jet. Built with &#10084;&#65039; by Innovation Labs.</p>
+        <p>&copy; 2026 Jet. Built by Innovation Labs.</p>
         <div class="footer-social">
-          <a href="https://github.com" aria-label="Jet on GitHub" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/sarathfranciswork/jet" aria-label="Jet on GitHub" target="_blank" rel="noopener noreferrer">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
             </svg>
@@ -447,6 +1899,143 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- ===== INLINE JAVASCRIPT ===== -->
+  <script>
+    (function() {
+      'use strict';
+
+      // --- Navbar scroll effect ---
+      var navbar = document.getElementById('navbar');
+      var lastScrollY = 0;
+
+      function handleNavScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        if (scrollY > 20) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+        lastScrollY = scrollY;
+      }
+
+      window.addEventListener('scroll', handleNavScroll, { passive: true });
+
+      // --- Mobile menu ---
+      var mobileBtn = document.getElementById('mobile-menu-btn');
+      var navLinks = document.getElementById('nav-links');
+
+      if (mobileBtn && navLinks) {
+        mobileBtn.addEventListener('click', function() {
+          var isOpen = navLinks.classList.toggle('open');
+          mobileBtn.classList.toggle('open');
+          mobileBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        // Close menu when clicking a link
+        var links = navLinks.querySelectorAll('a');
+        for (var i = 0; i < links.length; i++) {
+          links[i].addEventListener('click', function() {
+            navLinks.classList.remove('open');
+            mobileBtn.classList.remove('open');
+            mobileBtn.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          });
+        }
+      }
+
+      // --- Scroll-triggered fade-in animations ---
+      var fadeElements = document.querySelectorAll('.fade-in-up');
+
+      if ('IntersectionObserver' in window) {
+        var fadeObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              fadeObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        fadeElements.forEach(function(el) {
+          fadeObserver.observe(el);
+        });
+      } else {
+        // Fallback: show everything
+        fadeElements.forEach(function(el) {
+          el.classList.add('visible');
+        });
+      }
+
+      // --- Stagger feature cards ---
+      var featureCards = document.querySelectorAll('.feature-card.fade-in-up');
+      if ('IntersectionObserver' in window && featureCards.length > 0) {
+        var cardObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              // Find the index of this card to stagger
+              var allCards = Array.prototype.slice.call(featureCards);
+              var idx = allCards.indexOf(entry.target);
+              entry.target.style.transitionDelay = (idx * 0.08) + 's';
+              entry.target.classList.add('visible');
+              cardObserver.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        featureCards.forEach(function(card) {
+          cardObserver.observe(card);
+        });
+      }
+
+      // --- Auto-detect OS for recommended badge ---
+      function detectOS() {
+        var ua = navigator.userAgent || navigator.platform || '';
+        if (/Mac/i.test(ua)) return 'macos';
+        if (/Win/i.test(ua)) return 'windows';
+        if (/Linux/i.test(ua)) return 'linux';
+        return null;
+      }
+
+      var detectedOS = detectOS();
+      if (detectedOS) {
+        var platformCards = document.querySelectorAll('.platform-card[data-os]');
+        platformCards.forEach(function(card) {
+          if (card.getAttribute('data-os') === detectedOS) {
+            var badge = document.createElement('span');
+            badge.className = 'recommended-badge';
+            badge.textContent = 'Recommended';
+            card.appendChild(badge);
+          }
+        });
+      }
+
+      // --- Smooth scroll for anchor links ---
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (href === '#' || href === '#main') return;
+
+          var target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            var navHeight = navbar.offsetHeight || 64;
+            var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+    })();
+  </script>
 </body>
 </html>
