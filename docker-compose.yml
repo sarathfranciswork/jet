@@ -127,6 +127,8 @@ services:
     restart: always
     ports:
       - ${NGINX_PORT}:80
+    volumes:
+      - ./landing:/www/landing:ro
     environment:
       FILE_SIZE_LIMIT: ${FILE_SIZE_LIMIT:-5242880}
       BUCKET_NAME: ${AWS_S3_BUCKET_NAME:-uploads}

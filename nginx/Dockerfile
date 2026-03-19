@@ -3,6 +3,7 @@ FROM nginx:1.25.0-alpine
 RUN rm /etc/nginx/conf.d/default.conf
 COPY nginx.conf.template /etc/nginx/nginx.conf.template
 
+RUN mkdir -p /www/landing
 COPY ./env.sh /docker-entrypoint.sh
 
 RUN chmod +x /docker-entrypoint.sh
