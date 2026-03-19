@@ -247,6 +247,27 @@ export const ANALYTICS = (workspaceSlug: string, params: IAnalyticsParams) =>
 export const DEFAULT_ANALYTICS = (workspaceSlug: string, params?: Partial<IAnalyticsParams>) =>
   `DEFAULT_ANALYTICS_${workspaceSlug.toUpperCase()}_${params?.project?.toString()}_${params?.cycle}_${params?.module}`;
 
+// project analytics
+export const PROJECT_BURNDOWN = (
+  workspaceSlug: string,
+  projectId: string,
+  cycleId: string,
+  metric: string
+) => `PROJECT_BURNDOWN_${workspaceSlug}_${projectId}_${cycleId}_${metric}`;
+
+export const PROJECT_VELOCITY = (workspaceSlug: string, projectId: string, lastNCycles: number) =>
+  `PROJECT_VELOCITY_${workspaceSlug}_${projectId}_${lastNCycles}`;
+
+export const PROJECT_FLOW = (
+  workspaceSlug: string,
+  projectId: string,
+  startDate: string,
+  endDate: string
+) => `PROJECT_FLOW_${workspaceSlug}_${projectId}_${startDate}_${endDate}`;
+
+export const PROJECT_WORKLOAD = (workspaceSlug: string, projectId: string, cycleId?: string) =>
+  `PROJECT_WORKLOAD_${workspaceSlug}_${projectId}_${cycleId ?? "all"}`;
+
 // notifications
 export const USER_WORKSPACE_NOTIFICATIONS = (workspaceSlug: string, params: INotificationParams) => {
   const { type, snoozed, archived, read } = params;

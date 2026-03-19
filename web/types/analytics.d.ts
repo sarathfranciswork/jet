@@ -95,6 +95,73 @@ export interface IDefaultAnalyticsUser {
   count: number;
 }
 
+// Project-level analytics types
+export interface IBurndownData {
+  date: string;
+  value: number;
+}
+
+export interface IBurndownResponse {
+  ideal: IBurndownData[];
+  actual: IBurndownData[];
+  scope_changes: { date: string; added: number }[];
+  total_scope: number;
+  metric: "count" | "points";
+  cycle: {
+    id: string;
+    name: string;
+    start_date: string;
+    end_date: string;
+  };
+}
+
+export interface IVelocityCycle {
+  cycle_id: string;
+  cycle_name: string;
+  start_date: string | null;
+  end_date: string | null;
+  completed_issues: number;
+  total_issues: number;
+  completed_points: number;
+  committed_points: number;
+}
+
+export interface IVelocityResponse {
+  velocity: IVelocityCycle[];
+  rolling_average: {
+    cycle_name: string;
+    avg_points: number;
+    avg_count: number;
+  }[];
+}
+
+export interface IFlowDataPoint {
+  date: string;
+  backlog: number;
+  unstarted: number;
+  started: number;
+  completed: number;
+  cancelled: number;
+}
+
+export interface IFlowResponse {
+  flow: IFlowDataPoint[];
+  state_groups: string[];
+}
+
+export interface IWorkloadAssignee {
+  assignee_id: string;
+  display_name: string;
+  avatar: string | null;
+  days: Record<string, number>;
+  total: number;
+}
+
+export interface IWorkloadResponse {
+  workload: IWorkloadAssignee[];
+  days: string[];
+}
+
 export interface IDefaultAnalyticsResponse {
   issue_completed_month_wise: { month: number; count: number }[];
   most_issue_closed_user: IDefaultAnalyticsUser[];
