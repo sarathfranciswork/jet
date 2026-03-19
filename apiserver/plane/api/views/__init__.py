@@ -162,6 +162,13 @@ from .analytic import (
     DefaultAnalyticsEndpoint,
 )
 
+from .project_analytic import (
+    ProjectBurndownAnalyticsEndpoint,
+    ProjectVelocityAnalyticsEndpoint,
+    ProjectFlowAnalyticsEndpoint,
+    ProjectWorkloadAnalyticsEndpoint,
+)
+
 from .notification import NotificationViewSet, UnreadNotificationEndpoint, MarkAllReadNotificationViewSet
 
 from .exporter import ExportIssuesEndpoint

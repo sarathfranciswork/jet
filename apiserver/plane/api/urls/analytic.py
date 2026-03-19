@@ -7,6 +7,10 @@ from plane.api.views import (
     SavedAnalyticEndpoint,
     ExportAnalyticsEndpoint,
     DefaultAnalyticsEndpoint,
+    ProjectBurndownAnalyticsEndpoint,
+    ProjectVelocityAnalyticsEndpoint,
+    ProjectFlowAnalyticsEndpoint,
+    ProjectWorkloadAnalyticsEndpoint,
 )
 
 
@@ -42,5 +46,26 @@ urlpatterns = [
         "workspaces/<str:slug>/default-analytics/",
         DefaultAnalyticsEndpoint.as_view(),
         name="default-analytics",
+    ),
+    # Project-level analytics
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/analytics/burndown/",
+        ProjectBurndownAnalyticsEndpoint.as_view(),
+        name="project-burndown-analytics",
+    ),
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/analytics/velocity/",
+        ProjectVelocityAnalyticsEndpoint.as_view(),
+        name="project-velocity-analytics",
+    ),
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/analytics/flow/",
+        ProjectFlowAnalyticsEndpoint.as_view(),
+        name="project-flow-analytics",
+    ),
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/analytics/workload/",
+        ProjectWorkloadAnalyticsEndpoint.as_view(),
+        name="project-workload-analytics",
     ),
 ]
