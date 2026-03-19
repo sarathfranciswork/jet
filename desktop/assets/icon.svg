@@ -1,0 +1,10 @@
+<svg viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="102" fill="#09090B"/>
+  <path d="M160 96H352V152H288V320C288 334.782 282.257 348.902 271.941 359.314C261.625 369.726 247.63 375.6 233 375.6C218.37 375.6 204.375 369.726 194.059 359.314C183.743 348.902 178 334.782 178 320V288H234V320C234 323.448 235.369 326.754 237.808 329.192C240.246 331.631 243.552 333 247 333C250.448 333 253.754 331.631 256.192 329.192C258.631 326.754 260 323.448 260 320V96" fill="url(#icon-gradient)" stroke="url(#icon-gradient)" stroke-width="8" stroke-linejoin="round"/>
+  <defs>
+    <linearGradient id="icon-gradient" x1="160" y1="96" x2="352" y2="375.6" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+</svg>

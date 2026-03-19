@@ -1,0 +1,15 @@
+node_modules/
+dist/
+release/
+*.js.map
+*.d.ts
+
+# Generated icon files (regenerate with: node scripts/generate-icons.js)
+assets/icon.png
+assets/icon-*.png
+assets/icon.ico
+assets/icon.icns
+assets/tray-icon.png
+assets/tray-icon@2x.png
+assets/tray-iconTemplate.png
+assets/tray-iconTemplate@2x.png
