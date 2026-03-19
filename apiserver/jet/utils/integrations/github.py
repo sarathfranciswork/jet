@@ -13,9 +13,37 @@ from django.conf import settings
 logger = logging.getLogger(__name__)
 
 
+def _get_private_key_bytes():
+    """Load the GitHub App private key from env var or file."""
+    import base64
+
+    # Try base64-encoded env var first
+    b64_key = os.environ.get("GITHUB_APP_PRIVATE_KEY_BASE64", "")
+    if b64_key:
+        return base64.b64decode(b64_key)
+
+    # Try raw PEM env var (with literal \n replaced)
+    raw_key = os.environ.get("GITHUB_APP_PRIVATE_KEY", "")
+    if raw_key:
+        # Handle env vars where newlines are stored as literal \n
+        raw_key = raw_key.replace("\\n", "\n")
+        return raw_key.encode("utf8")
+
+    # Try PEM file path
+    pem_path = os.environ.get(
+        "GITHUB_APP_PRIVATE_KEY_PATH",
+        os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "github_app_key.pem"),
+    )
+    if os.path.exists(pem_path):
+        with open(pem_path, "rb") as f:
+            return f.read()
+
+    return b""
+
+
 def get_jwt_token():
     app_id = os.environ.get("GITHUB_APP_ID", "")
-    secret = bytes(os.environ.get("GITHUB_APP_PRIVATE_KEY", ""), encoding="utf8")
+    secret = _get_private_key_bytes()
     current_timestamp = int(datetime.now().timestamp())
     due_date = datetime.now() + timedelta(minutes=10)
     expiry = int(due_date.timestamp())
