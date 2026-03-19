@@ -31,7 +31,13 @@ export const SyncLogList: FC<Props> = observer(
     const logs = githubSync.syncLogs;
 
     if (!logs) {
-      return <Loader className="space-y-3" />;
+      return (
+        <Loader className="space-y-3">
+          <Loader.Item height="30px" />
+          <Loader.Item height="30px" />
+          <Loader.Item height="30px" />
+        </Loader>
+      );
     }
 
     if (logs.length === 0) {
