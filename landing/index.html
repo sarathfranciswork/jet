@@ -1749,7 +1749,11 @@
             </div>
             <h3 class="platform-name">macOS</h3>
             <p class="platform-arch">Apple Silicon & Intel</p>
-            <a href="https://github.com/sarathfranciswork/jet/releases" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Mac</a>
+            <a href="https://github.com/sarathfranciswork/jet/releases/download/v1.0.1/Jet-1.0.0-arm64.dmg" class="btn btn-primary btn-sm" id="mac-download">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download .dmg
+            </a>
+            <p style="font-size:11px;color:#52525b;margin-top:8px;"><a href="https://github.com/sarathfranciswork/jet/releases/download/v1.0.1/Jet-1.0.0-x64.dmg" style="color:#71717a;text-decoration:underline;">Intel Mac? Download x64</a></p>
           </div>
           <!-- Windows -->
           <div class="platform-card fade-in-up" data-os="windows">
@@ -1760,7 +1764,10 @@
             </div>
             <h3 class="platform-name">Windows</h3>
             <p class="platform-arch">Windows 10+</p>
-            <a href="https://github.com/sarathfranciswork/jet/releases" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Windows</a>
+            <a href="https://github.com/sarathfranciswork/jet/releases/latest" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Coming Soon
+            </a>
           </div>
           <!-- Linux -->
           <div class="platform-card fade-in-up" data-os="linux">
@@ -1771,7 +1778,10 @@
             </div>
             <h3 class="platform-name">Linux</h3>
             <p class="platform-arch">AppImage & .deb</p>
-            <a href="https://github.com/sarathfranciswork/jet/releases" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Download for Linux</a>
+            <a href="https://github.com/sarathfranciswork/jet/releases/latest" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Coming Soon
+            </a>
           </div>
         </div>
         <div class="desktop-pills fade-in-up">
@@ -2010,10 +2020,34 @@
           if (card.getAttribute('data-os') === detectedOS) {
             var badge = document.createElement('span');
             badge.className = 'recommended-badge';
-            badge.textContent = 'Recommended';
+            badge.textContent = 'Your OS';
             card.appendChild(badge);
+            // Make the button primary style for detected OS
+            var btn = card.querySelector('.btn-outline');
+            if (btn) {
+              btn.className = btn.className.replace('btn-outline', 'btn-primary');
+            }
           }
         });
+      }
+
+      // Auto-detect Apple Silicon vs Intel for macOS download link
+      if (detectedOS === 'macos') {
+        var macLink = document.getElementById('mac-download');
+        if (macLink) {
+          // Check for Apple Silicon
+          try {
+            var canvas = document.createElement('canvas');
+            var gl = canvas.getContext('webgl');
+            var renderer = gl && gl.getParameter(gl.RENDERER);
+            if (renderer && /Apple/.test(renderer)) {
+              // Apple Silicon — arm64 link is already default
+            } else {
+              // Likely Intel
+              macLink.href = 'https://github.com/sarathfranciswork/jet/releases/download/v1.0.1/Jet-1.0.0-x64.dmg';
+            }
+          } catch(e) {}
+        }
       }
 
       // --- Smooth scroll for anchor links ---
