@@ -16,23 +16,14 @@ http {
         add_header Permissions-Policy        "interest-cohort=()" always;
         add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
-        # Landing page at /landing
-        location /landing {
+        # Landing page
+        location = /landing {
+            return 301 /landing/;
+        }
+
+        location ^~ /landing/ {
             alias /www/landing/;
             index index.html;
-            try_files $uri $uri/ /landing/index.html;
-        }
-
-        location /landing/css/ {
-            alias /www/landing/css/;
-        }
-
-        location /landing/js/ {
-            alias /www/landing/js/;
-        }
-
-        location /landing/images/ {
-            alias /www/landing/images/;
         }
 
         # Web app
