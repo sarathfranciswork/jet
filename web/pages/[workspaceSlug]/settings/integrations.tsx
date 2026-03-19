@@ -47,7 +47,7 @@ const WorkspaceIntegrationsPage: NextPageWithLayout = () => {
 
 WorkspaceIntegrationsPage.getLayout = function getLayout(page: ReactElement) {
   return (
-    <AppLayout header={<WorkspaceSettingHeader title="Export Settings" />}>
+    <AppLayout header={<WorkspaceSettingHeader title="Integrations" />}>
       <WorkspaceSettingLayout>{page}</WorkspaceSettingLayout>
     </AppLayout>
   );
