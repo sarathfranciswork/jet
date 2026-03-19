@@ -1,11 +1,16 @@
 import os
+import hashlib
+import hmac
 import jwt
+import logging
 import requests
 from urllib.parse import urlparse, parse_qs
 from datetime import datetime, timedelta
 from cryptography.hazmat.primitives.serialization import load_pem_private_key
 from cryptography.hazmat.backends import default_backend
 from django.conf import settings
+
+logger = logging.getLogger(__name__)
 
 
 def get_jwt_token():
@@ -150,3 +155,155 @@ def get_release_notes():
         return {"error": "Unable to render information from Github Repository"}
 
     return response.json()
+
+
+def verify_github_webhook_signature(payload_body, signature_header, secret):
+    """Verify that the webhook payload was sent from GitHub by validating SHA256."""
+    if not signature_header:
+        return False
+    hash_object = hmac.new(
+        secret.encode("utf-8"), msg=payload_body, digestmod=hashlib.sha256
+    )
+    expected_signature = "sha256=" + hash_object.hexdigest()
+    return hmac.compare_digest(expected_signature, signature_header)
+
+
+class GithubAPIClient:
+    """Client for interacting with the GitHub API using installation tokens."""
+
+    BASE_URL = "https://api.github.com"
+
+    def __init__(self, access_tokens_url):
+        self.access_tokens_url = access_tokens_url
+        self._token = None
+        self._token_expires_at = None
+
+    def _get_installation_token(self):
+        """Get or refresh installation access token."""
+        now = datetime.now()
+        if self._token and self._token_expires_at and now < self._token_expires_at:
+            return self._token
+
+        jwt_token = get_jwt_token()
+        headers = {
+            "Authorization": f"Bearer {jwt_token}",
+            "Accept": "application/vnd.github+json",
+        }
+        response = requests.post(self.access_tokens_url, headers=headers)
+        response.raise_for_status()
+        data = response.json()
+        self._token = data.get("token")
+        expires_at = data.get("expires_at")
+        if expires_at:
+            self._token_expires_at = datetime.fromisoformat(
+                expires_at.replace("Z", "+00:00")
+            ).replace(tzinfo=None) - timedelta(minutes=1)
+        else:
+            self._token_expires_at = now + timedelta(minutes=55)
+        return self._token
+
+    def _headers(self):
+        token = self._get_installation_token()
+        return {
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        }
+
+    def _request(self, method, path, **kwargs):
+        url = f"{self.BASE_URL}{path}"
+        response = requests.request(method, url, headers=self._headers(), **kwargs)
+        response.raise_for_status()
+        if response.status_code == 204:
+            return None
+        return response.json()
+
+    # --- Issues ---
+    def get_issue(self, owner, repo, issue_number):
+        return self._request("GET", f"/repos/{owner}/{repo}/issues/{issue_number}")
+
+    def create_issue(self, owner, repo, title, body=None, labels=None, assignees=None):
+        data = {"title": title}
+        if body:
+            data["body"] = body
+        if labels:
+            data["labels"] = labels
+        if assignees:
+            data["assignees"] = assignees
+        return self._request("POST", f"/repos/{owner}/{repo}/issues", json=data)
+
+    def update_issue(self, owner, repo, issue_number, **kwargs):
+        data = {}
+        for key in ("title", "body", "state", "labels", "assignees"):
+            if key in kwargs:
+                data[key] = kwargs[key]
+        return self._request(
+            "PATCH", f"/repos/{owner}/{repo}/issues/{issue_number}", json=data
+        )
+
+    def close_issue(self, owner, repo, issue_number):
+        return self.update_issue(owner, repo, issue_number, state="closed")
+
+    def reopen_issue(self, owner, repo, issue_number):
+        return self.update_issue(owner, repo, issue_number, state="open")
+
+    # --- Comments ---
+    def create_comment(self, owner, repo, issue_number, body):
+        return self._request(
+            "POST",
+            f"/repos/{owner}/{repo}/issues/{issue_number}/comments",
+            json={"body": body},
+        )
+
+    def update_comment(self, owner, repo, comment_id, body):
+        return self._request(
+            "PATCH",
+            f"/repos/{owner}/{repo}/issues/comments/{comment_id}",
+            json={"body": body},
+        )
+
+    def delete_comment(self, owner, repo, comment_id):
+        return self._request(
+            "DELETE", f"/repos/{owner}/{repo}/issues/comments/{comment_id}"
+        )
+
+    # --- Labels ---
+    def create_label(self, owner, repo, name, color=None, description=None):
+        data = {"name": name}
+        if color:
+            data["color"] = color.lstrip("#")
+        if description:
+            data["description"] = description
+        return self._request("POST", f"/repos/{owner}/{repo}/labels", json=data)
+
+    def list_labels(self, owner, repo, per_page=100):
+        return self._request(
+            "GET", f"/repos/{owner}/{repo}/labels?per_page={per_page}"
+        )
+
+    # --- Pull Requests ---
+    def get_pull_request(self, owner, repo, pr_number):
+        return self._request("GET", f"/repos/{owner}/{repo}/pulls/{pr_number}")
+
+    # --- Webhooks ---
+    def register_webhook(self, owner, repo, webhook_url, secret, events=None):
+        if events is None:
+            events = [
+                "issues",
+                "issue_comment",
+                "pull_request",
+                "pull_request_review",
+                "label",
+            ]
+        data = {
+            "name": "web",
+            "active": True,
+            "events": events,
+            "config": {
+                "url": webhook_url,
+                "content_type": "json",
+                "secret": secret,
+                "insecure_ssl": "0",
+            },
+        }
+        return self._request("POST", f"/repos/{owner}/{repo}/hooks", json=data)

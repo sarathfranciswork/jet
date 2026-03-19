@@ -5,6 +5,10 @@ from jet.db.models import (
     GithubRepository,
     GithubRepositorySync,
     GithubCommentSync,
+    GithubSyncConfig,
+    GithubPullRequest,
+    GithubUserMapping,
+    GithubSyncLog,
 )
 
 
@@ -42,4 +46,45 @@ class GithubCommentSyncSerializer(BaseSerializer):
             "workspace",
             "repository_sync",
             "issue_sync",
+        ]
+
+
+class GithubSyncConfigSerializer(BaseSerializer):
+    class Meta:
+        model = GithubSyncConfig
+        fields = "__all__"
+        read_only_fields = [
+            "project",
+            "workspace",
+        ]
+
+
+class GithubPullRequestSerializer(BaseSerializer):
+    class Meta:
+        model = GithubPullRequest
+        fields = "__all__"
+        read_only_fields = [
+            "project",
+            "workspace",
+            "repository_sync",
+        ]
+
+
+class GithubUserMappingSerializer(BaseSerializer):
+    class Meta:
+        model = GithubUserMapping
+        fields = "__all__"
+        read_only_fields = [
+            "workspace",
+        ]
+
+
+class GithubSyncLogSerializer(BaseSerializer):
+    class Meta:
+        model = GithubSyncLog
+        fields = "__all__"
+        read_only_fields = [
+            "project",
+            "workspace",
+            "repository_sync",
         ]

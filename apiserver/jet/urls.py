@@ -8,9 +8,12 @@ from django.views.generic import TemplateView
 from django.conf import settings
 
 
+from jet.api.views import GithubWebhookEndpoint
+
 urlpatterns = [
     path("", TemplateView.as_view(template_name="index.html")),
     path("api/", include("jet.api.urls")),
+    path("api/webhooks/github/", GithubWebhookEndpoint.as_view(), name="github-webhook"),
     path("", include("jet.web.urls")),
 ]
 

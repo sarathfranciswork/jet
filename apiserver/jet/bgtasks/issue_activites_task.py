@@ -1525,6 +1525,26 @@ def issue_activity(
             except Exception as e:
                 capture_exception(e)
 
+            # Native GitHub sync — dispatch Jet→GitHub sync for relevant activities
+            try:
+                from jet.bgtasks.github_sync.issue_sync import sync_issue_to_github
+
+                for issue_activity in issue_activities_created:
+                    # Skip bot-originated changes to prevent loops
+                    if hasattr(issue_activity, 'actor') and issue_activity.actor and issue_activity.actor.is_bot:
+                        continue
+
+                    field = issue_activity.field
+                    if field in ("state", "name", "description", "label"):
+                        sync_issue_to_github.delay(
+                            str(issue_activity.issue_id),
+                            str(issue_activity.project_id),
+                            str(issue_activity.workspace_id),
+                            field=field,
+                        )
+            except Exception as e:
+                capture_exception(e)
+
         notifications.delay(
             type=type,
             issue_id=issue_id,

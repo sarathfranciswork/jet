@@ -124,6 +124,11 @@ from .integration import (
     GithubCommentSyncViewSet,
     GithubRepositoriesEndpoint,
     BulkCreateGithubIssueSyncEndpoint,
+    GithubSyncConfigViewSet,
+    GithubUserMappingViewSet,
+    GithubPullRequestViewSet,
+    GithubSyncLogViewSet,
+    GithubWebhookEndpoint,
     SlackProjectSyncViewSet,
 )
 

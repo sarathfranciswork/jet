@@ -9,6 +9,10 @@ from jet.api.views import (
     GithubIssueSyncViewSet,
     GithubCommentSyncViewSet,
     BulkCreateGithubIssueSyncEndpoint,
+    GithubSyncConfigViewSet,
+    GithubUserMappingViewSet,
+    GithubPullRequestViewSet,
+    GithubSyncLogViewSet,
     SlackProjectSyncViewSet,
 )
 
@@ -123,6 +127,80 @@ urlpatterns = [
             {
                 "get": "retrieve",
                 "delete": "destroy",
+            }
+        ),
+    ),
+    # Github Sync Config
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/github-repository-sync/<uuid:repo_sync_id>/sync-config/",
+        GithubSyncConfigViewSet.as_view(
+            {
+                "get": "list",
+                "post": "create",
+            }
+        ),
+    ),
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/github-repository-sync/<uuid:repo_sync_id>/sync-config/<uuid:pk>/",
+        GithubSyncConfigViewSet.as_view(
+            {
+                "get": "retrieve",
+                "patch": "partial_update",
+                "delete": "destroy",
+            }
+        ),
+    ),
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/github-repository-sync/<uuid:repo_sync_id>/sync-config/<uuid:pk>/activate/",
+        GithubSyncConfigViewSet.as_view({"post": "activate"}),
+    ),
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/github-repository-sync/<uuid:repo_sync_id>/sync-config/<uuid:pk>/deactivate/",
+        GithubSyncConfigViewSet.as_view({"post": "deactivate"}),
+    ),
+    # Github User Mapping
+    path(
+        "workspaces/<str:slug>/github-user-mappings/",
+        GithubUserMappingViewSet.as_view(
+            {
+                "get": "list",
+                "post": "create",
+            }
+        ),
+    ),
+    path(
+        "workspaces/<str:slug>/github-user-mappings/<uuid:pk>/",
+        GithubUserMappingViewSet.as_view(
+            {
+                "get": "retrieve",
+                "patch": "partial_update",
+                "delete": "destroy",
+            }
+        ),
+    ),
+    # Github Pull Requests
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/github-pull-requests/",
+        GithubPullRequestViewSet.as_view(
+            {
+                "get": "list",
+            }
+        ),
+    ),
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/github-pull-requests/<uuid:pk>/",
+        GithubPullRequestViewSet.as_view(
+            {
+                "get": "retrieve",
+            }
+        ),
+    ),
+    # Github Sync Logs
+    path(
+        "workspaces/<str:slug>/projects/<uuid:project_id>/github-sync-logs/",
+        GithubSyncLogViewSet.as_view(
+            {
+                "get": "list",
             }
         ),
     ),

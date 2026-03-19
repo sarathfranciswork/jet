@@ -63,6 +63,10 @@ from .integration import (
     GithubRepositorySync,
     GithubIssueSync,
     GithubCommentSync,
+    GithubSyncConfig,
+    GithubPullRequest,
+    GithubUserMapping,
+    GithubSyncLog,
     SlackProjectSync,
 )
 

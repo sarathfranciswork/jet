@@ -99,6 +99,7 @@ import {
 } from "store/inbox";
 
 import { IMentionsStore, MentionsStore } from "store/editor";
+import { GithubSyncStore, IGithubSyncStore } from "store/github-sync";
 
 enableStaticRendering(typeof window === "undefined");
 
@@ -162,6 +163,7 @@ export class RootStore {
   inboxFilters: IInboxFiltersStore;
 
   mentionsStore: IMentionsStore;
+  githubSync: IGithubSyncStore;
 
   constructor() {
     this.commandPalette = new CommandPaletteStore(this);
@@ -223,5 +225,6 @@ export class RootStore {
     this.inboxFilters = new InboxFiltersStore(this);
 
     this.mentionsStore = new MentionsStore(this);
+    this.githubSync = new GithubSyncStore(this);
   }
 }

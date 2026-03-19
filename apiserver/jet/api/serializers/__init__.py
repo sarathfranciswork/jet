@@ -80,6 +80,10 @@ from .integration import (
     GithubRepositorySerializer,
     GithubRepositorySyncSerializer,
     GithubCommentSyncSerializer,
+    GithubSyncConfigSerializer,
+    GithubPullRequestSerializer,
+    GithubUserMappingSerializer,
+    GithubSyncLogSerializer,
     SlackProjectSyncSerializer,
 )
 

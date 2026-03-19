@@ -221,6 +221,16 @@ export const EXPORT_SERVICES_LIST = (workspaceSlug: string, cursor: string, per_
 export const GITHUB_REPOSITORY_INFO = (workspaceSlug: string, repoName: string) =>
   `GITHUB_REPO_INFO_${workspaceSlug.toString().toUpperCase()}_${repoName.toUpperCase()}`;
 
+// github-sync
+export const GITHUB_SYNC_CONFIG = (repoSyncId: string) =>
+  `GITHUB_SYNC_CONFIG_${repoSyncId.toUpperCase()}`;
+export const GITHUB_PULL_REQUESTS = (projectId: string, issueId?: string) =>
+  `GITHUB_PULL_REQUESTS_${projectId.toUpperCase()}${issueId ? `_${issueId.toUpperCase()}` : ""}`;
+export const GITHUB_USER_MAPPINGS = (workspaceSlug: string) =>
+  `GITHUB_USER_MAPPINGS_${workspaceSlug.toUpperCase()}`;
+export const GITHUB_SYNC_LOGS = (projectId: string) =>
+  `GITHUB_SYNC_LOGS_${projectId.toUpperCase()}`;
+
 // slack-project-integration
 export const SLACK_CHANNEL_INFO = (workspaceSlug: string, projectId: string) =>
   `SLACK_CHANNEL_INFO_${workspaceSlug.toString().toUpperCase()}_${projectId.toUpperCase()}`;

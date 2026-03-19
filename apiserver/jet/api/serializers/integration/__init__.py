@@ -4,5 +4,9 @@ from .github import (
     GithubRepositorySyncSerializer,
     GithubIssueSyncSerializer,
     GithubCommentSyncSerializer,
+    GithubSyncConfigSerializer,
+    GithubPullRequestSerializer,
+    GithubUserMappingSerializer,
+    GithubSyncLogSerializer,
 )
 from .slack import SlackProjectSyncSerializer
