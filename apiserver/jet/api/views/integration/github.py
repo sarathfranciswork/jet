@@ -145,6 +145,23 @@ class GithubRepositorySyncViewSet(BaseViewSet):
             member=workspace_integration.actor, role=20, project_id=project_id
         )
 
+        # Create default sync config
+        from jet.db.models import GithubSyncConfig
+        GithubSyncConfig.objects.get_or_create(
+            repository_sync=repo_sync,
+            defaults={
+                "sync_direction": "bidirectional",
+                "github_trigger_label": "Jet",
+                "is_active": True,
+                "project_id": project_id,
+                "workspace_id": repo_sync.workspace_id,
+            },
+        )
+
+        # Trigger initial sync to import existing GitHub issues
+        from jet.bgtasks.github_sync.initial_sync import initial_github_sync
+        initial_github_sync.delay(str(repo_sync.id))
+
         # Return Response
         return Response(
             GithubRepositorySyncSerializer(repo_sync).data,
