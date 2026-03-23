@@ -906,6 +906,140 @@
       color: var(--text-tertiary);
     }
 
+    /* ===== ARCHITECTURE SECTION ===== */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .arch-card {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .arch-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .arch-card:hover::before {
+      opacity: 1;
+    }
+
+    .arch-icon {
+      font-size: 28px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .arch-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--jet-cyan);
+      margin-bottom: 6px;
+    }
+
+    .arch-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .arch-desc {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+    }
+
+    .arch-tech-tag {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(59, 130, 246, 0.08);
+      color: var(--jet-blue);
+      border: 1px solid rgba(59, 130, 246, 0.15);
+      margin: 3px 3px 0 0;
+    }
+
+    [data-theme="light"] .arch-tech-tag {
+      background: rgba(59, 130, 246, 0.06);
+    }
+
+    .arch-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 40px 0 12px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .arch-divider::before,
+    .arch-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border-color);
+    }
+
+    .arch-stack-summary {
+      max-width: 800px;
+      margin: 40px auto 0;
+      padding: 28px 36px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.06), rgba(6, 182, 212, 0.06));
+      border: 1px solid rgba(59, 130, 246, 0.12);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .arch-summary-item .arch-summary-value {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .arch-summary-item .arch-summary-label {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .arch-grid {
+        grid-template-columns: 1fr;
+      }
+      .arch-stack-summary {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     /* ===== ROI SECTION ===== */
     .roi-comparison {
       display: grid;
@@ -1242,10 +1376,13 @@
     <button class="nav-dot" data-section="s07" aria-label="Desktop App">
       <span class="nav-dot-label">Shipping</span>
     </button>
-    <button class="nav-dot" data-section="s08" aria-label="The ROI">
+    <button class="nav-dot" data-section="s08" aria-label="Production Architecture">
+      <span class="nav-dot-label">Architecture</span>
+    </button>
+    <button class="nav-dot" data-section="s09" aria-label="The ROI">
       <span class="nav-dot-label">ROI</span>
     </button>
-    <button class="nav-dot" data-section="s09" aria-label="What's Next">
+    <button class="nav-dot" data-section="s10" aria-label="What's Next">
       <span class="nav-dot-label">Future</span>
     </button>
   </nav>
@@ -1639,12 +1776,192 @@
       </div>
     </section>
 
-    <!-- ===== SECTION 08: THE ROI ===== -->
-    <section class="story-section" id="s08" aria-labelledby="s08-heading">
+    <!-- ===== SECTION 08: PRODUCTION ARCHITECTURE ===== -->
+    <section class="story-section auto-height" id="s08" aria-labelledby="s08-heading">
       <div class="container">
         <div class="text-center reveal">
           <span class="section-number">Section 08</span>
-          <h2 id="s08-heading" class="section-title">The Numbers That Matter</h2>
+          <h2 id="s08-heading" class="section-title">Not a Demo.<br><span class="gradient-text">Production Architecture.</span></h2>
+          <p class="section-sub centered">Jet runs 8 containerized services on GCP, with CI/CD, background workers, object storage, and multi-surface delivery. Every layer built and deployed by Claude Code.</p>
+        </div>
+
+        <div class="arch-divider reveal">Infrastructure Layer</div>
+
+        <div class="arch-grid">
+          <div class="glass-card arch-card reveal">
+            <span class="arch-icon">&#9729;&#65039;</span>
+            <div class="arch-label">Compute</div>
+            <div class="arch-title">GCP Compute Engine</div>
+            <div class="arch-desc">Production VM in us-central1 running Docker Compose orchestration with persistent volumes.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">GCE</span>
+              <span class="arch-tech-tag">Docker</span>
+              <span class="arch-tech-tag">Compose</span>
+            </div>
+          </div>
+          <div class="glass-card arch-card reveal reveal-delay-1">
+            <span class="arch-icon">&#128256;</span>
+            <div class="arch-label">Reverse Proxy</div>
+            <div class="arch-title">Nginx Gateway</div>
+            <div class="arch-desc">Alpine-based proxy routing API, web app, spaces, file uploads, and landing page through a single entry point.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">Nginx 1.25</span>
+              <span class="arch-tech-tag">Alpine</span>
+            </div>
+          </div>
+          <div class="glass-card arch-card reveal reveal-delay-2">
+            <span class="arch-icon">&#128640;</span>
+            <div class="arch-label">CI / CD</div>
+            <div class="arch-title">GitHub Actions</div>
+            <div class="arch-desc">Automated pipelines: deploy to GCP on push, build Electron apps for 3 platforms, Docker Hub image publishing.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">Actions</span>
+              <span class="arch-tech-tag">SSH Deploy</span>
+              <span class="arch-tech-tag">Docker Hub</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-divider reveal">Application Layer</div>
+
+        <div class="arch-grid">
+          <div class="glass-card arch-card reveal">
+            <span class="arch-icon">&#128039;</span>
+            <div class="arch-label">Backend API</div>
+            <div class="arch-title">Django + DRF</div>
+            <div class="arch-desc">Python 3.11 ASGI server with Gunicorn + Uvicorn workers. JWT auth, object permissions, OpenAI integration.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">Python 3.11</span>
+              <span class="arch-tech-tag">Django 4.2</span>
+              <span class="arch-tech-tag">DRF</span>
+              <span class="arch-tech-tag">ASGI</span>
+            </div>
+          </div>
+          <div class="glass-card arch-card reveal reveal-delay-1">
+            <span class="arch-icon">&#9883;&#65039;</span>
+            <div class="arch-label">Web Application</div>
+            <div class="arch-title">Next.js + React</div>
+            <div class="arch-desc">Server-rendered React app with MobX state, Tailwind CSS, Nivo charts, drag-and-drop, and Markdown editor.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">Next.js 12</span>
+              <span class="arch-tech-tag">React 18</span>
+              <span class="arch-tech-tag">MobX</span>
+              <span class="arch-tech-tag">Tailwind</span>
+            </div>
+          </div>
+          <div class="glass-card arch-card reveal reveal-delay-2">
+            <span class="arch-icon">&#128187;</span>
+            <div class="arch-label">Desktop</div>
+            <div class="arch-title">Electron App</div>
+            <div class="arch-desc">Cross-platform desktop client for macOS, Windows, and Linux. Signed, notarized, with auto-update via GitHub Releases.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">Electron 28</span>
+              <span class="arch-tech-tag">TypeScript</span>
+              <span class="arch-tech-tag">electron-builder</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-divider reveal">Data & Services Layer</div>
+
+        <div class="arch-grid">
+          <div class="glass-card arch-card reveal">
+            <span class="arch-icon">&#128451;&#65039;</span>
+            <div class="arch-label">Database</div>
+            <div class="arch-title">PostgreSQL 15</div>
+            <div class="arch-desc">Primary relational store with persistent volumes, 1000 max connections, and full Django ORM model layer.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">PostgreSQL 15</span>
+              <span class="arch-tech-tag">Alpine</span>
+            </div>
+          </div>
+          <div class="glass-card arch-card reveal reveal-delay-1">
+            <span class="arch-icon">&#9889;</span>
+            <div class="arch-label">Cache & Broker</div>
+            <div class="arch-title">Redis</div>
+            <div class="arch-desc">In-memory store serving as Celery message broker, result backend, and Django session/data cache layer.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">Redis 6.2</span>
+              <span class="arch-tech-tag">Celery</span>
+              <span class="arch-tech-tag">django-redis</span>
+            </div>
+          </div>
+          <div class="glass-card arch-card reveal reveal-delay-2">
+            <span class="arch-icon">&#128230;</span>
+            <div class="arch-label">Object Storage</div>
+            <div class="arch-title">MinIO (S3)</div>
+            <div class="arch-desc">S3-compatible object storage for file uploads, avatars, and attachments. Served via Nginx with public-read ACL.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">MinIO</span>
+              <span class="arch-tech-tag">S3 API</span>
+              <span class="arch-tech-tag">boto3</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-divider reveal">Background & Monitoring</div>
+
+        <div class="arch-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="glass-card arch-card reveal">
+            <span class="arch-icon">&#9881;&#65039;</span>
+            <div class="arch-label">Workers</div>
+            <div class="arch-title">Celery + Beat</div>
+            <div class="arch-desc">Async task workers and scheduled jobs — issue archival, S3 cleanup, and background processing.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">Celery</span>
+              <span class="arch-tech-tag">Beat Scheduler</span>
+            </div>
+          </div>
+          <div class="glass-card arch-card reveal reveal-delay-1">
+            <span class="arch-icon">&#128200;</span>
+            <div class="arch-label">Observability</div>
+            <div class="arch-title">Sentry + Scout APM</div>
+            <div class="arch-desc">Full error tracking with stack traces, plus application performance monitoring across all services.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">Sentry</span>
+              <span class="arch-tech-tag">Scout APM</span>
+            </div>
+          </div>
+          <div class="glass-card arch-card reveal reveal-delay-2">
+            <span class="arch-icon">&#128279;</span>
+            <div class="arch-label">Integrations</div>
+            <div class="arch-title">GitHub + Slack + OpenAI</div>
+            <div class="arch-desc">Native OAuth, webhook-driven GitHub sync, Slack notifications, and GPT-powered issue assistance.</div>
+            <div style="margin-top:10px;">
+              <span class="arch-tech-tag">GitHub OAuth</span>
+              <span class="arch-tech-tag">Slack SDK</span>
+              <span class="arch-tech-tag">GPT-4</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="arch-stack-summary reveal">
+          <div class="arch-summary-item">
+            <div class="arch-summary-value gradient-text">8</div>
+            <div class="arch-summary-label">Docker Services</div>
+          </div>
+          <div class="arch-summary-item">
+            <div class="arch-summary-value gradient-text">4</div>
+            <div class="arch-summary-label">Published Images</div>
+          </div>
+          <div class="arch-summary-item">
+            <div class="arch-summary-value gradient-text">6</div>
+            <div class="arch-summary-label">CI/CD Pipelines</div>
+          </div>
+          <div class="arch-summary-item">
+            <div class="arch-summary-value gradient-text">3</div>
+            <div class="arch-summary-label">Platform Targets</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SECTION 09: THE ROI ===== -->
+    <section class="story-section" id="s09" aria-labelledby="s09-heading">
+      <div class="container">
+        <div class="text-center reveal">
+          <span class="section-number">Section 09</span>
+          <h2 id="s09-heading" class="section-title">The Numbers That Matter</h2>
           <p class="section-sub centered">A side-by-side comparison that speaks for itself.</p>
         </div>
 
@@ -1690,12 +2007,12 @@
       </div>
     </section>
 
-    <!-- ===== SECTION 09: WHAT'S NEXT ===== -->
-    <section class="story-section" id="s09" aria-labelledby="s09-heading">
+    <!-- ===== SECTION 10: WHAT'S NEXT ===== -->
+    <section class="story-section" id="s10" aria-labelledby="s10-heading">
       <div class="container">
         <div class="text-center reveal">
-          <span class="section-number">Section 09</span>
-          <h2 id="s09-heading" class="section-title">The Age of Agentic Engineering</h2>
+          <span class="section-number">Section 10</span>
+          <h2 id="s10-heading" class="section-title">The Age of Agentic Engineering</h2>
           <p class="section-sub centered">This isn't the future. It's happening now.</p>
         </div>
 
