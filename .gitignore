@@ -79,3 +79,14 @@ tmp/
 
 ## packages
 dist
+
+# Claude Code
+.claude/worktrees/
+.claude/settings.local.json
+
+# Sensitive files
+scripts/github_app_credentials.json
+desktop/jet-dev-id.certSigningRequest
+
+# Large media files
+demo-assets/jet_demo_podcast.wav

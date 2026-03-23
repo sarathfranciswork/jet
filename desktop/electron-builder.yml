@@ -25,6 +25,9 @@ mac:
   darkModeSupport: true
   hardenedRuntime: true
   gatekeeperAssess: false
+  identity: "Sarath Francis (H845PX7Q62)"
+  notarize:
+    teamId: "H845PX7Q62"
   target:
     - target: dmg
       arch:
